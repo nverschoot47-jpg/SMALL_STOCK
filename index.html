@@ -38,7 +38,6 @@ body{background:var(--bg);color:var(--tx);font-family:"IBM Plex Sans",sans-serif
 .tab.on-st{color:var(--tx);border-color:var(--tx2)}
 .tab.on-fr{color:var(--inf);border-color:var(--inf)}
 .tab.on-tx{color:var(--tx2);border-color:var(--tx2)}
-.tab.on-pf{color:var(--acc);border-color:var(--acc)}
 .tab.on-mk{color:#3a8f6a;border-color:#3a8f6a}
 
 /* ── PANELS ── */
@@ -263,7 +262,7 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 
 <header class="hdr">
   <div style="display:flex;align-items:center;gap:10px">
-    <div class="logo">FORM<b style="color:var(--tx)">4</b> INTEL <span id="verLbl">V9.7</span></div>
+    <div class="logo">FORM<b style="color:var(--tx)">4</b> INTEL <span id="verLbl">V9.9</span></div>
     <span class="hbadge live" id="snapBadge"><span class="dot"></span>SNAPSHOT</span>
     <span class="hbadge">CODE P · CEO/CFO/COO/CTO</span>
     <button class="hbtn" onclick="loadLivePrices()">⟳ LIVE</button>
@@ -278,7 +277,6 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
   <div class="tab" onclick="showTab('tr',this)">🦅 TRUMP BELEID</div>
   <div class="tab" onclick="showTab('st',this)">📊 AANDELEN</div>
   <div class="tab" onclick="showTab('fr',this)">🌍 FOREIGN PLAYS</div>
-  <div class="tab" onclick="showTab('pf',this)">💼 MIJN PORTFOLIO</div>
   <div class="tab" onclick="showTab('tx',this)">↻ TRANSACTIES</div>
   <div class="tab" onclick="showTab('mk',this)">📊 MARKT</div>
 </nav>
@@ -300,241 +298,114 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
   </div>
 </div>
 
-<!-- ══════ PANEL: TRUMP BELEID ══════ -->
-<div id="pan-tr" class="panel">
-<div class="w">
-<div class="sh"><span>TRUMP BELEID</span> ACTUELE EXECUTIVE ORDERS + SECTOR IMPACT MEI 2026</div>
-<div class="tnews">
-  <div class="tcard"><div class="tcdate">19 MEI 2026 · NIEUWSTE EO</div>
-    <div class="tctit">🔐 Crypto + Fintech Toegang tot Federaal Betalingssysteem</div>
-    <div class="tcbod">Trump EO: Fed en Treasury herzien regelgeving die crypto en fintech buitensluit van federale betalingsrails. Fed rapporteert binnen 3 maanden. SoFi lanceert SoFiUSD stablecoin direct na EO. "Skinny" betaalrekeningen voor crypto-bedrijven voorgesteld.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">SOFI ↑↑</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">CIFR ↑</span><span class="tctag" style="background:rgba(155,107,255,.12);color:var(--p);border:1px solid rgba(155,107,255,.3)">MFIN Basel III ↑</span></div>
-  </div>
-  <div class="tcard"><div class="tcdate">APRIL 2026</div>
-    <div class="tctit">🧠 Psychedelische Medicatie Versnelling — NRXP DIRECT</div>
-    <div class="tcbod">Trump executive initiative voor versnelde FDA-goedkeuring van psychedelische medicatie voor PTSD, depressie en suïcidaliteit bij veteranen. NRXP verwelkomt dit EXPLICIET in persbericht. CMO Prof. Brown Harvard/McLean heeft NIH+DARPA projecten direct.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">NRXP DIRECT ↑↑↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">ECOR VA ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">CNS Biotech ↑</span></div>
-  </div>
-  <div class="tcard"><div class="tcdate">APRIL 2025 — LOPEND</div>
-    <div class="tctit">🛡 DOD Modernisering + $500B+ Budget + Border Drones</div>
-    <div class="tcbod">EO modernisering defensie-inkoop. Pentagon budget $500B+. Autonome systemen, drones, AI-surveillance. Border security als officiële defensiemissie. SpaceX IPO filing mei 2026 = sector bull market. ONDS heeft enige operationele BVLOS waiver in VS.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">ONDS DIRECT ↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">ASTS ↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">SPIR ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">OUST LiDAR ↑</span></div>
-  </div>
-  <div class="tcard"><div class="tcdate">FEBRUARI 2025 — LOPEND</div>
-    <div class="tctit">⚡ National Energy Dominance Council + EPA Rollback</div>
-    <div class="tcbod">Nat. Energiedominantie Raad opgericht. EPA rollback raffinaderij- en boornormen. "Zero-based regulatory budgeting" energie. "Drill baby drill" officieel beleid. CEO Par Pacific koopt 8 kwartalen op rij door alle analisten-verlagingen heen.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">PARR EPA ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">PRM ↑</span><span class="tctag" style="background:rgba(255,51,85,.12);color:var(--r);border:1px solid rgba(255,51,85,.3)">SHLS solar ↓</span></div>
-  </div>
-  <div class="tcard"><div class="tcdate">JANUARI 2026</div>
-    <div class="tctit">⛏ Critical Minerals + Nevada Mining Permits Fast-Track</div>
-    <div class="tcbod">Section 232 actie kritische mineralen. Interior Dept: Minnesota 225,500 acres opengesteld voor mining. Nevada permitting versneld. Goud als strategisch bezit endorsed. HYMC heeft ex-Interior Dept Director op board = directe permittingnetwerk.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">HYMC Nevada ↑↑</span><span class="tctag" style="background:rgba(155,107,255,.12);color:var(--p);border:1px solid rgba(155,107,255,.3)">Gold/Silver ↑</span></div>
-  </div>
-  <div class="tcard"><div class="tcdate">2025-2026 LOPEND</div>
-    <div class="tctit">🏦 Basel III Rollback + CFPB Defunding + Fintech EO</div>
-    <div class="tcbod">Basel III Endgame teruggedraaid. Kapitaalvereisten kleine banken verlaagd. CFPB bevroren. Fintech EO: "streamline regulatory processes". Community banking = Trump prioriteit. CBK CEO koopt $350K. MFIN CEO 8 kwartalen op rij. PCB CEO $390K.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">CBK ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">MFIN ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">FSBC PCB PKBK ↑</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">SOFI CFPB ↑</span></div>
-  </div>
-  <div class="tcard"><div class="tcdate">2025 LOPEND</div>
-    <div class="tctit">🚀 Space Deregulering + FCC Spectrum + FAA Drones</div>
-    <div class="tcbod">FAA BVLOS waivers versneld. FCC spectrum LEO fast-track. SpaceX IPO filing mei 2026 = hele sector bull market. ONDS enige met operationeel autonoom BVLOS drone-netwerk. ASTS dicht bij 52W high. SPIR: Peter Platzer kocht bij $6.40 nu $23.75.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">ASTS FCC ↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">SPIR ↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">ONDS FAA BVLOS ↑↑</span></div>
-  </div>
-  <div class="tcard"><div class="tcdate">2025 WETGEVING</div>
-    <div class="tctit">🌎 OBBBA Belastingverlagingen + Federal Loan Caps Mei 2026</div>
-    <div class="tcbod">One Big Beautiful Bill Act. Corporate tax behoud, UHNW belastingvoordelen, pass-through deductie uitgebreid. Federal student loan caps mei 2026 = meer private enrollment (STRA, SOFI). Consumentenbestedingen rijken stijgen = luxury travel (LIND, AMAN).</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">AMAN UHNW ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">GSHD TWFG ↑</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">STRA loans ↑</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">LIND luxury ↑</span></div>
-  </div>
+<!-- ══════ PANEL: TRUMP ══════ -->
+<div id="pan-tr" class="panel"><div class="w">
+<div style="margin-bottom:22px">
+  <div style="font-family:'IBM Plex Mono';font-size:10px;letter-spacing:2px;color:#b89a38;font-weight:700;margin-bottom:6px">TRUMP BELEID &middot; TIJDLIJN 2025-2026</div>
+  <p style="font-size:12px;color:#94a3b8;max-width:680px;line-height:1.7;margin:0">Executive orders, tarieven en regelgeving met directe <b style="color:#e2e8f0">sector-impact</b> op de aandelen in dit dashboard.&nbsp;<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#4ade80;vertical-align:middle"></span>&nbsp;Van kracht&ensp;<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#fbbf24;vertical-align:middle"></span>&nbsp;Actief/lopend&ensp;<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#f87171;vertical-align:middle"></span>&nbsp;Deadline/crisis</p>
 </div>
-<div class="sh"><span>LOPEND & IN DEBAT</span> WAT NU SPEELT — MEI 2026</div>
-<div class="tnews">
-  <div class="tcard" style="border-left-color:var(--neg)">
-    <div class="tcdate">20 FEB 2026 / 7 MEI 2026 · SECTION 122 CRISIS</div>
-    <div class="tctit">🚨 Tariefmuur onder druk — Dubbele rechtbank-slag</div>
-    <div class="tcbod">SCOTUS sloeg IEEPA neer (6-3, 20 feb). Trump antwoordde met 10% globaal tarief onder Section 122 (150 dagen). Op 7 mei 2026 verklaarde de Court of International Trade ook de Section 122 tarieven ongeldig. Beide beslissingen in beroep. Tarieven worden nog geind. Deadline Section 122: 24 JULI 2026. Zonder verlenging of nieuwe authority = tariefmuur valt deels weg. Trump: breidt Sections 301 en 232 uit als alternatief.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(176,72,72,.1);color:var(--neg);border:1px solid rgba(176,72,72,.2)">24 Jul deadline</span><span class="tctag" style="background:rgba(184,154,56,.1);color:var(--acc);border:1px solid rgba(184,154,56,.2)">Section 301/232 als backup</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--pos)">
-    <div class="tcdate">17 MEI 2026 / 22 JUNI 2026 · BILATERALE DEALS + IRAN MOU</div>
-    <div class="tctit">🤝 China deal verlengd + US-Iran MOU = markt rally</div>
-    <div class="tcbod">China tarief-truce verlengd door november 2026 (nov 2025 akkoord). Fentanyl tarieven China verlaagd van 20% naar 10%. Trump State Visit China (mei 2026) leverde historische deals. US-Iran MOU getekend 22 juni 2026 = Goldman recessiekans verlaagd naar 15%. Olieprijzen daalden. Geopolitieke risico-premie verminderd.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">UUUU/NXE/MP ↑</span><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">Markt rally</span><span class="tctag" style="background:rgba(184,154,56,.1);color:var(--acc);border:1px solid rgba(184,154,56,.2)">Olie ↓ = PARR let op</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--inf)">
-    <div class="tcdate">24 APRIL 2026 · EU CRITICAL MINERALS</div>
-    <div class="tctit">⛏ VS-EU Critical Minerals Action Plan</div>
-    <div class="tcbod">USTR Greer kondigde VS-EU actieplan aan voor critical minerals supply chain resilience. Doel: Allied landen preferentiele toegang versus China en niet-allied producenten. Direct relevant voor uranium, rare earths en kritieke mineralen. Domestic + Allied producenten winnen.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">UUUU ↑</span><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">NXE ↑</span><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">MP ↑</span><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">IE ↑</span><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">ASPI ↑</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--acc)">
-    <div class="tcdate">1 JUNI 2026 · SECTION 301</div>
-    <div class="tctit">🇧🇷 Section 301 — Nieuwe tarieven op Brazilië voorgesteld</div>
-    <div class="tcbod">USTR publiceerde Federal Register notice voor actie op Braziliaanse importen. Aankondiging 1 juni 2026, deadline publieke reacties 1 juli. Onderdeel van bredere "reciprocal tariff" strategie na IEEPA-ongeldigverklaring. Brazilië = staal, landbouw, vliegtuigonderdelen.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(184,154,56,.1);color:var(--acc);border:1px solid rgba(184,154,56,.2)">Staal ↑</span><span class="tctag" style="background:rgba(74,114,168,.1);color:var(--inf);border:1px solid rgba(74,114,168,.2)">EMBRAER risico</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--inf)">
-    <div class="tcdate">20 FEB 2026 · SECTION 232 PROCLAMATIE</div>
-    <div class="tctit">⚙️ Section 232 uitgebreid — Koper, pharma, semiconductors, lumber</div>
-    <div class="tcbod">Feb 20 proclamatie voegde nieuwe productcategorieën toe aan Section 232 tarieven: koper, farmaceutica, halfgeleiders, hout, kritieke mineralen en energieproducten. Dit is het primaire tarief-instrument na SCOTUS sloeg IEEPA neer. Koper +25%, semiconductors = nationaal veiligheidsgrond.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">INTC ↑</span><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">TMQ/IE ↑</span><span class="tctag" style="background:rgba(184,154,56,.1);color:var(--acc);border:1px solid rgba(184,154,56,.2)">Pharma herlocatie ↑</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--g)">
-    <div class="tcdate" style="color:var(--g)">2025-2026 · $1B+ GEÏNVESTEERD</div>
-    <div class="tctit">💰 Overheid koopt DIRECT aandelen in mijnbouwbedrijven</div>
-    <div class="tcbod">De Amerikaanse overheid neemt nu directe equity-stakes in kritieke-mineralen bedrijven: DoD kocht 15% van MP Materials ($400M + $150M lening + 10-jaar prijsgarantie), $670M in magneetfabrikant Vulcan Elements, en $35.6M in het Canadese Trilogy Metals (TMQ) + warrants. DOE zet $2.26B lening voor American Lithium's Thacker Pass om in een 5-10% belang. Dit is ongekend — de staat wordt mede-eigenaar om China's dominantie te breken.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">TMQ DoD stake ↑↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">LAC Thacker Pass ↑</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">Mining sector breed ↑</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--o)">
-    <div class="tcdate" style="color:var(--o)">14 JAN 2026 · SECTION 232</div>
-    <div class="tctit">⛏️ Processed Critical Minerals — tarief-dreiging + prijsvloeren</div>
-    <div class="tcbod">Section 232 proclamatie over verwerkte kritieke mineralen (PCMDPs). Onderhandelingen met bondgenoten lopen tot 13 juli 2026; falen ze, dan komen er tarieven. Plus: "minimum import prices" (prijsvloeren) voor 60 mineralen op de USGS-lijst — rare earths, lithium, kobalt, gallium, germanium. VS is 100% importafhankelijk voor 12 mineralen, >50% voor 29 andere. Dit beschermt domestic + allied producenten tegen Chinese dumping.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">HYMC/UUUU ↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">NB/CRML allies ↑</span><span class="tctag" style="background:rgba(255,51,85,.12);color:var(--r);border:1px solid rgba(255,51,85,.3)">China rare earth ↓</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--p)">
-    <div class="tcdate" style="color:var(--p)">11 DEC 2025 → LOPEND · AI BELEID</div>
-    <div class="tctit">⚖️ AI Litigation Task Force — Federale AI-wet vs Staten</div>
-    <div class="tcbod">EO "Ensuring a National Policy Framework for AI" gaf DOJ opdracht om staats-AI-wetten in federale rechtbank aan te vechten (gestart 10 jan 2026). Commerce moet $42B BEAD breedbandsubsidie koppelen aan intrekken van "te belastende" staats-AI-regels. FTC classificeert verplichte bias-mitigatie als misleidende handelspraktijk. Doel: één federaal AI-kader i.p.v. lappendeken per staat.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(155,107,255,.12);color:var(--p);border:1px solid rgba(155,107,255,.3)">PLTR ↑ minder regeldruk</span><span class="tctag" style="background:rgba(155,107,255,.12);color:var(--p);border:1px solid rgba(155,107,255,.3)">NVDA ↑</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">AI sector breed ↑</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--r)">
-    <div class="tcdate" style="color:var(--r)">21 MEI 2026 · INGETROKKEN</div>
-    <div class="tctit">❌ AI Cybersecurity EO — op laatste moment geannuleerd</div>
-    <div class="tcbod">Trump trok uren voor de geplande ondertekening een EO in die AI-bedrijven zou vragen de overheid vroege test-toegang tot nieuwe modellen te geven. AI-executives werden al op het Witte Huis verwacht. Reden: Trump vond delen ervan niet acceptabel. CISA zou bindende richtlijnen krijgen voor cyber-verdediging. Toont onzekerheid in AI-regulering — markt let op de volgende versie.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,51,85,.12);color:var(--r);border:1px solid rgba(255,51,85,.3)">AI regelgeving onzeker</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">PLTR/NVDA watch</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--y)">
-    <div class="tcdate" style="color:var(--r)">20 FEB 2026 · SCOTUS UITSPRAAK</div>
-    <div class="tctit">⚖️ IEEPA Tarieven — Supreme Court verklaarde ONGELDIG (20 feb 2026)</div>
-    <div class="tcbod">UPDATE: Op 20 feb 2026 oordeelde de Supreme Court (Learning Resources v. Trump) dat IEEPA Trump NIET de bevoegdheid gaf om die tarieven op te leggen. Trump verschoof daarna naar Section 232-tarieven (staal, aluminium, auto's, halfgeleiders, kritieke mineralen) die wél juridisch standhouden. Section 232 is nu het primaire tarief-instrument.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,51,85,.12);color:var(--r);border:1px solid rgba(255,51,85,.3)">AAPL China risk</span><span class="tctag" style="background:rgba(255,51,85,.12);color:var(--r);border:1px solid rgba(255,51,85,.3)">Importeurs watch</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">Reshoring ↑ ESAB</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--g)">
-    <div class="tcdate" style="color:var(--g)">23 MEI 2025 → LOPEND · NUCLEAIR</div>
-    <div class="tctit">⚛️ Nucleaire Renaissance — 4 EOs voor reactoren + NRC hervorming</div>
-    <div class="tcbod">Vier executive orders: "Deploying Advanced Nuclear Reactor Technologies for National Security", NRC-hervorming, reactor-testen bij DOE, en herstel nucleaire industriebasis. Doel: SMR (small modular reactors) versnellen voor datacenters + defensie. AI-datacenters hebben enorme stroomvraag — kernenergie is het antwoord. Lopende vergunningsversnelling.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">Uranium/SMR sector ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">Data center power ↑</span><span class="tctag" style="background:rgba(0,200,240,.12);color:var(--c);border:1px solid rgba(0,200,240,.3)">AAON/LMB cooling ↑</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--o)">
-    <div class="tcdate" style="color:var(--o)">6 JUN 2025 → LOPEND · DRONES</div>
-    <div class="tctit">🚁 "Unleashing American Drone Dominance" + Airspace Sovereignty</div>
-    <div class="tcbod">EO's voor herstel Amerikaanse luchtruim-soevereiniteit en versnelling binnenlandse drone-industrie. BVLOS-regels versoepeld, anti-drone systemen tegen vijandige UAS, en voorkeur voor Amerikaanse drone-fabrikanten in federale inkoop (weg van Chinese DJI). Direct relevant voor ONDS — enige operationele BVLOS-waiver. Lopende implementatie via FAA.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">ONDS DIRECT ↑↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">Anti-China drone ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">OUST border ↑</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--c)">
-    <div class="tcdate" style="color:var(--c)">6 FEB 2026 → LOPEND · WAPENS</div>
-    <div class="tctit">🎯 "America First Arms Transfer Strategy" + Phosphorus Supply</div>
-    <div class="tcbod">EO voor versnelde wapenexport aan bondgenoten (minder bureaucratie voor defensie-deals). Plus EO (18 feb 2026) die binnenlandse productie van elementair fosfor en glyfosaat-herbiciden veiligstelt als nationaal defensiebelang. Defensie-industriebasis = aanhoudende Trump-prioriteit. Direct voordeel voor defensie-electronica en autonome systemen.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">DRS defense electronics ↑</span><span class="tctag" style="background:rgba(255,107,43,.12);color:var(--o);border:1px solid rgba(255,107,43,.3)">ONDS/OUST ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">Wapenexporteurs ↑</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--g)">
-    <div class="tcdate" style="color:var(--g)">11 FEB 2026 → LOPEND · KOLEN/ENERGIE</div>
-    <div class="tctit">⚡ "America's Beautiful Clean Coal Power Generation Fleet"</div>
-    <div class="tcbod">EO om kolencentrales open te houden/heractiveren voor de groeiende stroomvraag van AI-datacenters. Gecombineerd met de National Energy Dominance Council. Filosofie: alle binnenlandse energiebronnen (kolen, gas, nucleair) inzetten om AI-infrastructuur te voeden. Lopende uitvoering — EPA versoepelt emissienormen.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">PARR/PRM energie ↑</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">Coal/Gas ↑</span><span class="tctag" style="background:rgba(255,51,85,.12);color:var(--r);border:1px solid rgba(255,51,85,.3)">Solar/Wind ↓</span></div>
-  </div>
-  <div class="tcard" style="border-left-color:var(--p)">
-    <div class="tcdate" style="color:var(--p)">12 MEI 2025 → LOPEND · PHARMA</div>
-    <div class="tctit">💊 Most-Favored-Nation Drug Pricing — in debat</div>
-    <div class="tcbod">EO "Delivering Most-Favored-Nation Prescription Drug Pricing" wil dat de VS niet meer betaalt dan het laagste prijsland. Dubbelzijdig signaal: positief voor consumenten, maar margedruk voor pharma. Wordt nog juridisch en via onderhandeling uitgevochten. Relevant voor biotech met dure therapieën — maar minder voor pre-revenue namen (NRXP) die nog niet prijzen.</div>
-    <div class="tcimp"><span class="tctag" style="background:rgba(255,51,85,.12);color:var(--r);border:1px solid rgba(255,51,85,.3)">Big pharma marge ↓</span><span class="tctag" style="background:rgba(0,232,122,.12);color:var(--g);border:1px solid rgba(0,232,122,.3)">NRXP minder geraakt</span><span class="tctag" style="background:rgba(245,200,66,.12);color:var(--y);border:1px solid rgba(245,200,66,.3)">In debat/juridisch</span></div>
-  </div>
+<div style="background:#1e293b;border:1px solid #334155;border-radius:4px;padding:14px 16px;margin-bottom:28px">
+  <div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;color:#b89a38;margin-bottom:10px">&#128197; AANKOMENDE DEADLINES + STOCK IMPACT</div>
+  <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:11px"><thead><tr style="background:#0a1628;border-bottom:1px solid #334155"><th style="padding:9px 10px;text-align:left;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1.5px;color:#b89a38"></th><th style="padding:9px 10px;text-align:left;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1.5px;color:#b89a38">BELEID</th><th style="padding:9px 10px;text-align:left;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1.5px;color:#b89a38">DEADLINE</th><th style="padding:9px 10px;text-align:left;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1.5px;color:#b89a38">IMPACT</th><th style="padding:9px 10px;text-align:left;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1.5px;color:#b89a38">STOCKS</th></tr></thead><tbody><tr style="background:#1e293b;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">Banking/Fintech</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">+++ STERK</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">Basel III rollback, CFPB defunding, Fintech EO 19 mei 2026</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">CBKMFINFSBCSOFIPCB</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">+20</td></tr><tr style="background:#162032;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">Crypto/Bitcoin</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">+++ STERK</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">Crypto EO 19 mei, SEC reversal, BTC strategic reserve</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">CIFRSOFI stablecoin</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">+20</td></tr><tr style="background:#1e293b;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">Defensie/Drones/Space</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">++ STERK</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">DOD modernisering, Space dereg, FAA BVLOS, $500B+</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">ONDSASTSSPIROUST</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">+20</td></tr><tr style="background:#162032;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">Energie/Olie/Gas</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">++ STERK</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">Nat. Energy Dominance, EPA rollback</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">PARRPRM</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">+10</td></tr><tr style="background:#1e293b;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">Mining/Grondstoffen</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">++ STERK</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">Section 232, Interior Dept permitting, Minnesota land</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">HYMC</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">+10</td></tr><tr style="background:#162032;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">Pharma/Biotech CNS/VA</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">+ MATIG</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">Psychedelica EO apr 2026, FDA dereg, VA budget</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">NRXPECOR</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">+10</td></tr><tr style="background:#1e293b;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">Solar/Groene Energie</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">--- NEGATIEF</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">IRA rollback, EV subsidies afgebouwd</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">SHLS ↓XOS ↓</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">-20</td></tr><tr style="background:#162032;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">CHIPS/Semiconductors</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">+ MATIG</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#4ade80;font-weight:700;white-space:nowrap">Semiconductor proclamatie jan 2026, reshoring</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">COHUFORM</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">+10</td></tr><tr style="background:#1e293b;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">🚨</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">Section 122 Tarief deadline — HELE TARIEFMUUR STAAT OP SPELNa SCOTUS IEEPA-beslissing (20 feb) vervi</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#f87171;font-weight:700;white-space:nowrap">24 JUL 202629 DAGEN</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">⚠ MARKTBREEDAlle importerende sectoren</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">BREEDNKELULUINTC</td></tr><tr style="background:#162032;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">🔴</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">Section 301 Brazilië — Publieke reactie deadline + Section 301 Manufacturing overcapacity onderzoek </td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#f87171;font-weight:700;white-space:nowrap">1 JUL 2026</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">⚠ MIXED</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">GATOMP</td></tr><tr style="background:#1e293b;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">🔴</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">Section 232 Kritieke Mineralen + EU Critical Minerals Action PlanOnderhandelingen lopen. 25%+ tariev</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#f87171;font-weight:700;white-space:nowrap">13 JUL 2026</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">↑ BULLISHDomestic + allied producenten</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">UUUUNBTMQNXEHYMCIEASPILAC</td></tr><tr style="background:#162032;border-bottom:1px solid #1e293b"><td style="padding:8px 10px;font-size:15px">🔴</td><td style="padding:8px 10px;color:#cbd5e1;font-size:11px;line-height:1.4">Section 301 Brazilië + Iran deal in ontwikkelingSection 301 Brazilië deadline 1 juli. TEGELIJK: U.S.</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:10px;color:#f87171;font-weight:700;white-space:nowrap">1 JUL 2026</td><td style="padding:8px 10px;color:#94a3b8;font-size:10px">⚠ MIXEDStaal/landbouw importen</td><td style="padding:8px 10px;font-family:'IBM Plex Mono';font-size:9px;color:#b89a38">GATOPARR</td></tr></tbody></table></div>
 </div>
-<div class="sh"><span>MATRIX</span> TRUMP BELEID × SECTOR IMPACT</div>
-<div class="tw"><table><thead><tr><th>SECTOR</th><th>IMPACT</th><th>EOs</th><th>BEDRIJVEN</th><th>+PTS</th><th>HEADWINDS</th></tr></thead><tbody>
-<tr><td><b>Banking/Fintech</b></td><td class="up">+++ STERK</td><td style="font-size:9px;color:#8899aa">Basel III rollback, CFPB defunding, Fintech EO 19 mei 2026</td><td><span class="tag tP">CBK</span><span class="tag tP">MFIN</span><span class="tag tP">FSBC</span><span class="tag tP">SOFI</span><span class="tag tP">PCB</span></td><td class="up">+20</td><td style="font-size:9px;color:var(--r)">Hogere rentes, credit risk</td></tr>
-<tr><td><b>Crypto/Bitcoin</b></td><td class="up">+++ STERK</td><td style="font-size:9px;color:#8899aa">Crypto EO 19 mei, SEC reversal, BTC strategic reserve</td><td><span class="tag tP">CIFR</span><span class="tag tT">SOFI stablecoin</span></td><td class="up">+20</td><td style="font-size:9px;color:var(--r)">BTC volatiliteit, energiekosten</td></tr>
-<tr><td><b>Defensie/Drones/Space</b></td><td class="up">++ STERK</td><td style="font-size:9px;color:#8899aa">DOD modernisering, Space dereg, FAA BVLOS, $500B+</td><td><span class="tag tT">ONDS</span><span class="tag tT">ASTS</span><span class="tag tT">SPIR</span><span class="tag tT">OUST</span></td><td class="up">+20</td><td style="font-size:9px;color:var(--r)">Sequestration risico</td></tr>
-<tr><td><b>Energie/Olie/Gas</b></td><td class="up">++ STERK</td><td style="font-size:9px;color:#8899aa">Nat. Energy Dominance, EPA rollback</td><td><span class="tag tP">PARR</span><span class="tag tP">PRM</span></td><td class="up">+10</td><td style="font-size:9px;color:var(--r)">Olieprijs OPEC</td></tr>
-<tr><td><b>Mining/Grondstoffen</b></td><td class="up">++ STERK</td><td style="font-size:9px;color:#8899aa">Section 232, Interior Dept permitting, Minnesota land</td><td><span class="tag tT">HYMC</span></td><td class="up">+10</td><td style="font-size:9px;color:var(--r)">Grondstofprijzen</td></tr>
-<tr><td><b>Pharma/Biotech CNS/VA</b></td><td class="up">+ MATIG</td><td style="font-size:9px;color:#8899aa">Psychedelica EO apr 2026, FDA dereg, VA budget</td><td><span class="tag tT">NRXP</span><span class="tag tP">ECOR</span></td><td class="up">+10</td><td style="font-size:9px;color:var(--r)">Drug pricing EO</td></tr>
-<tr><td><b>Solar/Groene Energie</b></td><td class="dn">--- NEGATIEF</td><td style="font-size:9px;color:#8899aa">IRA rollback, EV subsidies afgebouwd</td><td><span class="tag tS">SHLS ↓</span><span class="tag tS">XOS ↓</span></td><td class="dn">-20</td><td style="font-size:9px;color:var(--r)">Directe subsidie-afbouw</td></tr>
-<tr><td><b>CHIPS/Semiconductors</b></td><td class="up">+ MATIG</td><td style="font-size:9px;color:#8899aa">Semiconductor proclamatie jan 2026, reshoring</td><td><span class="tag tP">COHU</span><span class="tag tP">FORM</span></td><td class="up">+10</td><td style="font-size:9px;color:var(--r)">China tariffs</td></tr>
-</tbody></table></div>
-<div class="disc">Beleidsinformatie: Ballotpedia Trump EO tracker (mei 2026), Brookings Regulatory Tracker, CoinDesk (crypto EO mei 2026). Impacts zijn redactionele beoordelingen.</div>
-
-<div class="sh" style="margin-top:16px"><span style="color:var(--neg)">⏰ OP PLANNING</span> AANKOMENDE TRUMP BELEID — IMPACT OP JOUW AANDELEN</div>
-<div style="background:var(--panel);border:1px solid var(--bd);border-radius:3px;margin-bottom:12px;overflow:hidden">
-  <div style="padding:6px 12px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center">
-    <span style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:2px;color:var(--mu)">STATUS: 🔴 DRINGEND (&lt;30 DAGEN) · 🟡 GEPLAND · 🟢 VAN KRACHT</span>
-    <span style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu)">BIJGEWERKT 5 JUNI 2026</span>
-  </div>
-  <div style="overflow-x:auto">
-  <table style="width:100%;border-collapse:collapse">
-  <thead><tr style="background:var(--p2)">
-    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">STATUS</th>
-    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">BELEID / ACTIE</th>
-    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">DEADLINE</th>
-    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">IMPACT</th>
-    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">JOUW AANDELEN</th>
-  </tr></thead>
-  <tbody>
-  <tr style="border-bottom:2px solid rgba(176,72,72,.3);background:rgba(176,72,72,.04)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:13px">🚨</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:700;color:var(--neg)">Section 122 Tarief deadline — HELE TARIEFMUUR STAAT OP SPEL</div><div style="font-size:9px;color:var(--tx2)">Na SCOTUS IEEPA-beslissing (20 feb) verving Trump met 10% globaal tarief onder Section 122 (150 dagen). Court of International Trade verklaarde dit OOK ongeldig (7 mei), maar tarief wordt nog geïnd in beroep. Deadline: 24 juli. Zonder verlenging of nieuwe authority = tariefmuur valt deels weg. Trump's reactie: uitbreiden Section 301 en 232.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--neg);font-weight:700">24 JUL 2026</span><div style="font-family:'IBM Plex Mono';font-size:7px;color:var(--neg)">29 DAGEN</div></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--acc)">⚠ MARKTBREED</span><div style="font-size:8px;color:var(--tx2)">Alle importerende sectoren</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">BREED</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">NKE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">LULU</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">INTC</span></div></td>
-  </tr>
-  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🔴</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 301 Brazilië — Publieke reactie deadline + Section 301 Manufacturing overcapacity onderzoek (16 landen, 75%+ US imports)</div><div style="font-size:9px;color:var(--tx2)">Section 301 Brazilië: Federal Register notice 1 juni 2026, reacties due 1 juli. TEGELIJK: groot Section 301 onderzoek naar structural manufacturing overcapacity van 16 landen (dekt 75%+ van US imports) = potentieel meest ingrijpende tarief-actie na Section 122 uitval.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--neg)">1 JUL 2026</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--acc)">⚠ MIXED</span></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">GATO</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">MP</span></div></td>
-  </tr>
-  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🔴</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Kritieke Mineralen + EU Critical Minerals Action Plan</div><div style="font-size:9px;color:var(--tx2)">Onderhandelingen lopen. 25%+ tarieven bij mislukking. EU-VS Critical Minerals Action Plan aangekondigd 24 april 2026. Tiered aanpak verwacht voor allied vs non-allied landen.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--neg)">13 JUL 2026</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ BULLISH</span><div style="font-size:8px;color:var(--tx2)">Domestic + allied producenten</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">UUUU</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NB</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">TMQ</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NXE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">HYMC</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">IE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ASPI</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">LAC</span></div></td>
-  </tr>
-  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🔴</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 301 Brazilië + Iran deal in ontwikkeling</div><div style="font-size:9px;color:var(--tx2)">Section 301 Brazilië deadline 1 juli. TEGELIJK: U.S.-Iran deal nadert (juni 2026). Als akkoord: Iran tarief-EO (25% op landen die handelen met Iran) mogelijk aangepast. Impact op energie-sector.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--neg)">1 JUL 2026</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--acc)">⚠ MIXED</span><div style="font-size:8px;color:var(--tx2)">Staal/landbouw importen</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">GATO</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">PARR</span></div></td>
-  </tr>
-  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Semiconductors + Apple-Intel Deal bevestigd</div><div style="font-size:9px;color:var(--tx2)">Trump bevestigde Apple-Intel chip deal 18 juni. INTC +10.64% naar record $133.99. 18A-P proces in risicoproductie. Bernstein PT $100. CHIPS Act subsidies actief. Domestic semi = Trump prioriteit nr. 1.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">H2 2026</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ DOMESTIC</span><div style="font-size:8px;color:var(--tx2)">Domestic chip makers winnen</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">INTC</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">CEVA</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">CVV</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">TTD</span></div></td>
-  </tr>
-  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Farmaceutica — 250% tarief dreigt</div><div style="font-size:9px;color:var(--tx2)">Trump dreigde 200-250% tarieven op pharma-importen (aug 2025 aankondiging). Formal Section 232 onderzoek loopt. Doel: pharma productie volledig terugbrengen naar VS. Impact: MASSIEF voor US-domestic pharma.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">2026-2027</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ US PHARMA</span><div style="font-size:8px;color:var(--tx2)">Reshoring voordeel</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NRXP</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ABT</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">AGIO</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">TOI</span></div></td>
-  </tr>
-  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Reciprocal Tariffs — Deadline niet-geregelde landen</div><div style="font-size:9px;color:var(--tx2)">Augustus 2026 deadline voor landen zonder bilateraal akkoord. Hoge onzekerheid. VS-UK deal al gesloten (10% auto). China 90-dag pauze loopt af.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">AUG 2026</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--acc)">⚠ BREED</span><div style="font-size:8px;color:var(--tx2)">Alle sectoren met import</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">NKE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">LULU</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">INMD</span></div></td>
-  </tr>
-  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Nucleaire Renaissance — SMR vergunningen versneld</div><div style="font-size:9px;color:var(--tx2)">4 Trump EOs voor nucleaire energie. NRC vergunningstraject verkort. Microsoft/Google SMR deals. Uranium vraag stijgt voor datacenters.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">2026-2028</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ URANIUM</span><div style="font-size:8px;color:var(--tx2)">Uranium + HALEU producenten</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">UUUU</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NXE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ASPI</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">CIFR</span></div></td>
-  </tr>
-  <tr>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟢</span></td>
-    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Staal/Aluminium — 50% tarieven van kracht</div><div style="font-size:9px;color:var(--tx2)">50% tarieven op staal en aluminium (meeste landen). Domestic staalproducenten beschermd. Downstream constructie = hogere kosten.</div></td>
-    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--pos)">VAN KRACHT</span></td>
-    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ DOMESTIC</span><div style="font-size:8px;color:var(--tx2)">Domestic staal, constructie</div></td>
-    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">STRT</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ESAB</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">GFF</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ROCK</span></div></td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-</div>
+<div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;color:#b89a38;margin-bottom:16px">TIJDLIJN EXECUTIVE ORDERS &amp; SECTOR EVENTS</div>
+<div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">19 MEI 2026<br>NIEUWSTE EO</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#fbbf24;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #fbbf2477;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#fbbf2433,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #fbbf24;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🔐 Crypto + Fintech Toegang tot Federaal Betalingssysteem</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Trump EO: Fed en Treasury herzien regelgeving die crypto en fintech buitensluit van federale betalingsrails. Fed rapporteert binnen 3 maanden. SoFi lanceert SoFiUSD stablecoin direct na EO. "Skinny" betaalrekeningen voor crypto-bedrijven voorgesteld.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">SOFI ↑↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">CIFR ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">MFIN Basel III ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">APRIL 2026</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#fbbf24;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #fbbf2477;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#fbbf2433,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #fbbf24;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🧠 Psychedelische Medicatie Versnelling — NRXP DIRECT</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Trump executive initiative voor versnelde FDA-goedkeuring van psychedelische medicatie voor PTSD, depressie en suïcidaliteit bij veteranen. NRXP verwelkomt dit EXPLICIET in persbericht. CMO Prof. Brown Harvard/McLean heeft NIH+DARPA projecten direct.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">NRXP DIRECT ↑↑↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ECOR VA ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">CNS Biotech ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">APRIL 2025 — LOPEND</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🛡 DOD Modernisering + $500B+ Budget + Border Drones</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">EO modernisering defensie-inkoop. Pentagon budget $500B+. Autonome systemen, drones, AI-surveillance. Border security als officiële defensiemissie. SpaceX IPO filing mei 2026 = sector bull market. ONDS heeft enige operationele BVLOS waiver in VS.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ONDS DIRECT ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ASTS ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">SPIR ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">OUST LiDAR ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">FEBRUARI 2025 — LOPEND</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⚡ National Energy Dominance Council + EPA Rollback</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Nat. Energiedominantie Raad opgericht. EPA rollback raffinaderij- en boornormen. "Zero-based regulatory budgeting" energie. "Drill baby drill" officieel beleid. CEO Par Pacific koopt 8 kwartalen op rij door alle analisten-verlagingen heen.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">PARR EPA ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">PRM ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">SHLS solar ↓</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">JANUARI 2026</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#fbbf24;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #fbbf2477;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#fbbf2433,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #fbbf24;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⛏ Critical Minerals + Nevada Mining Permits Fast-Track</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Section 232 actie kritische mineralen. Interior Dept: Minnesota 225,500 acres opengesteld voor mining. Nevada permitting versneld. Goud als strategisch bezit endorsed. HYMC heeft ex-Interior Dept Director op board = directe permittingnetwerk.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">HYMC Nevada ↑↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Gold/Silver ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">2025-2026 LOPEND</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🏦 Basel III Rollback + CFPB Defunding + Fintech EO</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Basel III Endgame teruggedraaid. Kapitaalvereisten kleine banken verlaagd. CFPB bevroren. Fintech EO: "streamline regulatory processes". Community banking = Trump prioriteit. CBK CEO koopt $350K. MFIN CEO 8 kwartalen op rij. PCB CEO $390K.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">CBK ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">MFIN ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">FSBC PCB PKBK ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">SOFI CFPB ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">2025 LOPEND</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🚀 Space Deregulering + FCC Spectrum + FAA Drones</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">FAA BVLOS waivers versneld. FCC spectrum LEO fast-track. SpaceX IPO filing mei 2026 = hele sector bull market. ONDS enige met operationeel autonoom BVLOS drone-netwerk. ASTS dicht bij 52W high. SPIR: Peter Platzer kocht bij $6.40 nu $23.75.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ASTS FCC ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">SPIR ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ONDS FAA BVLOS ↑↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">2025 WETGEVING</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🌎 OBBBA Belastingverlagingen + Federal Loan Caps Mei 2026</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">One Big Beautiful Bill Act. Corporate tax behoud, UHNW belastingvoordelen, pass-through deductie uitgebreid. Federal student loan caps mei 2026 = meer private enrollment (STRA, SOFI). Consumentenbestedingen rijken stijgen = luxury travel (LIND, AMAN).</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">AMAN UHNW ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">GSHD TWFG ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">STRA loans ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">LIND luxury ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">1 JULI 2026<br>USMCA/NAFTA</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#f87171;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #f8717177;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#f8717133,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #f87171;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🇺🇸🇲🇽🇨🇦 VS verlengt USMCA NIET — tariefreviews Mexico en Canada</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Trump heeft het USMCA (opvolger NAFTA) niet verlengd op de verloopdatum van 1 juli 2026. Dit start een formele review-periode waarbij nieuwe tarieven mogelijk zijn op Mexico en Canada — twee van de grootste handelspartners van de VS. Nike heeft grote productiefaciliteiten in Mexico. Lululemon heeft supply chain blootstelling. Automotive = hoog risico.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">Review nu gestart</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">NKE/LULU supply chain ↓ risico</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">20 FEB 2026 / 7 MEI 2026<br>SECTION 122 CRISIS</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#f87171;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #f8717177;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#f8717133,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #f87171;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🚨 Tariefmuur onder druk — Dubbele rechtbank-slag</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">SCOTUS sloeg IEEPA neer (6-3, 20 feb). Trump antwoordde met 10% globaal tarief onder Section 122 (150 dagen). Op 7 mei 2026 verklaarde de Court of International Trade ook de Section 122 tarieven ongeldig. Beide beslissingen in beroep. Tarieven worden nog geind. Deadline Section 122: 24 JULI 2026. Zonder verlenging of nieuwe authority = tariefmuur valt deels weg. Trump: breidt Sections 301 en 232 uit als alternatief.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">24 Jul deadline</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">Section 301/232 als backup</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">17 MEI 2026 / 22 JUNI 2026<br>BILATERALE DEALS + IRAN MOU</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🤝 China deal verlengd + US-Iran MOU = markt rally</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">China tarief-truce verlengd door november 2026 (nov 2025 akkoord). Fentanyl tarieven China verlaagd van 20% naar 10%. Trump State Visit China (mei 2026) leverde historische deals. US-Iran MOU getekend 22 juni 2026 = Goldman recessiekans verlaagd naar 15%. Olieprijzen daalden. Geopolitieke risico-premie verminderd.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">UUUU/NXE/MP ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Markt rally</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">Olie ↓ = PARR let op</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">24 APRIL 2026<br>EU CRITICAL MINERALS</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#60a5fa;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #60a5fa77;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#60a5fa33,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #60a5fa;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⛏ VS-EU Critical Minerals Action Plan</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">USTR Greer kondigde VS-EU actieplan aan voor critical minerals supply chain resilience. Doel: Allied landen preferentiele toegang versus China en niet-allied producenten. Direct relevant voor uranium, rare earths en kritieke mineralen. Domestic + Allied producenten winnen.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">UUUU ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">NXE ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">MP ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">IE ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ASPI ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">1 JUNI 2026<br>SECTION 301</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#fbbf24;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #fbbf2477;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#fbbf2433,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #fbbf24;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🇧🇷 Section 301 — Nieuwe tarieven op Brazilië voorgesteld</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">USTR publiceerde Federal Register notice voor actie op Braziliaanse importen. Aankondiging 1 juni 2026, deadline publieke reacties 1 juli. Onderdeel van bredere "reciprocal tariff" strategie na IEEPA-ongeldigverklaring. Brazilië = staal, landbouw, vliegtuigonderdelen.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Staal ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">EMBRAER risico</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">20 FEB 2026<br>SECTION 232 PROCLAMATIE</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#60a5fa;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #60a5fa77;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#60a5fa33,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #60a5fa;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⚙️ Section 232 uitgebreid — Koper, pharma, semiconductors, lumber</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Feb 20 proclamatie voegde nieuwe productcategorieën toe aan Section 232 tarieven: koper, farmaceutica, halfgeleiders, hout, kritieke mineralen en energieproducten. Dit is het primaire tarief-instrument na SCOTUS sloeg IEEPA neer. Koper +25%, semiconductors = nationaal veiligheidsgrond.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">INTC ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">TMQ/IE ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Pharma herlocatie ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">2025-2026<br>$1B+ GEÏNVESTEERD</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">💰 Overheid koopt DIRECT aandelen in mijnbouwbedrijven</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">De Amerikaanse overheid neemt nu directe equity-stakes in kritieke-mineralen bedrijven: DoD kocht 15% van MP Materials ($400M + $150M lening + 10-jaar prijsgarantie), $670M in magneetfabrikant Vulcan Elements, en $35.6M in het Canadese Trilogy Metals (TMQ) + warrants. DOE zet $2.26B lening voor American Lithium's Thacker Pass om in een 5-10% belang. Dit is ongekend — de staat wordt mede-eigenaar om China's dominantie te breken.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">TMQ DoD stake ↑↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">LAC Thacker Pass ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Mining sector breed ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">14 JAN 2026<br>SECTION 232</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#fbbf24;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #fbbf2477;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#fbbf2433,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #fbbf24;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⛏️ Processed Critical Minerals — tarief-dreiging + prijsvloeren</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Section 232 proclamatie over verwerkte kritieke mineralen (PCMDPs). Onderhandelingen met bondgenoten lopen tot 13 juli 2026; falen ze, dan komen er tarieven. Plus: "minimum import prices" (prijsvloeren) voor 60 mineralen op de USGS-lijst — rare earths, lithium, kobalt, gallium, germanium. VS is 100% importafhankelijk voor 12 mineralen, >50% voor 29 andere. Dit beschermt domestic + allied producenten tegen Chinese dumping.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">HYMC/UUUU ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">NB/CRML allies ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">China rare earth ↓</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">11 DEC 2025 → LOPEND<br>AI BELEID</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⚖️ AI Litigation Task Force — Federale AI-wet vs Staten</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">EO "Ensuring a National Policy Framework for AI" gaf DOJ opdracht om staats-AI-wetten in federale rechtbank aan te vechten (gestart 10 jan 2026). Commerce moet $42B BEAD breedbandsubsidie koppelen aan intrekken van "te belastende" staats-AI-regels. FTC classificeert verplichte bias-mitigatie als misleidende handelspraktijk. Doel: één federaal AI-kader i.p.v. lappendeken per staat.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">PLTR ↑ minder regeldruk</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">NVDA ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">AI sector breed ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">21 MEI 2026<br>INGETROKKEN</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#fbbf24;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #fbbf2477;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#fbbf2433,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #fbbf24;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">❌ AI Cybersecurity EO — op laatste moment geannuleerd</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Trump trok uren voor de geplande ondertekening een EO in die AI-bedrijven zou vragen de overheid vroege test-toegang tot nieuwe modellen te geven. AI-executives werden al op het Witte Huis verwacht. Reden: Trump vond delen ervan niet acceptabel. CISA zou bindende richtlijnen krijgen voor cyber-verdediging. Toont onzekerheid in AI-regulering — markt let op de volgende versie.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">AI regelgeving onzeker</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">PLTR/NVDA watch</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">20 FEB 2026<br>SCOTUS UITSPRAAK</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#fbbf24;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #fbbf2477;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#fbbf2433,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #fbbf24;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⚖️ IEEPA Tarieven — Supreme Court verklaarde ONGELDIG (20 feb 2026)</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">UPDATE: Op 20 feb 2026 oordeelde de Supreme Court (Learning Resources v. Trump) dat IEEPA Trump NIET de bevoegdheid gaf om die tarieven op te leggen. Trump verschoof daarna naar Section 232-tarieven (staal, aluminium, auto's, halfgeleiders, kritieke mineralen) die wél juridisch standhouden. Section 232 is nu het primaire tarief-instrument.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">AAPL China risk</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">Importeurs watch</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Reshoring ↑ ESAB</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">23 MEI 2025 → LOPEND<br>NUCLEAIR</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⚛️ Nucleaire Renaissance — 4 EOs voor reactoren + NRC hervorming</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">Vier executive orders: "Deploying Advanced Nuclear Reactor Technologies for National Security", NRC-hervorming, reactor-testen bij DOE, en herstel nucleaire industriebasis. Doel: SMR (small modular reactors) versnellen voor datacenters + defensie. AI-datacenters hebben enorme stroomvraag — kernenergie is het antwoord. Lopende vergunningsversnelling.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Uranium/SMR sector ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Data center power ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">AAON/LMB cooling ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">6 JUN 2025 → LOPEND<br>DRONES</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🚁 "Unleashing American Drone Dominance" + Airspace Sovereignty</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">EO's voor herstel Amerikaanse luchtruim-soevereiniteit en versnelling binnenlandse drone-industrie. BVLOS-regels versoepeld, anti-drone systemen tegen vijandige UAS, en voorkeur voor Amerikaanse drone-fabrikanten in federale inkoop (weg van Chinese DJI). Direct relevant voor ONDS — enige operationele BVLOS-waiver. Lopende implementatie via FAA.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ONDS DIRECT ↑↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Anti-China drone ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">OUST border ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">6 FEB 2026 → LOPEND<br>WAPENS</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">🎯 "America First Arms Transfer Strategy" + Phosphorus Supply</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">EO voor versnelde wapenexport aan bondgenoten (minder bureaucratie voor defensie-deals). Plus EO (18 feb 2026) die binnenlandse productie van elementair fosfor en glyfosaat-herbiciden veiligstelt als nationaal defensiebelang. Defensie-industriebasis = aanhoudende Trump-prioriteit. Direct voordeel voor defensie-electronica en autonome systemen.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">DRS defense electronics ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">ONDS/OUST ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Wapenexporteurs ↑</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">11 FEB 2026 → LOPEND<br>KOLEN/ENERGIE</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div><div style="width:2px;flex:1;min-height:24px;background:linear-gradient(#4ade8033,#1e293b22);margin-top:2px"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">⚡ "America's Beautiful Clean Coal Power Generation Fleet"</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">EO om kolencentrales open te houden/heractiveren voor de groeiende stroomvraag van AI-datacenters. Gecombineerd met de National Energy Dominance Council. Filosofie: alle binnenlandse energiebronnen (kolen, gas, nucleair) inzetten om AI-infrastructuur te voeden. Lopende uitvoering — EPA versoepelt emissienormen.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">PARR/PRM energie ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #4ade8044;border-radius:2px;color:#4ade80;background:#4ade800d;white-space:nowrap">Coal/Gas ↑</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">Solar/Wind ↓</span></div></div></div>
+</div><div style="display:grid;grid-template-columns:160px 20px 1fr;margin-bottom:0">
+<div style="text-align:right;padding:3px 16px 0 0"><span style="font-family:'IBM Plex Mono';font-size:9px;color:#64748b;line-height:1.6;display:block">12 MEI 2025 → LOPEND<br>PHARMA</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding-top:3px"><div style="width:12px;height:12px;border-radius:50%;background:#4ade80;border:2px solid #0a0f1a;flex-shrink:0;box-shadow:0 0 7px #4ade8077;z-index:1"></div></div>
+<div style="padding:0 0 18px 16px"><div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #4ade80;border-radius:4px;padding:12px 14px"><div style="font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.35;margin-bottom:7px">💊 Most-Favored-Nation Drug Pricing — in debat</div><div style="font-size:11.5px;color:#94a3b8;line-height:1.7;margin-bottom:8px">EO "Delivering Most-Favored-Nation Prescription Drug Pricing" wil dat de VS niet meer betaalt dan het laagste prijsland. Dubbelzijdig signaal: positief voor consumenten, maar margedruk voor pharma. Wordt nog juridisch en via onderhandeling uitgevochten. Relevant voor biotech met dure therapieën — maar minder voor pre-revenue namen (NRXP) die nog niet prijzen.</div><div style='display:flex;flex-wrap:wrap;gap:5px'><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #f8717144;border-radius:2px;color:#f87171;background:#f871710d;white-space:nowrap">Big pharma marge ↓</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">NRXP minder geraakt</span><span style="font-family:'IBM Plex Mono';font-size:9px;padding:2px 8px;border:1px solid #b89a3844;border-radius:2px;color:#b89a38;background:#b89a380d;white-space:nowrap">In debat/juridisch</span></div></div></div>
+</div></div>
 </div></div>
 
 <!-- ══════ PANEL: AANDELEN (SC + PE + LC samen) ══════ -->
@@ -612,16 +483,6 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 <div class="disc">⚠ EXTRA RISICO: valuta, dilutie/shelf registrations, pre-revenue exploratie. Verifieer op sec.gov (6-K/20-F).</div>
 </div></div>
 
-<!-- ══════ PANEL: PORTFOLIO ══════ -->
-<div id="pan-pf" class="panel"><div class="w">
-<div style="background:rgba(184,154,56,.04);border:1px solid rgba(184,154,56,.15);border-radius:3px;padding:5px 12px;margin-bottom:6px;font-size:9px;color:var(--tx2);font-family:'IBM Plex Mono'">📊 MARKT INSIDER RATIO JUNI 2026: <b style="color:var(--neg)">0.27</b> &nbsp;|&nbsp; PCE INFLATIE: <b style="color:var(--neg)">4.1% annueel</b> (hoogste seit apr 2023) — Fed houdt rente hoog. MU +17% na blowout AI earnings. Goldman recessiekans 15% (US-Iran MOU). AI chip thesis intact.</div>
-<div style="background:var(--panel);border:1px solid rgba(184,154,56,.2);border-radius:3px;padding:8px 12px;margin-bottom:8px;font-size:10px;color:var(--tx2)">
-  💼 <b style="color:var(--acc)">JOUW PORTFOLIO ANALYSE</b> — Gebaseerd op insider conviction data. Pas je tickers aan in de code onder <code style="font-family:'IBM Plex Mono';font-size:9px;color:var(--c)">CONFIG.portfolio</code>. Koersen worden live opgehaald via de API.
-</div>
-<div id="pf-widget"></div>
-<div class="disc">⚠ GEEN FINANCIEEL ADVIES. De ACTIE kolom is gebaseerd op insider-koopdata, niet op koersverwachtingen. Doe altijd eigen onderzoek. Verifieer op sec.gov.</div>
-</div></div>
-
 <!-- ══════ PANEL: TRANSACTIES ══════ -->
 <div id="pan-tx" class="panel"><div class="w">
 <div id="watch-box"></div>
@@ -640,48 +501,8 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 
 // ══ DATA ══════════════════════════════════════════
 const CONFIG = {
-  dataDate: '2026-06-30',   // <<< ZET DIT OP VANDAAG bij elke update
-  versie: 'V9.7',
-  // ╔═══════════════════════════════════════════════════════╗
-  // ║ LIVE PRIJZEN API SLEUTELS — vul hier je gratis keys in ║
-  // ║ 1. Finnhub (primair): finnhub.io/register → gratis     ║
-  // ║    60 calls/min. Plak je key hieronder.                ║
-  // ║ 2. Twelve Data (backup): twelvedata.com → gratis       ║
-  // ║    800 calls/dag. Plak je key hieronder.               ║
-  // ║ Laat leeg = dashboard gebruikt snapshot-prijzen.       ║
-  // ╚═══════════════════════════════════════════════════════╝
-  finnhubKey: 'd8d6ul9r01qub2puue2gd8d6ul9r01qub2puue30',      // <<< PLAK JE FINNHUB KEY HIER tussen de quotes
-  twelveDataKey: '6a1a6f9ae017b3.84744888',   // <<< PLAK JE TWELVE DATA KEY HIER (backup)
-  liveEnabled: true,   // false = altijd snapshot-prijzen gebruiken
-  // ╔═══════════════════════════════════════════════════════╗
-  // ║ CHANGELOG — wat is er vandaag nieuw/gewijzigd?         ║
-  // ║ type: 'new'=nieuw, 'upd'=gewijzigd, 'rm'=verwijderd    ║
-  // ╚═══════════════════════════════════════════════════════╝
-  changelog: [
-    {type:'upd', txt:'🚀 ASTS EXPLODEERT: +21.44% maandag, sloot $86.77. Dubbele catalyst: Japan $926M Rakuten-subsidie + Rocket Lab/Iridium $8B deal valideert hele satelliet-sector. V-herstel van $64 low. Short interest 24% float.'},
-    {type:'upd', txt:'🔥 NKE earnings VANAVOND na close. EPS $0.11 verwacht (-21%), China -20%. CFO-wissel. Insiders Hill+Cook kochten $42-49, nu onderwater op $42.38 (-35% YTD). RBC PT $50.'},
-    {type:'upd', txt:'Markt: tech-rotatie naar non-tech sectoren. Q2 2026 start. Space stocks sterkste sector vandaag.'}
-  ],
-  // Tickers die NIEUW zijn vandaag (krijgen groene NIEUW badge):
-  nieuwToday: [],
-  // Tickers met GEWIJZIGDE data vandaag (krijgen gele UPD badge):
-  updToday: ['INTC','PLTR'],
-  // ╔══════════════════════════════════════════════════════════╗
-  // ║ JOUW PORTFOLIO — pas deze lijst aan met jouw tickers     ║
-  // ║ Europese aandelen: voeg toe met exchange: 'EU'           ║
-  // ╚══════════════════════════════════════════════════════════╝
-  portfolio: [
-    {tk:'GSHD', qty:null, avgPrice:null},
-    {tk:'MKTW', qty:null, avgPrice:null},
-    {tk:'MP',   qty:null, avgPrice:null},
-    {tk:'PAX',  qty:null, avgPrice:null},
-    {tk:'SOFI', qty:null, avgPrice:null},
-    {tk:'TWFG', qty:null, avgPrice:null},
-    {tk:'VCIG', qty:null, avgPrice:null},
-    {tk:'BBAI', qty:null, avgPrice:null, note:'Niet in insider dashboard — 18 insider-sells, 0 buys'},
-    {tk:'3CP',  qty:null, avgPrice:null, note:'Xiaomi — Europees genoteerd, geen US Form 4 data', exchange:'EU'},
-    {tk:'AGS',  qty:null, avgPrice:null, note:'Ageas SA/NV — Belgisch verzekering, geen US Form 4 data', exchange:'EU'}
-  ],
+  dataDate: '2026-07-15',   // <<< ZET DIT OP VANDAAG bij elke update
+  versie: 'V9.9',
   // ╔═══════════════════════════════════════════════════════╗
   // ║ WATCH / VERWACHT — GEEN echte filings, wel vooruitblik ║
   // ║ type: 'cat'=catalyst datum, '10b'=bekend 10b5-1 plan,  ║
@@ -690,7 +511,7 @@ const CONFIG = {
   // ║ ingediende SEC Form 4's. Verzin hier nooit aankopen.   ║
   // ╚═══════════════════════════════════════════════════════╝
   watch: [
-    {tk:'NKE', type:'cat', datum:'VANAVOND', txt:'\uD83D\uDD25 Q4 FY2026 earnings vanavond na close! Consensus EPS $0.11 (-21%), omzet $10.85B (-2%). China -20% verwacht. CFO-wissel (Denton vanaf 17 aug). Insiders Hill+Cook kochten $42-49 = nu onderwater. RBC PT $50, gem. PT $54-60.'},
+    {tk:'NKE', type:'cat', datum:'29 SEP 2026', txt:'Q4 beat: EPS $0.20 vs $0.12 (+66.7% beat). Omzet $10.97B. ⚠ AH -3.58% op vlakke FY27-guidance. $0.52 was one-time IEEPA tarief-teruggave. China -12% (beter dan -20% gevreesd). Volgende earnings Q1 FY27: 29 sept 2026.'},
     {tk:'SPCX', type:'cat', datum:'Nu live NASDAQ', txt:'SpaceX (SPCX) IPO 12 juni 2026 — grootste IPO ooit ($135 → $161, +19%). Starlink = directe concurrent van ASTS in satellite-to-phone. Capital rotation uit andere space/AI stocks. Volg ASTS impact.'},
     {tk:'LULU', type:'cat', datum:'Sept 2026', txt:'Nieuwe CEO Heidi O\u2019Neill (ex-Nike) start officieel september. Q2 earnings ~sept. Proxy-strijd Chip Wilson settled. Catalyst: CEO-overgang + Q2 na guidance-reset.'}, 
     {tk:'MFIN', type:'pat', datum:'~Q3 2026', txt:'CEO Murstein kocht 8 kwartalen op rij — patroon suggereert mogelijk nieuwe koop bij Q2-resultaten. VERWACHTING, geen filing.'},
@@ -701,109 +522,121 @@ const CONFIG = {
     {tk:'TSLA', type:'cat', datum:'2026-2027', txt:'Robotaxi launch + Optimus = grote catalysts. Musk-aankoopgedrag historisch rond mijlpalen. Aanleiding.'},
     {tk:'CIFR', type:'10b', datum:'lopend', txt:'Directors verkochten via 10b5-1 in mei. Mogelijk meer geplande verkopen volgens schema. Bekend 10b5-1 risico.'},
     {tk:'NVDA', type:'10b', datum:'lopend', txt:'CEO Huang heeft doorlopend 10b5-1 verkoopschema. Verdere verkopen verwacht volgens plan, geen nieuw signaal.'},
-    {tk:'UNH', type:'cat', datum:'Q2 2026', txt:'Q2 earnings = Medicare Advantage update. Na 10-director cluster apr 2026 is verdere insider-actie het volgen waard. Aanleiding.'},
+    {tk:'UNH', type:'cat', datum:'MORGEN 16 JUL', txt:'Q2 earnings = Medicare Advantage update. Na 10-director cluster apr 2026 is verdere insider-actie het volgen waard. Aanleiding.'},
     {tk:'HYMC', type:'cat', datum:'Q3 2026', txt:'Goud productie-update + Nevada permitting milestones. Catalysts die insider-actie kunnen triggeren.'}
-  ]
+  ],
+  finnhubKey: 'd8d6ul9r01qub2puue2gd8d6ul9r01qub2puue30',
+  twelveDataKey: '6a1a6f9ae017b3.84744888',
+  liveEnabled: true,
+  changelog: [
+    {type:'upd', txt:'ASTS $72.87 (van piek $86.77). V-herstel intact. BlueBird 11-13 augustus.'},
+    {type:'upd', txt:'UNH Q2 earnings MORGEN 16 juli. Consensus EPS $4.84 (+18.6%). PT $468-485.'},
+    {type:'upd', txt:'CPI 3.5% meevaller (14 juli). Goud $4.037. Fed-hike angst daalt.'}
+  ],
+  nieuwToday: [],
+  updToday: ['UNH','ASTS','INTC']
 };
 
 // ══ MARKT DATA — update dit blok elke sessie ════════════════════
 const MARKT_DATA = {
-  date: '2026-06-30',
-  sfeer: 'MIXED',
-  sfeerlabel: 'PCE 4.1% · MU +17% · Apple -5.6%',
+  date: '2026-07-15',
+  sfeer: 'RISK-ON TILT',
+  sfeerlabel: 'CPI 3.5% (groot meevaller) \u00b7 Goud $4.037 \u00b7 UNH morgen \u00b7 Section 122 9 dagen',
 
   snap: [
-    {label:'Sfeer op de markt', val:'MIXED', col:'#b89a38', sub:'PCE 4.1% (hoogste sint apr 2023) — MU +17%, Apple -5.6%, Dow +0.78%'},
-    {label:'Goud · XAUUSD',     val:'~$3.280', col:'#b89a38', sub:'Dalende trend — dollar druk + hawkish Fed'},
-    {label:'Nasdaq · NQ',       val:'~30.200', col:'#b04848', sub:'AI-unwind di -2% · herstelt deels vandaag'},
+    {label:'Sfeer op de markt', val:'RISK-ON TILT', col:'#3a8f6a', sub:'CPI 3.5% meevaller \u2192 Fed-hike angst daalt \u2192 goud + aandelen omhoog'},
+    {label:'Goud \u00b7 XAUUSD', val:'$4.037 \u25b2', col:'#b89a38', sub:'Herstelde +2% op CPI-meevaller \u00b7 van $3.975 terug boven $4.000'},
+    {label:'Nasdaq \u00b7 NQ', val:'~30.500+', col:'#3a8f6a', sub:'Risico-aandelen omhoog op lagere inflatie-verwachting'},
   ],
-  snapLine: 'PCE inflatie (Fed\u2019s favoriete maatstaf) kwam vandaag uit op 4.1% annueel \u2014 hoogste since april 2023. Toch stijgen aandelen deels: Micron +17% na blowout AI-earnings en Goldman sloot recessiekans naar 15% na US-Iran MOU. Markt is gesplitst: AI-chips omhoog, consumenten-tech (Apple -5.6%) omlaag.',
+  snapLine: 'CPI juni 2026: 3.5% annueel (vs 3.8% verwacht, vs 4.2% in mei) \u2014 en de maandelijkse inflatie daalde 0.4% \u2014 de eerste maandelijkse daling since 2020. Dit is een massive meevaller voor de markt. Goud sprong 2% naar $4.080 (di 14 juli) en herstelt vandaag op $4.037. Fed-hike kans daalt: nu ~50% kans op september-hike (was 63-80%). Morgen: UNH Q2 earnings voor opening \u2014 consensus EPS $4.84 (+18.6%). Overmorgen: Section 122 tarief-deadline 24 juli = 9 dagen.',
 
   bigpic: [
-    {icon:'\uD83C\uDFE6', title:'1 \u00B7 De Fed blijft hawkish', body:'Fed hield rente op 3.50-3.75% (17 juni). 9 van 19 beleidsmakers verwachten nog een verhoging dit jaar. Nieuwe voorzitter Kevin Warsh stopte met forward guidance \u2014 elk datacijfer telt dubbel. PCE vandaag 4.1% = geen ruimte voor versoepeling.', matters:'Hoge rente \u2192 sterke dollar \u2192 tegenwind voor goud \u00e9n dure techaandelen.'},
-    {icon:'\uD83D\uDCB5', title:'2 \u00B7 Sterke dollar drukt goud', body:'Goud levert geen rente op. Als cash en obligaties m\u00e9\u00e9r opbrengen (hoge rente), wordt goud relatief minder aantrekkelijk. Dollar op 13-maands top. PCE 4.1% vandaag = Fed kan NIET versoepelen = dollar blijft sterk.', matters:'Zolang dollar sterk blijft, blijft goud structureel onder druk.'},
-    {icon:'\uD83E\uDD16', title:'3 \u00B7 AI-unwind di 24 juni', body:'AI- en techaandelen waren \u201ccrowded\u201d. Dinsdag stortte Korea -10%, NQ -2%, goud \u00f3\u00f3k -2% (longs geliquideerd). Vandaag deels herstel: Micron +17% na blowout AI-geheugen earnings \u2014 bevestigt AI-demand thesis. Apple -5.6% (prijsverhogingen door geheugenkosten).', matters:'Micron beat = AI-infrastructuur vraag echt. Apple correctie = consument voelt inflatie.'},
-    {icon:'\u23F3', title:'4 \u00B7 $7.87 biljoen wacht op de zijlijn', body:'Record cash in geldmarktfondsen. Hoge rente = risicovrije cash levert rendement op = blijft parkeren. Pas als Fed draait (dovish trigger) stroomt dit terug in aandelen en goud. Goldman: recessiekans 15% (US-Iran MOU 22 juni).', matters:'De brandstof voor de volgende grote rally \u2014 trigger is nog niet er.'},
-    {icon:'\uD83D\uDEA8', title:'5 \u00B7 Section 122 deadline 24 juli', body:'Na SCOTUS-slag (IEEPA neergehaald) gebruikte Trump Section 122 voor 10% globaal tarief (150 dagen). CIT verklaarde dit \u00f3\u00f3k ongeldig (7 mei) maar tarief loopt door in beroep. Deadline: 24 JULI 2026 (29 dagen). Tariefmuur hangt aan d\u00e9ze datum.', matters:'Als Section 122 afloopt \u2192 tariefmuur valt deels weg \u2192 marktbrede schok mogelijk.'},
-    {icon:'\uD83C\uDFAF', title:'6 \u00B7 INTC + MU = AI-chip thesis intact', body:'Intel Q1 beat: $13.58B omzet (+$1.16B vs verwacht), EPS $0.29 vs $0.02 (1430% beat). Micron vandaag +17% na AI-geheugen blowout. Nancy Pelosi kocht $5M INTC call opties. Apple-Intel chip deal (Trump 18 juni). AI-infrastructuur \u2260 AI-applicaties.', matters:'Chips en geheugen winnen \u2014 software en consumenten-hardware hebben het moeilijker.'},
+    {icon:'\uD83D\uDCCA', title:'1 \u00b7 CPI 3.5% \u2014 de grootste meevaller van Q3', body:'Inflatie daalde naar 3.5% annueel in juni (vs 3.8% verwacht). Maandelijkse CPI: -0.4% \u2014 eerste MoM-daling since 2020. Core CPI: 2.6% (vs hogere prognoses). Belangrijkste driver: lagere olieprijzen na Iran-de-escalatie (tijdelijk). Fed Chair Warsh sprak Congres toe di 14 juli \u2014 geen agressief signaal.', matters:'Lagere inflatie \u2192 Fed kan minder snel hiken \u2192 goud en groeiaandelen profiteren.'},
+    {icon:'\uD83C\uDFE5', title:'2 \u00b7 UNH Q2 morgen \u2014 de grote insider-thesis-toets', body:'10 directors kochten op 1 april 2026. Sindsdien +74%. Morgen (16 juli, v\u00f3\u00f3r opening): Q2 earnings. Consensus: EPS $4.84 (+18.6%), omzet $110-111B. Polymarket: 71% kans op beat. Wells Fargo PT $485, Morgan Stanley PT $468. Q1 was +10% beat ($7.23 vs $6.59). Als Q2 ook beat = insider-thesis volledig bewezen.', matters:'UNH = de beste insider-signal van 2026 tot nu. Morgen is de bevestiging.'},
+    {icon:'\uD83D\uDEA8', title:'3 \u00b7 Section 122 deadline: 9 DAGEN (24 juli)', body:'Na SCOTUS IEEPA-slag en CIT Section 122-ruling hangt de tariefmuur aan 24 juli. Zonder verlenging door Congress of nieuwe juridische grond \u2014 tariefmuur valt deels weg. Trump breidt Sections 301 en 232 uit als backup. Bessent (Treasury): "No one should expect tariff revenue to go down."', matters:'24 juli = meest kritieke handelsdatum van het jaar. Marktbreed event.'},
+    {icon:'\uD83D\uDE80', title:'4 \u00b7 Iran: Hormuz-spanning flakkert op', body:'Begin juli heropende Trump de Hormuz-blokkade na nieuwe Iraanse provocaties. US sloeg 140 Iraanse doelen. Sindsdien: onderhandelingen in Qatar (Witkoff + Kushner). VP Vance: "US heeft alle kaarten." Gevolg: olieprijzen stegen dan daalden \u2014 disinflatoir effect hielp CPI mee.', matters:'Iran = de wild card. Escalatie \u2192 olie omhoog \u2192 inflatie terug \u2192 Fed hawkish \u2192 goud en tech omlaag.'},
+    {icon:'\u26CF', title:'5 \u00b7 Section 232 mineralen (deadline 13 juli)', body:'De Section 232 kritieke mineralen-deadline was 13 juli. Officieel besluit nog niet gepubliceerd op Federal Register (onderzoek kan doorlopen). Tarieven op kritieke mineralen kunnen 25%+ worden. Direct relevant voor UUUU, NXE, MP, IE, ASPI, LAC in het dashboard.', matters:'Uranium + rare earth stocks: bij 25%+ tarief = grote prijsboost voor US/allied producenten.'},
+    {icon:'\uD83E\uDDE0', title:'6 \u00b7 INTC Q2 earnings 23 juli (8 dagen)', body:'Intel rapporteert Q2 op 23 juli. Q1 was massive beat: $13.58B omzet (+$1.16B vs verwacht), EPS $0.29 vs $0.02 (+1430%). Q2 guidance: $14.34B. Apple-Intel deal nog niet officieel bevestigd maar 18A-P in risicoproductie. Goldman Neutral PT $150. Pelosi kocht $5M calls.', matters:'INTC Q2 = bevestiging of Q1 \u00e9\u00e9nmalig was, of structureel herstel.'},
   ],
 
   instr: [
     {sym:'XAUUSD', name:'Goud / MGC micro-future', accent:'#b89a38',
-     px:'~$3.280', chg:'dalende trend', bias:'BEARISH', biasNote:'Dollar 13-mnd top + PCE 4.1% = Fed kan niet draaien. Goud geen haven in de AI-unwind (longs geliquideerd). Structureel onder druk totdat Fed pivots.',
+     px:'$4.037', chg:'+2% di na CPI-meevaller', bias:'BULLISH TILT',
+     biasNote:'CPI 3.5% meevaller (di 14 juli) deed goud +2% springen naar $4.080. Vandaag iets lager op $4.037. Structurele thesis: lagere inflatie \u2192 Fed draait minder agressief \u2192 goud krijgt support. Iran-spanning = extra geopolitieke premie. $4.000 was de bodem, nu herstel richting $4.150-4.200.',
      levels:[
-       {l:'$3.450', tag:'weerstand', type:'res'},
-       {l:'$3.380', tag:'weerstand', type:'res'},
-       {l:'$3.280', tag:'NU \u25c0', type:'cur'},
-       {l:'$3.200', tag:'steun', type:'sup'},
-       {l:'$3.150', tag:'steun', type:'sup'},
-       {l:'$3.000', tag:'rond/major', type:'sup'},
+       {l:'$4.200', tag:'weerstand', type:'res'},
+       {l:'$4.150', tag:'weerstand', type:'res'},
+       {l:'$4.080', tag:'di-piek (CPI-rally)', type:'res'},
+       {l:'$4.037', tag:'NU \u25c0', type:'cur'},
+       {l:'$4.000', tag:'steun / bodem', type:'sup'},
+       {l:'$3.950', tag:'steun', type:'sup'},
+       {l:'$3.820', tag:'steun major', type:'sup'},
      ],
-     driver:'Dollar kracht + PCE hoog + Fed hawkish'},
+     driver:'CPI 3.5% meevaller + Iran-geopolitiek + Fed-hike angst daalt'},
     {sym:'NQ', name:'Nasdaq-100 / MNQ micro-future', accent:'#3a8f6a',
-     px:'~30.200', chg:'AI-unwind -2% di, herstel wo', bias:'MIXED', biasNote:'AI-unwind di (Korea -10%) sloeg NQ -2% lager. Vandaag deels herstel: Micron +17% trekt chips omhoog, Apple -5.6% drukt. PCE 4.1% = rentezorgen blijven. 30.000 gamma-pin als bodem.',
+     px:'~30.500+', chg:'herstel op CPI-meevaller', bias:'BULLISH',
+     biasNote:'CPI-meevaller di 14 juli = risk-on. Nasdaq herstelt na moeilijke juni. AI-chip thesis intact (INTC, MU, AMD). UNH morgen = healthcare check. INTC Q2 23 juli = tech catalyst. Section 122 24 juli = risico.',
      levels:[
-       {l:'30.800', tag:'supply', type:'res'},
-       {l:'30.540', tag:'weerstand', type:'res'},
-       {l:'30.438', tag:'flip (verloren)', type:'res'},
-       {l:'30.200', tag:'NU \u25c0', type:'cur'},
-       {l:'30.000', tag:'gamma-pin', type:'sup'},
+       {l:'31.500', tag:'supply zone', type:'res'},
+       {l:'31.000', tag:'weerstand', type:'res'},
+       {l:'30.500', tag:'NU \u25c0', type:'cur'},
+       {l:'30.000', tag:'steun / vorige pin', type:'sup'},
        {l:'29.500', tag:'steun major', type:'sup'},
      ],
-     driver:'MU +17% vs Apple -5.6% + PCE 4.1%'},
+     driver:'CPI meevaller + AI-earnings kalender (INTC 23 jul, UNH 16 jul)'},
   ],
 
   play: [
-    {sym:'NASDAQ \u00B7 NQ \u00B7 ~30.200', accent:'#3a8f6a', rows:[
-      ['\uD83D\uDFE2','ALS OMHOOG','Terug boven 30.438 \u2192 unwind-reset richting 30.800. Nodig: verdere MU/chip-rally + geen nieuwe inflatieschok.','#3a8f6a'],
-      ['\uD83D\uDFE1','ALS ZIJWAARTS','30.000-30.438: range. Speel de randen, jaag geen breakthrough na.','#b89a38'],
-      ['\uD83D\uDD34','ALS OMLAAG','Onder 30.000 (pin weg) \u2192 29.800 \u2192 29.500. Nieuwe inflatie-vrees + Apple-correctie zet door.','#b04848'],
+    {sym:'GOUD \u00b7 XAUUSD \u00b7 $4.037', accent:'#b89a38', rows:[
+      ['\uD83D\uDFE2','ALS OMHOOG','Boven $4.100 \u2192 richting $4.150-4.200. Nodig: Iran-de-escalatie + dovish Warsh + verdere CPI-daling.','#3a8f6a'],
+      ['\uD83D\uDFE1','ALS ZIJWAARTS','$4.000-$4.100: consolidatie. CPI positief maar Iran = wild card.','#b89a38'],
+      ['\uD83D\uDD34','ALS OMLAAG','Onder $4.000 \u2192 $3.950 als Iran escaleert of surprise Fed-hike signaal.','#b04848'],
     ]},
-    {sym:'GOUD \u00B7 XAUUSD \u00B7 ~$3.280', accent:'#b89a38', rows:[
-      ['\uD83D\uDFE2','ALS OMHOOG','Terug boven $3.380 \u2192 opluchting richting $3.450. Trigger: zwakke dollar / zachte data.','#3a8f6a'],
-      ['\uD83D\uDFE1','ALS ZIJWAARTS','$3.200-$3.380: nieuwe lagere range. Koop onderkant, verkoop bovenkant.','#b89a38'],
-      ['\uD83D\uDD34','ALS OMLAAG','Onder $3.200 \u2192 $3.150 \u2192 $3.000. Dollar sterk + PCE hoog = doorzakken.','#b04848'],
+    {sym:'NASDAQ \u00b7 NQ \u00b7 ~30.500', accent:'#3a8f6a', rows:[
+      ['\uD83D\uDFE2','ALS OMHOOG','Boven 31.000 \u2192 31.500 als UNH beat + INTC beat + Section 122 verlengd.','#3a8f6a'],
+      ['\uD83D\uDFE1','ALS ZIJWAARTS','30.000-31.000: afwachten Section 122 deadline + INTC earnings.','#b89a38'],
+      ['\uD83D\uDD34','ALS OMLAAG','Onder 30.000 als Section 122 valt + Iran escaleert + INTC misst.','#b04848'],
     ]},
   ],
 
   tl:[
-    ['23 jun (di)', 'Tech-selloff: Korea -10%, NQ -2%, goud -2% (longs geliquideerd \u2014 geen haven).','#b04848'],
-    ['24 jun (wo)', 'Goud blijft zwak. Section 122 tarief-nieuws. INTC Q1 beat bekendgemaakt ($13.58B, EPS +1430%).','#b89a38'],
-    ['25 jun (do)', 'PCE 4.1% (hoogste sint apr 2023). Micron (MU) +17% na AI-blowout. Apple -5.6% (prijsverhogingen). Nancy Pelosi $5M INTC calls. Dow +0.78%.','#b89a38'],
-    ['26 jun (vr)', 'COT-rapport (CFTC) \u2014 eerste COT m\u00e9t data na de Fed. Goud-long-liquidatie wordt zichtbaar. UMich inflatie-verwachtingen.','#7088a0'],
-    ['24 jul 2026', 'Section 122 deadline \u2014 tariefmuur staat op spel als Trump geen nieuwe authority vindt.','#b04848'],
+    ['1 juli', 'Q3 start. USMCA niet verlengd. ADP jobs 98K (zwak). NKE beat maar AH -3.58%.','#b89a38'],
+    ['7 juli', 'Iran-conflict flakkert op. Trump: Hormuz-blokkade heropend. Oil spikes. ASTS daalt verder.','#b04848'],
+    ['13 juli', 'Section 232 kritieke mineralen deadline. Hormuz-onderhandelingen Qatar.','#b89a38'],
+    ['14 juli', 'CPI juni 3.5% (vs 3.8% verwacht) \u2014 EERSTE MoM-daling since 2020! Goud +2% naar $4.080.','#3a8f6a'],
+    ['15 juli', 'Goud $4.037. UNH earnings morgen. INTC earnings 23 juli. Section 122 deadline 24 juli (9d).','#b89a38'],
   ],
 
   ahead:[
-    ['Morgen vr 26', 'COT (CFTC) + UMich inflatie', 'eerste COT na Fed \u2014 goud-liquidatie zwart-op-wit'],
-    ['23 jul 2026', 'INTC Q2 earnings', 'Apple-Intel deal + 18A-P productie update'],
-    ['16 jul 2026', 'UNH Q2 earnings', '10-director cluster apr = rewarded? Bevestiging thesis'],
-    ['24 jul 2026', '\uD83D\uDEA8 Section 122 deadline', 'Tariefmuur al/niet intact \u2014 marktbreed event'],
-    ['17 aug 2026', 'ASTS Q2 earnings', 'BlueBird 8-10 revenue + Japan J-LEO update'],
+    ['MORGEN 16 JUL', 'UNH Q2 earnings (v\u00f3\u00f3r opening)', 'consensus EPS $4.84 +18.6% \u00b7 71% kans beat \u00b7 PT $468-485'],
+    ['23 JUL 2026', 'INTC Q2 earnings', 'Q1 was EPS +1430% beat \u00b7 Q2 guidance $14.34B'],
+    ['24 JUL 2026', '\uD83D\uDEA8 Section 122 deadline', 'tariefmuur al/niet intact \u2014 9 dagen'],
+    ['AUG 2026', 'ASTS BlueBird 11-13 launch', 'Cape Canaveral \u00b7 Q2 earnings 17 aug'],
+    ['17 AUG 2026', 'ASTS Q2 earnings', '$3.5B cash \u00b7 $150-200M revenue guidance'],
   ],
 
   trump:[
-    'Section 122 deadline 24 juli 2026 (29 dagen) \u2014 tariefmuur hangt aan \u00e9\u00e9n rechtszaak in beroep.',
-    'Apple-Intel chip deal bevestigd door Trump 18 juni op Truth Social. INTC +440% in 12 maanden.',
-    'US-Iran MOU getekend 22 juni \u2014 Goldman recessiekans 15%. 60-daagse sanctiewaiver lopend.',
-    'China tarief-truce verlengd t/m november 2026. Fentanyl-tarief China 20%\u219210%.',
-    'VS-EU Critical Minerals Action Plan (24 april) \u2014 allied landen preferentie vs China.',
-    'Pharma tarieven dreigen 200-250% \u2014 Section 232 onderzoek lopend.',
+    'Section 122 deadline 24 JULI 2026 (9 dagen!) \u2014 tariefmuur op spel.',
+    'CPI 3.5% juni = lagere inflatie helpt Fed minder agressief te zijn. Olie laag door Iran-deal.',
+    'Iran: Hormuz-blokkade heropend 7 juli, onderhandelingen Qatar 14 juli. Wild card.',
+    'USMCA niet verlengd (1 juli) \u2014 review Mexico + Canada lopend.',
+    'Section 232 kritieke mineralen (deadline 13 juli) \u2014 besluit nog niet gepubliceerd.',
+    'Apple-Intel chip deal + INTC Q2 23 juli \u2014 foundry momentum test.',
   ],
 
   glossary:[
-    ['Hawkish / Dovish','Streng (hoge rente, inflatie bestrijden) / soepel (lage rente, groei steunen).'],
-    ['PCE','De inflatiemaatstaf waar de Fed naar kijkt. Vandaag 4.1% = hawkish.'],
-    ['DXY (dollar-index)','De dollar t.o.v. andere munten. Hoog = sterke dollar = druk op goud.'],
-    ['COT','Wekelijks CFTC-rapport: hoe groot spelers (fondsen) long of short zitten.'],
-    ['Long / Short','Gokken op stijging (long) of op daling (short).'],
-    ['Risk-on / Risk-off','Geld zoekt rendement (aandelen) / geld zoekt veiligheid (cash, dollar).'],
-    ['Gamma-pin','Het niveau waar de meeste opties waardeloos verlopen \u2014 werkt als magneet.'],
-    ['AI-unwind','Opeengepakte AI-positions worden massaal verkocht \u2014 zelfversterkend.'],
-    ['Section 122','Tijdelijk tarief-instrument (150 dagen) dat Trump gebruikte na IEEPA-slag.'],
-    ['IEEPA','Noodwet die Trump gebruikte voor tarieven \u2014 SCOTUS verklaarde dit ongeldig (feb 2026).'],
-    ['MGC / MNQ','Micro gold futures (MGC) en micro Nasdaq-100 futures (MNQ) \u2014 kleiner, voor particulieren.'],
-    ['COT net long','Meer long dan short posities bij grote spelers. Hoog = overcrowded risico.'],
+    ['CPI','Consumer Price Index \u2014 inflatiemaatstaf. Juni: 3.5% (meevaller, was 4.2% mei).'],
+    ['MoM-daling','Month-over-month daling in consumentenprijzen. Eerste since 2020 in juni 2026.'],
+    ['Hawkish / Dovish','Streng (hoge rente) / soepel. Fed: nu minder hawkish na CPI-meevaller.'],
+    ['Section 122','Trump noodtarief-instrument (150 dagen). Deadline 24 juli \u2014 9 dagen.'],
+    ['Section 232','Nationale veiligheid tarieven. Kritieke mineralen: deadline 13 juli.'],
+    ['PCE','Fed\u2019s favoriete inflatiemaatstaf. CPI is de brede maatstaf.'],
+    ['Long / Short','Gokken op stijging (long) of daling (short).'],
+    ['COT','CFTC weekrapport \u2014 positionering grote spelers.'],
+    ['Gamma-pin','Magneet-niveau waar meeste opties verlopen. $4.000 voor goud.'],
+    ['Risk-on / off','Geld zoekt rendement (risk-on) of veiligheid (risk-off). Nu: risk-on tilt.'],
+    ['Hormuz','Kritieke olie-doorvoerstraat tussen Iran en Oman. Bij blokkade: olie omhoog.'],
+    ['MGC / MNQ','Micro gold future (MGC) en micro Nasdaq future (MNQ).'],
   ],
 };
 // ════════════════════════════════════════════════════════════════
@@ -813,14 +646,12 @@ const MARKT_DATA = {
 // ═══════════════════════════════════════════════
 
 const SC=[{tk:'CBK',co:'Commercial Bancgroup',sec:'Banking',st:'bk',score:92,trump:4,mk:420e6,price:24.80,hi:28.50,lo:18.20,sig:['cP','cl','tr','de'],ins:[{n:'James Shoffner',r:'CEO',cd:'P',bd:'2026-05-15',bp:'$24.01',val:'+$350K',dw:'+8%'},{n:'Multiple Directors',r:'Board',cd:'P',bd:'2026-05-12',bp:'~$24',val:'+$197K',dw:'+6%'}],sells:[,{n:'Berkshire Hathaway',sd:'2026-05-15',sp:'~$340-360',val:'-volledig belang',nt:'Berkshire verkocht volledig UNH-belang (15 mei). Groot institutioneel exit. MAAR: insiders kochten zelf in april.'}],nv:547000,dow:'+8%',q1r:'$9.53M net income',q1e:'+$0.58',q1n:'\uD83D\uDD25 EARNINGS VANAVOND (30 juni, na close)! Consensus: EPS $0.11-0.12 (-21% YoY), omzet $10.85B (-2%). China verwacht -20%. CFO Friend vertrekt, opvolger David Denton (ex-Pfizer/Lowes CFO) vanaf 17 aug. RBC verlaagde naar Sector Perform PT $50 (was $70). Gemiddeld analist PT $54-60 = 30-40% upside. Aandeel nu $42.38, -35% YTD. CEO Hill + director Cook kochten bij $42-49 = ONDERWATER op huidige niveau.',tt:'CEO Shoffner: GOP-donor, aanwezig Trump bankenroundtable. Basel III rollback + CFPB defunding = dubbele directe beleidsvoordelen.',usp:'100% brutomarge community bank. S&P BMI index inclusie. Basel III + CFPB direct.'},
-
-,
+  
 {tk:'MFIN',co:'Medallion Financial Corp',sec:'Specialty Finance',st:'fi',score:85,trump:4,mk:228e6,price:9.59,hi:11.00,lo:7.85,sig:['cP','cl','tr','de'],ins:[{n:'Andrew Murstein',r:'CEO',cd:'P',bd:'2026-05-06',bp:'$9.80',val:'+$343K',dw:'+6%'},{n:'Director A',r:'Director',cd:'P',bd:'2026-05-08',bp:'$9.85',val:'+$197K',dw:'+8%'},{n:'Director B',r:'Director',cd:'P',bd:'2026-05-08',bp:'$9.90',val:'+$149K',dw:'+7%'}],sells:[],nv:689000,dow:'+6%',q1r:'$54.1M',q1e:'+$0.20',q1n:'EPS miss ($0.50 verwacht) maar loan book RECORD $2.62B (+5% YoY). Q3 recovery verwacht.',tt:'CEO Murstein: 8 AANEENGESLOTEN kwartalen eigen geld kopen. Basel III + CFPB beide direct. Recreation/home lending = Trump American Dream.',usp:'8 aaneengesloten CEO kwartaalkopen — ongekend. $2.62B loan book record. Basel III + CFPB dubbel direct.'},
 {tk:'PCB',co:'PCB Bancorp',sec:'Banking',st:'bk',score:85,trump:3,mk:235e6,price:22.10,hi:27.40,lo:16.80,sig:['cP','de'],ins:[{n:'Sang Lee',r:'CEO',cd:'P',bd:'2026-05-10',bp:'$21.43',val:'+$390K',dw:'+6%'}],sells:[],nv:390086,dow:'+6%',q1r:'$26.8M NII',q1e:'+$0.82',q1n:'Net income $10.65M gestegen. $0.22/kwartaal dividend. 5.2% EPS groei verwacht.',tt:'SMB-bank = Trump small business narratief. CEO Sang Lee: Basel III + CFPB beide direct beleidsvoordelen.',usp:'CEO $390K eigen geld. Net income stijgend. Dividend groeier. Basel III direct.'},
 {tk:'FSBC',co:'Five Star Bancorp',sec:'Banking',st:'bk',score:84,trump:3,mk:680e6,price:29.60,hi:36.40,lo:20.10,sig:['cP','cl','de'],ins:[{n:'James Walsh',r:'CEO',cd:'P',bd:'2026-05-06',bp:'$28.40',val:'+$284K',dw:'+5%'},{n:'Director A',r:'Director',cd:'P',bd:'2026-05-07',bp:'$28.55',val:'+$214K',dw:'+7%'},{n:'Director B',r:'Director',cd:'P',bd:'2026-05-08',bp:'$28.60',val:'+$143K',dw:'+6%'}],sells:[],nv:641000,dow:'+5%',q1r:'$52.3M',q1e:'+$0.68',q1n:'Net interest income groeit. CEO + 2 Directors cluster 3 opeenvolgende dagen.',tt:'CEO + 2 directeuren cluster 3 opeenvolgende dagen = maximale gecoördineerde overtuiging. Basel III + CFPB direct.',usp:'3-persoons CEO+Directors cluster 3 opeenvolgende dagen. Basel III direct voordeel.'},
 {tk:'BRCB',co:'Black Rock Coffee Bar',sec:'Restaurants',st:'cs',score:84,trump:2,mk:185e6,price:7.10,hi:9.80,lo:4.20,sig:['cP','ch'],ins:[{n:'Clay Howard Geyer',r:'COO',cd:'P',bd:'2026-05-21',bp:'$6.52',val:'+$300K',dw:'+368%'}],sells:[],nv:299816,dow:'+368%',q1r:'$48M est.',q1e:'N/A',q1n:'Snelgroeiende Pacific NW coffee chain. Nieuwe locaties meerdere staten 2026.',tt:'Geen directe WH-connectie. Brand als non-woke Starbucks alternatief. Domestic jobs narratief.',usp:'COO kocht +368% meer dan bestaande holdings in 1 transactie = EXTREMSTE conviction-signaal dataset.'},
-
-,
+  
 
 {tk:'PKBK',co:'Parke Bancorp',sec:'Banking',st:'bk',score:77,trump:3,mk:218e6,price:22.80,hi:27.10,lo:17.40,sig:['cP','de'],ins:[{n:'Vito Pantilione',r:'Chairman/CEO',cd:'P',bd:'2026-04-25',bp:'$22.10',val:'+$221K',dw:'+5%'},{n:'Director',r:'Director',cd:'P',bd:'2026-04-28',bp:'$22.05',val:'+$176K',dw:'+6%'}],sells:[],nv:397000,dow:'+5%',q1r:'$22.1M NII',q1e:'+$0.68',q1n:'NII steeg $22.13M van $16.61M. Dividend verhoogd $0.20/kwartaal. 5 kwartalen insider kopen.',tt:'5 aaneengesloten kwartalen Chairman/CEO kopen. Basel III + CFPB direct NJ/PA bank.',usp:'5 kwartalen Chairman/CEO kopen. NII sterk gestegen. Dividend verhoogd.'},
 {tk:'FSUN',co:'FirstSun Capital Bancorp',sec:'Banking',st:'bk',score:79,trump:3,mk:920e6,price:39.80,hi:48.20,lo:28.60,sig:['cP','de','ch'],ins:[{n:'Neal Arnold',r:'CEO',cd:'P',bd:'2026-04-10',bp:'$38.20',val:'+$306K',dw:'+12%'},{n:'New Director',r:'Director',cd:'P',bd:'2026-04-12',bp:'$38.00',val:'+$114K',dw:'+8%'}],sells:[],nv:420000,dow:'+12%',q1r:'$108M',q1e:'+$0.88',q1n:'Post-merger integratie. Texas Sunbelt. CEO + nieuwe director kopen na fusie.',tt:'Texas HQ + Basel III + CFPB. CEO post-merger koop = geloof in integratie. Sunbelt groeizone.',usp:'CEO + nieuwe director kopen na fusie-aankondiging. Texas Sunbelt positionering.'},
@@ -828,23 +659,20 @@ const SC=[{tk:'CBK',co:'Commercial Bancgroup',sec:'Banking',st:'bk',score:92,tru
 {tk:'BCAL',co:'Southern California Bancorp',sec:'Banking',st:'bk',score:75,trump:3,mk:195e6,price:15.20,hi:19.80,lo:11.40,sig:['cP','de','ch'],ins:[{n:'David Rainer',r:'CEO',cd:'P',bd:'2026-04-20',bp:'$14.80',val:'+$296K',dw:'+11%'},{n:'Director',r:'Director',cd:'P',bd:'2026-04-22',bp:'$14.75',val:'+$148K',dw:'+8%'}],sells:[],nv:444000,dow:'+11%',q1r:'$32M NII',q1e:'+$0.58',q1n:'SoCal commercial bank. Reshoring corridor. CEO + directeur cluster.',tt:'SoCal reshoring manufacturing corridor. Basel III + CFPB direct. CEO + directeur cluster.',usp:'CEO + Director cluster. Reshoring corridor commercial loans groeiend.'},
 {tk:'BSRR',co:'Bear State Financial',sec:'Banking',st:'bk',score:73,trump:3,mk:380e6,price:17.20,hi:21.40,lo:13.80,sig:['cP','cl','de'],ins:[{n:'CEO',r:'CEO',cd:'P',bd:'2026-04-30',bp:'$16.40',val:'+$246K',dw:'+7%'},{n:'CFO',r:'CFO',cd:'P',bd:'2026-05-02',bp:'$16.45',val:'+$165K',dw:'+8%'}],sells:[],nv:411000,dow:'+7%',q1r:'$42M',q1e:'+$0.52',q1n:'CEO koopt, CFO volgt 3 dagen later. C-suite cluster maximale overtuiging.',tt:'CEO + CFO 3 dagen apart = C-suite cluster. Basel III + CFPB direct.',usp:'C-suite cluster: CEO + CFO 3 dagen apart = financieel directie overtuiging.'},
 {tk:'GWRS',co:'Global Water Resources',sec:'Water Utilities',st:'ut',score:70,trump:2,mk:280e6,price:13.80,hi:17.20,lo:10.40,sig:['cP'],ins:[{n:'Ron Fleming',r:'CEO',cd:'P',bd:'2026-05-14',bp:'$13.20',val:'+$198K',dw:'+7%'}],sells:[],nv:198000,dow:'+7%',q1r:'$20.8M',q1e:'+$0.12',q1n:'Arizona water utility. CEO koopt 4 aaneengesloten jaren. Gereguleerde utility voorspelbaar.',tt:'Arizona water utility. Infrastructuur permitting reform. Sun Belt groei. CEO 4 jaar consecutief.',usp:'CEO 4 jaar op rij. Gereguleerde utility. AZ Sun Belt demografische groei.'},
-
-,
+  
 
 {tk:'OCFC',co:'OceanFirst Financial',sec:'Banking',st:'bk',score:72,trump:3,mk:840e6,price:18.40,hi:22.80,lo:14.60,sig:['cP','de'],ins:[{n:'Christopher Maher',r:'CEO',cd:'P',bd:'2026-05-09',bp:'$18.10',val:'+$181K',dw:'+6%'}],sells:[],nv:181000,dow:'+6%',q1r:'$82M',q1e:'+$0.48',q1n:'NJ/NY community bank. NII gestegen Q1 2026. Basel III rollback direct.',tt:'NJ/NY community bank. Basel III + CFPB direct. Commercial real estate reshoring zones.',usp:'CEO persoonlijk koopt. NII gestegen. Basel III rollback directe kapitaalverlichting.'},
 
 {tk:'GSBD',co:'Goldman Sachs BDC',sec:'BDC/Credit',st:'fi',score:68,trump:3,mk:1.4e9,price:14.20,hi:17.80,lo:12.40,sig:['cP','de'],ins:[{n:'Alexandra Cockrell Madden',r:'CFO',cd:'P',bd:'2026-05-08',bp:'$14.10',val:'+$142K',dw:'+5%'}],sells:[],nv:142000,dow:'+5%',q1r:'$112M',q1e:'+$0.42',q1n:'Goldman BDC. CFO persoonlijk koopt. ~9% dividend yield.',tt:'Basel III rollback indirect. CFPB defunding. Goldman netwerk.',usp:'CFO persoonlijk koopt Goldman BDC. ~9% dividend yield.'},
 
 {tk:'ESTA',co:'Establishment Labs',sec:'Medical Devices',st:'bt',score:67,trump:1,mk:1.08e9,price:29.60,hi:42.80,lo:22.10,sig:['cP'],ins:[{n:'Juan José Chacón-Q.',r:'CEO',cd:'P',bd:'2026-05-08',bp:'$28.40',val:'+$341K',dw:'+9%'}],sells:[],nv:340800,dow:'+9%',q1r:'$84M',q1e:'+$0.22',q1n:'Motiva borstimplantaten. FDA US-goedkeuring 2024.',tt:'FDA apparatuur deregulering = marktexpansie. Costa Rica productie tarief-exposure monitoren.',usp:'FDA US-goedkeuring 2024. CEO $341K voor US marktpenetratie versnelling.'},
-
-,
+  
 
 {tk:'AMAN',co:'Aman Resorts',sec:'Luxury Hospitality',st:'cs',score:63,trump:2,mk:880e6,price:13.10,hi:18.40,lo:9.20,sig:['cP'],ins:[{n:'Vlad Doronin',r:'Chairman/CEO',cd:'P',bd:'2026-05-06',bp:'$12.40',val:'+$248K',dw:'+4%'}],sells:[],nv:248000,dow:'+4%',q1r:'$142M',q1e:'+$0.08',q1n:'Ultra-luxe 34 resorts. UHNW clientèle. OBBBA belastingverlaging = UHNW spending groei.',tt:'OBBBA belastingverlagingen = UHNW spending groei. Domestic luxury push. Chairman investeert in eigen merk.',usp:'UHNW clientèle. Belastingverlagingen drijven luxe reizen. Chairman persoonlijk investeert.'},
 {tk:'LMB',co:'Limbach Holdings Inc',sec:'MEP/Data Center',st:'en',score:71,trump:3,mk:680e6,price:38.20,hi:52.40,lo:28.60,sig:['cP','ch'],ins:[{n:'Michael McCann',r:'CEO',cd:'P',bd:'2026-05-15',bp:'$38.00',val:'+$380K',dw:'+8%'}],sells:[],nv:380000,dow:'+8%',q1r:'$126M',q1e:'+$0.88',q1n:'MEP contractor HVAC/plumbing/electrical. Data center buildout = direct voordeel.',tt:'Data center infra = AI nationaal belang. Permitting reform. Domestische bouwindustrie.',usp:'Data center HVAC/MEP direct voordeel AI buildout. CEO $380K.'},
 
 {tk:'BSIG',co:'BrightSphere Investment',sec:'Asset Management',st:'fi',score:68,trump:2,mk:580e6,price:20.40,hi:26.80,lo:16.20,sig:['cP'],ins:[{n:'Suren Rana',r:'CEO',cd:'P',bd:'2026-05-14',bp:'$20.10',val:'+$201K',dw:'+7%'}],sells:[],nv:201000,dow:'+7%',q1r:'$58M',q1e:'+$0.44',q1n:'Multi-boutique asset manager. AUM groeiend bull market.',tt:'Asset management deregulering. Bull market = AUM groei.',usp:'Multi-boutique asset manager. CEO $201K. AUM groeiend.'},
-
-,
+  
 
 {tk:'ROCK',co:'Gibraltar Industries',sec:'Building Products/Solar',st:'en',score:79,trump:3,mk:1.08e9,price:40.20,hi:48.80,lo:28.40,sig:['cP','cl'],ins:[{n:'William Bosway (CEO)',r:'CEO',cd:'P',bd:'2026-05-20',bp:'$38.80',val:'+$1.01M',dw:'+0.4%'},{n:'James Metcalf (Director)',r:'Director',cd:'P',bd:'2026-05-20',bp:'$40.40',val:'+$502K',dw:'+0.3%'}],sells:[],nv:1512000,dow:'+0.4%',q1r:'$298M',q1e:'+$0.82',q1n:'CEO kocht $1.01M + Director $502K = $1.5M cluster op dezelfde dag. Building products + residential solar.',tt:'CEO Bosway 4 aankopen recent. Director Metcalf eveneens. Infrastructure + solar = indirect Trump deregulering residential.',usp:'CEO $1M+ cluster met Director dezelfde dag. $1.5M gecombineerd. Building products residential groei.'},
 {tk:'VCIG',co:'VCI Global Ltd',sec:'Financial Advisory/Tech',st:'fi',score:76,trump:3,mk:180e6,price:1.33,hi:3.20,lo:0.80,sig:['cP'],ins:[{n:'Hoo Voon Him (CEO)',r:'CEO/Director',cd:'P',bd:'2026-05-26',bp:'$1.33',val:'+$870K',dw:'+0.4%'}],sells:[],nv:870000,dow:'+0.4%',q1r:'$12M',q1e:'-$0.02',q1n:'CEO kocht $870K op 26 mei 2026 = meest recente grote insider koop. 2 aankopen in 6 maanden totaal $1.77M.',tt:'CEO heeft 2 aankopen totaal $1.77M in 6 maanden. Malaysia-based financial advisory + tech. Fintech deregulering indirect.',usp:'MEEST RECENT: CEO kocht $870K op 26 mei 2026. Totaal $1.77M in 6 maanden = 2 aankopen.'},
@@ -894,7 +722,7 @@ const PENNY=[
 ];
 
 const LARGE=[
-{tk:'ASTS',co:'AST SpaceMobile',sec:'Satellite/Telecom',st:'df',score:86,trump:5,mk:33.30e9,price:86.77,hi:133.86,lo:63.72,sig:['cP','cl','tr'],ins:[{n:'Abel Avellan (CEO)',r:'CEO',cd:'P',bd:'2026-04-26',bp:'$14.20',val:'+$852K',dw:'+8%'}],sells:[{n:'Huiwen Yao (CTO)',sd:'2026-06-09',sp:'~$96',val:'-$3.85M',nt:'CTO verkocht 40K aandelen ($3.85M) op 9 juni. Tijdstip = SpaceX IPO week. Eerste grote insider-sell bij ASTS.'}],nv:1138000,dow:'+8%',q1r:'$8.4M',q1e:'-$0.51',q1n:'EXPLOSIEVE WEEK: +21.44% maandag (sloot $86.77) na DUBBELE catalyst. (1) Japan kondigde $926M subsidie aan voor Rakuten-ASTS satellietnetwerk \u2014 beste dag in bijna 2 jaar. (2) Rocket Lab kocht Iridium voor $8B \u2014 valideert hele sector, ASTS+Planet Labs +10-20% mee omhoog. CEO kocht bij $14 = nog steeds +520%. Van $134 ATH naar $64 low (-52%) en nu terug naar $87. BlueBird 11-13 launch begin augustus. Short interest 24% float = squeeze-potentieel.',tt:'WH Space Policy briefings. Ex-Pentagon Director board. FCC spectrum. SpaceX IPO bull.',usp:'CEO kocht bij $14 nu $129. Direct-to-cell enige op schaal.'},
+{tk:'ASTS',co:'AST SpaceMobile',sec:'Satellite/Telecom',st:'df',score:86,trump:5,mk:21.90e9,price:72.87,hi:133.86,lo:63.72,sig:['cP','cl','tr'],ins:[{n:'Abel Avellan (CEO)',r:'CEO',cd:'P',bd:'2026-04-26',bp:'$14.20',val:'+$852K',dw:'+8%'}],sells:[{n:'Huiwen Yao (CTO)',sd:'2026-06-09',sp:'~$96',val:'-$3.85M',nt:'CTO verkocht 40K aandelen ($3.85M) op 9 juni. Tijdstip = SpaceX IPO week. Eerste grote insider-sell bij ASTS.'}],nv:1138000,dow:'+8%',q1r:'$8.4M',q1e:'-$0.51',q1n:'Van piek $86.77 (29 juni) teruggezakt naar ~$73 door Iran-conflict + marktvolatiliteit. V-patroon intact: bodem $63.72 → piek $86.77 → nu $72.87. BlueBird 11-13 launch AUGUSTUS = volgende catalyst. Short interest 24% float. Q2 earnings 17 aug. CPI meevaller 3.5% = macro-support.',tt:'WH Space Policy briefings. Ex-Pentagon Director board. FCC spectrum. SpaceX IPO bull.',usp:'CEO kocht bij $14 nu $129. Direct-to-cell enige op schaal.'},
 {tk:'SOFI',co:'SoFi Technologies',sec:'Neobank',st:'fi',score:82,trump:4,mk:20.2e9,price:16.28,hi:32.73,lo:12.86,sig:['cP','cA','tr'],ins:[{n:'Anthony Noto (CEO)',r:'CEO',cd:'P',bd:'2026-05-11',bp:'$12.80',val:'+$512K',dw:'+6%'},{n:'Nieuwe CFO',r:'CFO',cd:'P',bd:'2026-05-13',bp:'$12.85',val:'+$193K',dw:'+12%'}],sells:[],nv:705000,dow:'+6%',q1r:'$1.09B',q1e:'+$0.12',q1n:'41% YoY. SoFiUSD stablecoin.',tt:'Crypto EO 19 mei direct. CFPB defunding. CEO+CFO cluster.',usp:'$1.09B +41%. SoFiUSD stablecoin. CEO+CFO cluster.'},
 {tk:'CIFR',co:'Cipher Digital Inc',sec:'Bitcoin Mining/HPC',st:'tk',score:81,trump:5,mk:8.41e9,price:20.55,hi:25.52,lo:2.95,sig:['cP','tr'],ins:[{n:'Tyler Page (CEO)',r:'CEO',cd:'P',bd:'2026-05-14',bp:'$3.40',val:'+$510K',dw:'+15%'}],sells:[{n:'Directors',sd:'2026-05-22',sp:'~$22-23',val:'-$380K',nt:'⚠ Directors selling bij high terwijl CEO kocht'}],nv:130000,dow:'+15%',q1r:'$34.8M',q1e:'-$0.87',q1n:'Record BTC treasury. HPC pivot.',tt:'Trump pro-Bitcoin. Crypto EO direct.',usp:'Record BTC. HPC pivot. ⚠ Directors verkopen.'},
 {tk:'RBLX',co:'Roblox Corporation',sec:'Gaming',st:'tk',score:60,trump:1,mk:24.4e9,price:39.80,hi:56.40,lo:24.10,sig:['cP'],ins:[{n:'David Baszucki (CEO/Founder)',r:'CEO/Founder',cd:'P',bd:'2026-05-09',bp:'$38.20',val:'+$573K',dw:'+2%'}],sells:[],nv:573000,dow:'+2%',q1r:'$1.14B',q1e:'-$0.38',q1n:'80M+ DAU. Oprichter $573K = dataset largest.',tt:'Tech deregulering.',usp:'Oprichter $573K dataset largest. 80M+ DAU.'},
@@ -915,7 +743,7 @@ const LARGE=[
 {tk:'FORM',co:'FormFactor Inc',sec:'Semiconductor Test',st:'tk',score:72,trump:2,mk:1.5e9,price:29.40,hi:38.10,lo:18.20,sig:['cP'],ins:[{n:'Mike Slessor (CEO)',r:'CEO',cd:'P',bd:'2026-05-08',bp:'$28.20',val:'+$423K',dw:'+8%'}],sells:[],nv:423000,dow:'+8%',q1r:'$206M',q1e:'+$0.28',q1n:'NVIDIA/AMD/Intel supply chain.',tt:'CHIPS Act direct.',usp:'NVIDIA/AMD/Intel. CEO $423K.'},
 {tk:'FSLY',co:'Fastly Inc',sec:'CDN/Edge Cloud',st:'tk',score:69,trump:2,mk:1.1e9,price:8.90,hi:14.20,lo:5.80,sig:['cP','ch'],ins:[{n:'Todd Nightingale (CEO)',r:'CEO',cd:'P',bd:'2026-05-13',bp:'$8.40',val:'+$504K',dw:'+12%'}],sells:[],nv:504000,dow:'+12%',q1r:'$142M',q1e:'-$0.08',q1n:'Nieuwe CEO turnaround.',tt:'DOD edge computing.',usp:'Nieuwe CEO $504K turnaround.'}
 ,
-{tk:'UNH',co:'UnitedHealth Group',sec:'Managed Healthcare',st:'hc',score:91,trump:3,mk:373.28e9,price:407.82,hi:415.98,lo:234.60,sig:['cP','cl','ch'],ins:[{n:'Stephen Hemsley (CEO)',r:'CEO',cd:'P',bd:'2026-03-17',bp:'~$310',val:'+$2.1M',dw:'+0.4%'},{n:'CFO + Optum CEO',r:'CFO/CEO Optum',cd:'P',bd:'2026-03-17',bp:'~$310',val:'+$1.8M',dw:'Cluster'},{n:'10 Board Directors',r:'Board x10',cd:'P',bd:'2026-04-01',bp:'~$280',val:'+$8.6M',dw:'CLUSTER'}],sells:[],nv:12500000,dow:'+0.4%',q1r:'$111.7B',q1e:'+$7.23',q1n:'Q1 2026 $111.7B revenue +2% YoY. EPS $7.23 adjusted. FY 2026 guidance >$18.25/sh. 10-director cluster apr 2026 = sterkste large cap signaal van 2026.',tt:'10 DIRECTORS CLUSTER 1 APRIL 2026 = sterkste large cap cluster-signaal van 2026 per AInvest onderzoek. CEO Hemsley + CFO + Optum CEO al op 17 maart gekocht. Koers -46% van ATH. Medicare Advantage Trump/Medicaid beleid impact.',usp:'10-PERSOONS DIRECTOR CLUSTER APR 2026. $111.7B omzet. Koers -46% van ATH = asymmetrisch setup. Sterkste large cap insider signaal 2026.'},
+{tk:'UNH',co:'UnitedHealth Group',sec:'Managed Healthcare',st:'hc',score:91,trump:3,mk:373.28e9,price:407.82,hi:421.50,lo:234.60,sig:['cP','cl','ch'],ins:[{n:'Stephen Hemsley (CEO)',r:'CEO',cd:'P',bd:'2026-03-17',bp:'~$310',val:'+$2.1M',dw:'+0.4%'},{n:'CFO + Optum CEO',r:'CFO/CEO Optum',cd:'P',bd:'2026-03-17',bp:'~$310',val:'+$1.8M',dw:'Cluster'},{n:'10 Board Directors',r:'Board x10',cd:'P',bd:'2026-04-01',bp:'~$280',val:'+$8.6M',dw:'CLUSTER'}],sells:[],nv:12500000,dow:'+0.4%',q1r:'$111.7B',q1e:'+$7.23',q1n:'\uD83D\uDD25 Q2 EARNINGS MORGEN 16 JULI (v\u00f3\u00f3r opening)! Consensus EPS $4.84 (+18.6% YoY), omzet $110-111B. Polymarket 71% kans op beat. Wells Fargo PT $485, KeyBanc $475, Truist $480, Morgan Stanley $468. Q1 was al massieve beat: EPS $7.23 vs $6.59 verwacht. 10-director cluster april = +74% sindsdien. Morgen de bevestiging.',tt:'10 DIRECTORS CLUSTER 1 APRIL 2026 = sterkste large cap cluster-signaal van 2026 per AInvest onderzoek. CEO Hemsley + CFO + Optum CEO al op 17 maart gekocht. Koers -46% van ATH. Medicare Advantage Trump/Medicaid beleid impact.',usp:'10-PERSOONS DIRECTOR CLUSTER APR 2026. $111.7B omzet. Koers -46% van ATH = asymmetrisch setup. Sterkste large cap insider signaal 2026.'},
 {tk:'KKR',co:'KKR & Co. Inc.',sec:'Alternative Asset Mgmt/PE',st:'fi',score:82,trump:4,mk:108e9,price:120.40,hi:166.20,lo:100.80,sig:['cP','cl','tr'],ins:[{n:'Henry Kravis (Co-Founder)',r:'Co-Founder/Director',cd:'P',bd:'2026-04-15',bp:'$118.20',val:'+$4.8M',dw:'+0.8%'},{n:'George Roberts (Co-Founder)',r:'Co-Founder/Director',cd:'P',bd:'2026-04-15',bp:'$118.20',val:'+$3.2M',dw:'+0.6%'}],sells:[],nv:8000000,dow:'+0.8%',q1r:'$3.2B fee revenue',q1e:'+$0.88',q1n:'Strong insider accumulation. Beide co-founders kopen tegelijk. $553B AUM. Private credit boom 2026.',tt:'Co-founders Kravis + Roberts kopen tegelijk = $8M gecombineerde cluster. Trump PE-deregulering = direct voordeel. CFPB defunding = minder compliance. Blackstone en Apollo rivalry = consolidatiedruk.',usp:'Beide co-founders $8M cluster. $553B AUM. PE deregulering direct. Strong insider accumulation pattern 2026.'},
 {tk:'NOW',co:'ServiceNow Inc.',sec:'Enterprise SaaS/AI',st:'tk',score:78,trump:3,mk:210e9,price:1020.40,hi:1198.40,lo:728.80,sig:['cP','ch'],ins:[{n:'Bill McDermott (CEO)',r:'CEO',cd:'P',bd:'2026-04-18',bp:'$980.00',val:'+$3.6M',dw:'+0.2%'}],sells:[],nv:3600000,dow:'+0.2%',q1r:'$3.09B',q1e:'+$4.04',q1n:'Q1 2026 record $3.09B +19% YoY. AI workflow platform. cRPO +22%. CEO $3.6M persoonlijk koop.',tt:'CEO McDermott koop = contra-consensus buy na AI valuation debate. Trump AI deregulering = enterprise SaaS voordeel. DOD AI workflow contracten pipeline. Strong insider accumulation per onderzoek.',usp:'CEO $3.6M persoonlijk. Record Q1 $3.09B +19%. AI workflow leader. DOD enterprise contracten.'},
 {tk:'PLTR',co:'Palantir Technologies',sec:'AI/Data Analytics/Defense',st:'df',score:85,trump:5,mk:329e9,price:116.70,hi:207.52,lo:116.18,sig:['cP','tr','de'],ins:[{n:'Alex Karp (CEO)',r:'CEO',cd:'P',bd:'2026-04-22',bp:'$122.00',val:'+$2.8M',dw:'+0.2%'}],sells:[],nv:2800000,dow:'+0.2%',q1r:'$883M',q1e:'+$0.13',q1n:'⚠ 5de opeenvolgende dalingssessie. -28% YTD. Nieuw 52W low $116.18. Verloor groot Europees contract. France PM: wil strategische afhankelijkheid van Palantir vermijden. UK NHS review nog lopend. MAAR: Wolfe upgrade Hold, UBS Buy PT $182. Zeta Global partnership. US Army contract intact.',tt:'CEO Alex Karp: nauwe banden Trump WH, aanwezig AI briefings WH. Palantir = de-facto AI platform voor DOD/CIA/FBI/DHS. Trump AI nationaal belang = directe overheidscontracten.',usp:'CEO Karp kocht 1.47M aandelen jan-apr 2026 = grootste insider buy in US growth stocks dit jaar. Nu onderwater (-8% op $127). -28% YTD, 52W low $116.18. Europees contract verloren. MAAR: US Army intact, UBS PT $182.75 = 56% upside. Bodem-signaal zodra European risico pricet.'},
@@ -931,7 +759,7 @@ const LARGE=[
 {tk:'META',co:'Meta Platforms Inc.',sec:'Social Media/AI/VR',st:'tk',score:48,trump:3,mk:1450e9,price:576.40,hi:740.80,lo:440.20,sig:['cP'],ins:[{n:'Mark Zuckerberg',r:'CEO/Founder',cd:'P',bd:'2026-01-15',bp:'$590.00',val:'+$42M',dw:'<0.1%'}],sells:[{n:'Mark Zuckerberg (10b5-1)',sd:'2026-Q1',sp:'~$576-740',val:'-$4.2B',nt:'⚠ CEO verkoopt $4.2B via 10b5-1 plan. Persoonlijke aankoop minimaal t.o.v. verkopen.'}],nv:42000000,dow:'<0.1%',q1r:'$42.3B',q1e:'+$6.43',q1n:'Q1 2026 $42.3B +16% YoY. AI Llama platform. Reality Labs -$4.2B verlies. ⚠ CEO netto verkoper.',tt:'CEO Zuckerberg: WH bezoeken jan 2026, $1M Trump inauguratie donatie. Meta AI vs OpenAI overheidscontracten. ⚠ Netto 10b5-1 verkoper.',usp:'⚠ CEO netto VERKOPER ($4.2B 10b5-1 vs $42M koop). $42.3B +16%. AI Llama maar insiders cashen massaal.'},
 {tk:'AMZN',co:'Amazon.com Inc.',sec:'E-commerce/Cloud/AI',st:'tk',score:50,trump:2,mk:2200e9,price:210.40,hi:240.80,lo:159.20,sig:['cP'],ins:[{n:'Andy Jassy',r:'CEO',cd:'P',bd:'2026-02-12',bp:'$208.00',val:'+$4.8M',dw:'<0.1%'}],sells:[{n:'Jeff Bezos (10b5-1)',sd:'2026-Q1',sp:'~$180-210',val:'-$5B',nt:'⚠ Bezos verkoopt $5B+ via 10b5-1. CEO Jassy koopt tegengesteld aan oprichter.'}],nv:4800000,dow:'<0.1%',q1r:'$155.7B',q1e:'+$1.59',q1n:'Q1 2026 $155.7B +9% YoY. AWS +17%. ⚠ Bezos verkoopt $5B+ terwijl CEO Jassy koopt.',tt:'CEO Jassy koopt terwijl oprichter Bezos $5B+ verkoopt via 10b5-1 = gemengd signaal. AWS = nationaal AI cloud belang. DOD JEDI uitbreiding.',usp:'⚠ Gemengd: CEO Jassy $4.8M koopt MAAR Bezos $5B+ verkoopt. AWS +17%. Netto sterk verkoper.'},
 {tk:'MSFT',co:'Microsoft Corporation',sec:'Cloud/AI/Enterprise',st:'tk',score:52,trump:2,mk:3250e9,price:437.80,hi:468.40,lo:380.20,sig:['cP'],ins:[{n:'Satya Nadella',r:'CEO',cd:'P',bd:'2026-01-08',bp:'$428.00',val:'+$2.2M',dw:'<0.1%'}],sells:[{n:'Satya Nadella (10b5-1)',sd:'2026-Q1',sp:'~$440-460',val:'-$68M',nt:'⚠ CEO verkoopt $68M via 10b5-1. Aankoop klein t.o.v. verkopen.'}],nv:2200000,dow:'<0.1%',q1r:'$70.1B',q1e:'+$3.46',q1n:'Q1 2026 $70.1B +13% YoY. Azure +33%. Copilot AI. ⚠ CEO netto verkoper.',tt:'CEO Nadella: OpenAI partner. Azure = DOD/CIA overheidscloud. Trump AI EO = overheidscloud voordeel. ⚠ Netto 10b5-1 verkoper.',usp:'⚠ CEO netto VERKOPER ($68M 10b5-1 vs $2.2M koop). $70.1B +13%. Azure +33% maar insiders cashen.'},
-{tk:'NKE',co:'Nike Inc',sec:'Apparel/Footwear',st:'cs',score:79,trump:2,mk:70e9,price:42.38,hi:80.17,lo:41.80,sig:['cP','cl','ch'],ins:[{n:'Elliott Hill (CEO)',r:'CEO',cd:'P',bd:'2026-04-13',bp:'$42.27',val:'+$1.0M',dw:'+5%'},{n:'Tim Cook (Director)',r:'Director',cd:'P',bd:'2026-04-10',bp:'$42.43',val:'+$1.06M',dw:'+8%'}],sells:[{n:'VP (10b5-1)',sd:'2026-Q1',sp:'~$50',val:'-$180K',nt:'Kleine VP-verkoop via plan. CEO+director kochten $2M+ = balans sterk bullish.'}],nv:2060000,dow:'+5%',q1r:'$11.3B',q1e:'+$0.54',q1n:'\uD83D\uDD25 EARNINGS VANAVOND (30 juni na close)! Consensus EPS $0.11 (-21% YoY), omzet $10.85B (-2%). China verwacht -20%. CFO-wissel: Friend vertrekt, Denton (ex-Pfizer/Lowes) vanaf 17 aug. RBC verlaagde PT naar $50 (was $70). CEO Hill + director Cook kochten op $42-43 = nu vlak bij hun instapprijs.',tt:'CEO Hill + director Tim Cook cluster bij 52W low. Consumer recovery + China heropening. Turnaround story onder nieuwe CEO.',usp:'\uD83D\uDD25 Earnings vanavond! CEO Hill + Tim Cook kochten $2.06M samen bij $42-43. Nu $42.38 = insiders zitten praktisch op instapprijs. RBC PT $50, gem PT $54-60 (30-40% upside). China -20% verwacht, CFO-wissel parallel.'},
+{tk:'NKE',co:'Nike Inc',sec:'Apparel/Footwear',st:'cs',score:79,trump:2,mk:60.5e9,price:40.87,hi:80.17,lo:40.87,sig:['cP','cl','ch'],ins:[{n:'Elliott Hill (CEO)',r:'CEO',cd:'P',bd:'2026-04-13',bp:'$42.27',val:'+$1.0M',dw:'+5%'},{n:'Tim Cook (Director)',r:'Director',cd:'P',bd:'2026-04-10',bp:'$42.43',val:'+$1.06M',dw:'+8%'}],sells:[{n:'VP (10b5-1)',sd:'2026-Q1',sp:'~$50',val:'-$180K',nt:'Kleine VP-verkoop via plan. CEO+director kochten $2M+ = balans sterk bullish.'}],nv:2060000,dow:'+5%',q1r:'$11.3B',q1e:'+$0.54',q1n:'Q4 FY2026 BEAT (30 juni): EPS $0.20 adj vs $0.12 (+66.7% beat). Omzet $10.97B vs $10.86B. \u26a0 $0.52 was eenmalige IEEPA tarief-teruggave. China -12% (beter dan -20% gevreesd). Wholesale +4%. AH reactie: -3.58% op vlakke FY27 guidance. CFO Denton start 17 aug.',tt:'CEO Hill + director Tim Cook cluster bij 52W low. Consumer recovery + China heropening. Turnaround story onder nieuwe CEO.',usp:'Q4 beat: EPS $0.20 vs $0.12 (+66.7%). Maar $0.52 was eenmalige tarief-teruggave. AH -3.58% op vlakke FY27-guidance. CEO Hill + Tim Cook kochten $2.06M op $42-43, aandeel nu $40.87 = insiders ONDERWATER. CFO-wissel (Denton aug). PT gem $54-60. USMCA niet verlengd = tarief-risico supply chain.'},
 {tk:'ABT',co:'Abbott Laboratories',sec:'Medical Devices/Diagnostics',st:'hc',score:76,trump:2,mk:185e9,price:118.40,hi:140.20,lo:98.60,sig:['cP','ch'],ins:[{n:'Robert Ford (CEO)',r:'CEO',cd:'P',bd:'2026-02-18',bp:'$107.13',val:'+$2.01M',dw:'+3%'}],sells:[{n:'EVP (10b5-1)',sd:'2026-Q1',sp:'~$115',val:'-$420K',nt:'EVP verkocht via plan. CEO $2M koop = balans bullish.'}],nv:2010000,dow:'+3%',q1r:'$10.4B',q1e:'+$1.12',q1n:'Diabetes care (Libre) + diagnostics groei. CEO Ford $2M persoonlijk bij dip. Defensieve healthcare.',tt:'CEO Ford $2M persoonlijk. Defensieve medtech. FreeStyle Libre groei. Minder Trump-afhankelijk, meer kwaliteits-play.',usp:'CEO $2M persoonlijk bij dip. FreeStyle Libre diabetes franchise. Defensieve large-cap medtech met groei.'},
 {tk:'INTC',co:'Intel Corporation',sec:'Semiconductors',st:'tk',score:88,trump:5,mk:608700000000,price:139.00,hi:141.45,lo:18.20,sig:['cP','tr','de','ch'],ins:[{n:'David Zinsner (CFO)',r:'CFO',cd:'P',bd:'2026-01-26',bp:'$42.50',val:'+$250K',dw:'+4%'},{n:'Director',r:'Director',cd:'P',bd:'2026-02-02',bp:'$24.10',val:'+$241K',dw:'+6%'},{n:'Nancy Pelosi (Congress)',r:'House Member (Disclosure)',cd:'P',bd:'2026-06-25',bp:'$50 strike call',val:'+~$5M',dw:'N/A'}],sells:[{n:'SVP (10b5-1)',sd:'2026-Q1',sp:'~$25',val:'-$120K',nt:'Kleine SVP-verkoop. CFO+director kochten meer = balans bullish.'}],nv:491000,dow:'+4%',q1r:'$12.7B',q1e:'-$0.04',q1n:'Q1 MASSIEVE BEAT: $13.58B omzet, EPS $0.29 vs $0.02 (+1430%). ⚠ Vandaag -3.24% (AI demand zorgen + tech-rotatie). Goldman Sachs initieerde Neutral $150 PT (jun 25). ⚠ Apple-Intel deal nog NIET officieel bevestigd door Apple of Intel zelf. 18A-P in risicoproductie. Q2 earnings 23 juli.',tt:'Trump bevestigde Apple-Intel chip deal 18 juni op Truth Social. Overheid heeft ~10% belang in INTC. CHIPS Act + Apple + Trump endorsement = perfecte storm voor domestic semiconductor.',usp:'CFO koop $42.50 = +215%. Director koop $24.10 = +455%. Goldman $150 PT (Neutral). ⚠ Apple-Intel deal officieel NOG niet bevestigd door Apple/Intel. Vandaag -3.24% op AI demand zorgen. Q2 earnings 23 juli = volgende catalyst.'},
 {tk:'FCN',co:'FTI Consulting',sec:'Business Consulting',st:'fi',score:80,trump:2,mk:4.6e9,price:138.40,hi:212.60,lo:128.40,sig:['cP','cl'],ins:[{n:'CEO',r:'CEO',cd:'P',bd:'2026-05-13',bp:'$144.21',val:'+$870K',dw:'+3%'},{n:'CFO',r:'CFO',cd:'P',bd:'2026-05-13',bp:'$144.21',val:'+$720K',dw:'+4%'},{n:'Director',r:'Director',cd:'P',bd:'2026-05-13',bp:'$144.21',val:'+$490K',dw:'+5%'}],sells:[],nv:2080000,dow:'+3%',q1r:'$920M',q1e:'+$2.18',q1n:'3 senior execs kochten $2.08M op ZELFDE DAG (13 mei) bij 52W low. Restructuring/litigation consulting = counter-cyclisch.',tt:'3-persoons cluster zelfde dag $2.08M bij 52W low. Restructuring consulting bloeit bij economische onzekerheid. Counter-cyclische hedge.',usp:'3 execs (CEO+CFO+director) $2.08M cluster ZELFDE DAG bij 52W low. Geen verkopen. Counter-cyclisch restructuring.'},
@@ -1156,234 +984,179 @@ function fcard(tx,capType){
   </div>`;
 }
 
-// ══ PORTFOLIO TAB ════════════════════════════════════
-function buildPortfolio(){
-  const el=document.getElementById('pf-widget');
-  if(!el||!CONFIG.portfolio||!CONFIG.portfolio.length)return;
-  const allStocks=[...SC,...PENNY,...LARGE,...FOREIGN].filter(Boolean);
 
-  // ACTIE logic based on insider data
-  function getActie(tk,d){
-    if(!d)return{label:'GEEN DATA',color:'var(--mu)',icon:'⚪',detail:'Niet in insider dashboard'};
-    const hasBuy=d.ins&&d.ins.length>0&&d.ins.some(i=>i.cd==='P');
-    const hasSell=d.sells&&d.sells.length>0;
-    const isCluster=d.sig&&d.sig.includes('cl');
-    const score=d.score||0;
-    if(tk==='BBAI')return{label:'OVERWEEG VERKOOP',color:'var(--neg)',icon:'🔴',detail:'18 insider-sells, 0 aankopen. Geen conviction.'};
-    if(isCluster&&hasBuy&&!hasSell)return{label:'STERK HOUD/KOOP',color:'var(--pos)',icon:'🟢',detail:'Cluster koop — meerdere insiders kochten'};
-    if(hasBuy&&score>=75&&!hasSell)return{label:'HOUD/KOOP',color:'var(--pos)',icon:'🟢',detail:'Insider koop met hoge score'};
-    if(hasBuy&&hasSell)return{label:'MONITOR',color:'var(--acc)',icon:'🟡',detail:'Insider koop maar ook verkopen — gemengd signaal'};
-    if(hasBuy)return{label:'HOUD',color:'var(--acc)',icon:'🟡',detail:'Insider koop aanwezig'};
-    return{label:'MONITOR',color:'var(--mu)',icon:'⚪',detail:'Beperkt insider signaal'};
-  }
-
-  const rows=CONFIG.portfolio.map(p=>{
-    const d=allStocks.find(s=>s&&s.tk===p.tk);
-    const live=LIVE[p.tk];
-    const price=live?live.price:d?d.price:null;
-    const pctChg=live&&live.pct?live.pct:null;
-    const actie=p.exchange==='EU'?
-      {label:'EUROPEES',color:'var(--inf)',icon:'🔵',detail:p.note||'Europees genoteerd — geen US Form 4 data'}:
-      p.note&&!d?{label:'GEEN DATA',color:'var(--mu)',icon:'⚪',detail:p.note}:
-      getActie(p.tk,d);
-    const ins0=d&&d.ins&&d.ins[0]?d.ins[0]:null;
-    const scoreColor=d?d.score>=80?'var(--pos)':d.score>=60?'var(--acc)':'var(--tx2)':'var(--mu)';
-
-    return`<tr onclick="${d?`jumpToTicker('${p.tk}')`:''}" style="cursor:${d?'pointer':'default'}">
-      <td><span style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;color:var(--tx)">${p.tk}</span></td>
-      <td><span style="font-size:10px;color:var(--tx2)">${d?d.co:p.note||'—'}</span></td>
-      <td>
-        <div style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;color:var(--tx)">${price?'$'+price.toFixed(2):'—'}</div>
-        ${pctChg!==null?`<div style="font-family:'IBM Plex Mono';font-size:8px;color:${pctChg>=0?'var(--pos)':'var(--neg)'}">${pctChg>=0?'+':''}${pctChg.toFixed(2)}%</div>`:''}
-      </td>
-      <td>${d?`<div style="display:flex;align-items:center;gap:4px"><span style="font-family:'IBM Plex Mono';font-size:12px;font-weight:700;color:${scoreColor}">${d.score}</span><div style="width:28px;height:3px;background:var(--bd);border-radius:2px;overflow:hidden"><div style="height:100%;width:${d.score}%;background:${scoreColor}"></div></div></div>`:'<span style="color:var(--mu)">—</span>'}</td>
-      <td>${d&&d.trump?`<span style="font-family:'IBM Plex Mono';font-size:10px;color:var(--acc)">${'★'.repeat(d.trump)}</span>`:'<span style="color:var(--mu)">—</span>'}</td>
-      <td><div style="display:flex;align-items:center;gap:5px"><span style="font-size:13px">${actie.icon}</span><div><div style="font-family:'IBM Plex Mono';font-size:8px;font-weight:700;color:${actie.color}">${actie.label}</div><div style="font-size:8px;color:var(--mu)">${actie.detail}</div></div></div></td>
-      <td>${ins0?`<div style="font-family:'IBM Plex Mono';font-size:9px;font-weight:600;color:var(--pos)">${ins0.val}</div><div style="font-size:8px;color:var(--mu)">${ins0.n} · ${ins0.bd}</div>`:'<span style="color:var(--mu)">—</span>'}</td>
-      <td>${d&&d.sells&&d.sells.length?`<span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--neg)">${d.sells[0].val}</span><div style="font-size:8px;color:var(--mu)">${d.sells[0].n}</div>`:'<span style="color:var(--mu)">—</span>'}</td>
-    </tr>`;
-  }).join('');
-
-  el.innerHTML=`<div style="background:var(--panel);border:1px solid var(--bd);border-radius:3px;overflow:hidden">
-    <div style="padding:5px 12px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between">
-      <span style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:2px;color:var(--acc)">💼 PORTFOLIO — ${CONFIG.portfolio.length} POSITIES</span>
-      <span style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu)">${CONFIG.dataDate}</span>
-    </div>
-    <div style="overflow-x:auto">
-    <table style="width:100%;border-collapse:collapse">
-    <thead><tr style="background:var(--p2)">
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">TICKER</th>
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">BEDRIJF</th>
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">PRIJS · %</th>
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">SCORE</th>
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">TRUMP</th>
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">ACTIE (INSIDER BASIS)</th>
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">LAATSTE KOOP</th>
-      <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">LAATSTE VERKOOP</th>
-    </tr></thead>
-    <tbody>${rows}</tbody>
-    </table>
-    </div>
-    <div style="padding:8px 12px;border-top:1px solid var(--bd);background:var(--p2)">
-      <div style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);margin-bottom:4px">LEGENDE:</div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:9px">
-        <span>🟢 <span style="color:var(--pos)">STERK HOUD/KOOP</span> = cluster of sterke insider koop, geen verkopen</span>
-        <span>🟡 <span style="color:var(--acc)">HOUD/MONITOR</span> = insider koop aanwezig maar ook verkopen</span>
-        <span>🔴 <span style="color:var(--neg)">OVERWEEG VERKOOP</span> = insider-sells domineren, geen koop</span>
-        <span>🔵 <span style="color:var(--inf)">EUROPEES</span> = geen US Form 4 data beschikbaar</span>
-        <span>⚪ GEEN DATA = niet in insider dashboard</span>
-      </div>
-    </div>
-  </div>`;
-}
 // ══ MARKT TAB ════════════════════════════════════════════════
 function buildMarkt(){
   const el=document.getElementById('mk-widget');
   if(!el||!MARKT_DATA)return;
   const M=MARKT_DATA;
 
-  function card(content,accent='var(--bd)',extra=''){
-    return`<div style="background:var(--panel);border:1px solid var(--bd);border-top:3px solid ${accent};border-radius:3px;padding:14px 16px;margin-bottom:10px${extra}">${content}</div>`;
-  }
-  function sh(title,sub=''){
-    return`<div style="margin:20px 0 8px"><div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:2px;color:var(--acc)">${title}</div>${sub?`<div style="font-size:9px;color:var(--mu);margin-top:2px">${sub}</div>`:''}</div>`;
+  // Readable color scheme for MARKT tab
+  const MK={
+    pos:'#4ade80',   // bright green
+    neg:'#f87171',   // bright red
+    acc:'#fbbf24',   // bright amber
+    inf:'#60a5fa',   // bright blue
+    tx: '#e2e8f0',   // near-white text
+    tx2:'#94a3b8',   // medium grey
+    mu: '#64748b',   // muted grey
+    bg: '#0f172a',   // dark bg
+    panel:'#1e293b', // card bg
+    bd: '#334155',   // border
+    p2: '#253349',   // slightly lighter panel
+  };
+
+  function sh(title, sub=''){
+    return `<div style="margin:20px 0 10px">
+      <div style="font-family:'IBM Plex Mono';font-size:10px;letter-spacing:2px;font-weight:700;color:${MK.acc};text-transform:uppercase">${title}</div>
+      ${sub?`<div style="font-size:11px;color:${MK.tx2};margin-top:3px">${sub}</div>`:''}
+    </div>`;
   }
   function lvRow(lv){
-    const col=lv.type==='res'?'var(--neg)':lv.type==='cur'?'var(--tx)':lv.type==='sup'?'var(--pos)':'var(--acc)';
-    const bold=lv.type==='cur'?'font-weight:700;':'';
-    return`<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(17,24,40,.5)">
-      <span style="font-family:'IBM Plex Mono';font-size:10px;${bold}color:${col}">${lv.l}</span>
-      <span style="font-size:9px;color:${col};${bold}">${lv.tag}</span>
+    const col = lv.type==='res'?MK.neg : lv.type==='cur'?'#ffffff' : lv.type==='sup'?MK.pos : MK.acc;
+    const bold = lv.type==='cur'?'font-weight:700;font-size:13px;':'font-size:11px;';
+    const bg   = lv.type==='cur'?`background:rgba(255,255,255,0.06);border-radius:3px;padding:3px 6px;`:'padding:3px 6px;';
+    return `<div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${MK.bd};${bg}">
+      <span style="${bold}color:${col};font-family:'IBM Plex Mono'">${lv.l}</span>
+      <span style="font-size:11px;color:${col};font-weight:${lv.type==='cur'?700:400}">${lv.tag}</span>
     </div>`;
   }
 
   // HEADER
-  let html=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:6px">
+  let html=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;padding:12px 16px;background:${MK.p2};border-radius:4px;border:1px solid ${MK.bd}">
     <div>
-      <div style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;letter-spacing:2px;color:var(--acc)">📊 MARKT DAGOVERZICHT</div>
-      <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono'">${M.date} · ${M.sfeerlabel}</div>
+      <div style="font-family:'IBM Plex Mono';font-size:13px;font-weight:700;letter-spacing:2px;color:${MK.acc}">📊 MARKT DAGOVERZICHT</div>
+      <div style="font-size:11px;color:${MK.tx2};font-family:'IBM Plex Mono';margin-top:2px">${M.date} · ${M.sfeerlabel}</div>
     </div>
-    <span style="font-family:'IBM Plex Mono';font-size:9px;padding:3px 10px;background:rgba(184,154,56,.1);border:1px solid rgba(184,154,56,.25);border-radius:10px;color:var(--acc)">${M.sfeer}</span>
+    <span style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;padding:4px 14px;background:rgba(250,191,36,.15);border:1px solid ${MK.acc};border-radius:10px;color:${MK.acc}">${M.sfeer}</span>
   </div>`;
 
-  // SNAP
-  html+=sh('IN ÉÉN OOGOPSLAG');
-  html+=`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-bottom:8px">`;
+  // SNAP CARDS
+  html += sh('In één oogopslag');
+  html += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:10px">`;
   M.snap.forEach(s=>{
-    html+=`<div style="background:var(--panel);border:1px solid var(--bd);border-top:3px solid ${s.col};border-radius:3px;padding:10px 12px">
-      <div style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu)">${s.label}</div>
-      <div style="font-family:'IBM Plex Mono';font-size:16px;font-weight:700;color:${s.col};margin:3px 0">${s.val}</div>
-      <div style="font-size:9px;color:var(--tx2)">${s.sub}</div>
+    html += `<div style="background:${MK.panel};border:1px solid ${MK.bd};border-top:3px solid ${s.col};border-radius:4px;padding:14px 16px">
+      <div style="font-family:'IBM Plex Mono';font-size:10px;color:${MK.tx2};letter-spacing:0.5px">${s.label}</div>
+      <div style="font-family:'IBM Plex Mono';font-size:22px;font-weight:700;color:${s.col};margin:5px 0 4px">${s.val}</div>
+      <div style="font-size:11.5px;color:${MK.tx};line-height:1.5">${s.sub}</div>
     </div>`;
   });
-  html+=`</div>`;
-  html+=`<div style="background:var(--panel);border-left:3px solid #b04848;border-radius:3px;padding:10px 14px;margin-bottom:12px;font-size:10px;line-height:1.6;color:var(--tx2)">${M.snapLine}</div>`;
+  html += `</div>`;
+  html += `<div style="background:${MK.panel};border-left:4px solid ${MK.neg};border-radius:4px;padding:12px 16px;margin-bottom:14px;font-size:12px;line-height:1.7;color:${MK.tx}">${M.snapLine}</div>`;
 
   // BIG PICTURE
-  html+=sh('HET GROTE PLAATJE','Zes bouwstenen die samen verklaren waarom alles beweegt.');
-  html+=`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px;margin-bottom:12px">`;
+  html += sh('Het grote plaatje', 'Zes bouwstenen die samen verklaren waarom alles beweegt.');
+  html += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px;margin-bottom:14px">`;
   M.bigpic.forEach(b=>{
-    html+=`<div style="background:var(--panel);border:1px solid var(--bd);border-radius:3px;padding:12px 14px">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-        <span style="font-size:16px">${b.icon}</span>
-        <span style="font-size:11px;font-weight:700;line-height:1.3">${b.title}</span>
+    html += `<div style="background:${MK.panel};border:1px solid ${MK.bd};border-radius:4px;padding:14px 16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <span style="font-size:20px">${b.icon}</span>
+        <span style="font-size:13px;font-weight:700;color:${MK.tx};line-height:1.3">${b.title}</span>
       </div>
-      <div style="font-size:9px;color:var(--tx2);line-height:1.55;margin-bottom:8px">${b.body}</div>
-      <div style="background:var(--p2);border-radius:2px;padding:7px 10px;font-size:8.5px;line-height:1.45">
-        <b style="color:var(--acc)">Waarom het telt: </b><span style="color:var(--tx2)">${b.matters}</span>
+      <div style="font-size:11.5px;color:${MK.tx2};line-height:1.6;margin-bottom:10px">${b.body}</div>
+      <div style="background:${MK.p2};border-radius:3px;padding:9px 12px;font-size:11px;line-height:1.5">
+        <span style="color:${MK.acc};font-weight:700">Waarom het telt: </span>
+        <span style="color:${MK.tx}">${b.matters}</span>
       </div>
     </div>`;
   });
-  html+=`</div>`;
+  html += `</div>`;
 
-  // INSTRUMENTS
-  html+=sh('DE TWEE MARKTEN','Rood = weerstand · Wit = huidige prijs · Groen = steun');
-  html+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">`;
+  // INSTRUMENTS with level ladders
+  html += sh('De twee markten', '🔴 Rood = weerstand · ⚪ Wit = huidige prijs · 🟢 Groen = steun');
+  html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">`;
   M.instr.forEach(d=>{
-    const biasCol=d.bias==='BEARISH'?'#b04848':d.bias==='BULLISH'?'#3a8f6a':'#b89a38';
-    html+=`<div style="background:var(--panel);border:1px solid var(--bd);border-top:3px solid ${d.accent};border-radius:3px;padding:12px 14px">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
-        <div><span style="font-family:'IBM Plex Mono';font-size:14px;font-weight:700">${d.sym}</span><span style="color:var(--mu);font-size:9px;margin-left:6px">${d.name}</span></div>
-        <span style="font-family:'IBM Plex Mono';font-size:7px;padding:2px 7px;border-radius:2px;background:${biasCol};color:#04060d;font-weight:700">${d.bias}</span>
+    const biasCol = d.bias.includes('BEAR')?MK.neg : d.bias.includes('BULL')?MK.pos : MK.acc;
+    html += `<div style="background:${MK.panel};border:1px solid ${MK.bd};border-top:3px solid ${d.accent};border-radius:4px;padding:14px 16px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;flex-wrap:wrap;gap:6px">
+        <div>
+          <span style="font-family:'IBM Plex Mono';font-size:16px;font-weight:700;color:${MK.tx}">${d.sym}</span>
+          <span style="color:${MK.tx2};font-size:10px;margin-left:8px">${d.name}</span>
+        </div>
+        <span style="font-family:'IBM Plex Mono';font-size:9px;padding:3px 10px;border-radius:3px;background:${biasCol};color:#0f172a;font-weight:700">${d.bias}</span>
       </div>
-      <div style="font-family:'IBM Plex Mono';font-size:18px;font-weight:700;margin:4px 0">${d.px}</div>
-      <div style="font-size:9px;color:var(--mu);margin-bottom:8px">${d.chg}</div>
-      <div style="font-size:9px;color:var(--tx2);line-height:1.5;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--bd)">${d.biasNote}</div>
-      <div style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);margin-bottom:4px">NIVEAUS:</div>
+      <div style="font-family:'IBM Plex Mono';font-size:26px;font-weight:700;color:${MK.tx};margin:6px 0 2px">${d.px}</div>
+      <div style="font-size:11px;color:${MK.tx2};margin-bottom:10px">${d.chg}</div>
+      <div style="font-size:11.5px;color:${MK.tx};line-height:1.6;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid ${MK.bd}">${d.biasNote}</div>
+      <div style="font-family:'IBM Plex Mono';font-size:9px;color:${MK.mu};letter-spacing:1px;margin-bottom:4px">NIVEAUS</div>
       ${d.levels.map(lvRow).join('')}
-      <div style="font-size:8px;color:var(--mu);font-family:'IBM Plex Mono';margin-top:6px">driver: ${d.driver}</div>
+      <div style="font-size:10px;color:${MK.mu};font-family:'IBM Plex Mono';margin-top:8px;border-top:1px solid ${MK.bd};padding-top:6px">driver: ${d.driver}</div>
     </div>`;
   });
-  html+=`</div>`;
+  html += `</div>`;
 
   // PLAYBOOK
-  html+=sh('HET DRAAIBOEK: ALS-DAN','Scenario\u2019s \u2014 geen voorspelling. Kijk welk niveau breekt.');
-  html+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">`;
+  html += sh('Het draaiboek: als-dan', 'Geen voorspelling — kijk welk niveau breekt.');
+  html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">`;
   M.play.forEach(p=>{
-    html+=`<div style="background:var(--panel);border:1px solid var(--bd);border-top:3px solid ${p.accent};border-radius:3px;padding:12px 14px">
-      <div style="font-family:'IBM Plex Mono';font-size:10px;font-weight:700;margin-bottom:8px">${p.sym}</div>`;
+    html += `<div style="background:${MK.panel};border:1px solid ${MK.bd};border-top:3px solid ${p.accent};border-radius:4px;padding:14px 16px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;color:${MK.tx};margin-bottom:10px">${p.sym}</div>`;
     p.rows.forEach(([ic,tag,txt,col],j)=>{
-      html+=`<div style="display:flex;gap:8px;padding:6px 0;${j?'border-top:1px solid rgba(17,24,40,.5)':''}">
-        <span style="font-size:12px">${ic}</span>
-        <div><div style="font-family:'IBM Plex Mono';font-size:8px;font-weight:700;color:${col}">${tag}</div>
-        <div style="font-size:9px;color:var(--tx2);line-height:1.4;margin-top:2px">${txt}</div></div>
+      html += `<div style="display:flex;gap:10px;padding:8px 0;${j?'border-top:1px solid '+MK.bd:''}">
+        <span style="font-size:16px;flex-shrink:0">${ic}</span>
+        <div>
+          <div style="font-family:'IBM Plex Mono';font-size:10px;font-weight:700;color:${col};letter-spacing:0.5px">${tag}</div>
+          <div style="font-size:11.5px;color:${MK.tx};line-height:1.5;margin-top:3px">${txt}</div>
+        </div>
       </div>`;
     });
-    html+=`</div>`;
+    html += `</div>`;
   });
-  html+=`</div>`;
+  html += `</div>`;
 
   // TIMELINE
-  html+=sh('TIJDLIJN — WAT GEBEURDE ER');
-  html+=`<div style="background:var(--panel);border:1px solid var(--bd);border-radius:3px;padding:6px 14px;margin-bottom:12px">`;
+  html += sh('Tijdlijn — wat er is gebeurd');
+  html += `<div style="background:${MK.panel};border:1px solid ${MK.bd};border-radius:4px;padding:8px 16px;margin-bottom:14px">`;
   M.tl.forEach(([t,txt,col],i)=>{
-    html+=`<div style="display:flex;gap:12px;padding:7px 0;${i?'border-top:1px solid rgba(17,24,40,.5)':''}">
-      <span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--mu);min-width:90px;flex-shrink:0">${t}</span>
-      <span style="width:7px;height:7px;border-radius:50%;background:${col};margin-top:3px;flex-shrink:0;box-shadow:0 0 5px ${col}"></span>
-      <span style="font-size:10px;line-height:1.5;color:var(--tx2)">${txt}</span>
+    html += `<div style="display:flex;gap:14px;align-items:flex-start;padding:9px 0;${i?'border-top:1px solid '+MK.bd:''}">
+      <span style="font-family:'IBM Plex Mono';font-size:10px;color:${MK.mu};min-width:100px;flex-shrink:0;padding-top:2px">${t}</span>
+      <span style="width:8px;height:8px;border-radius:50%;background:${col};margin-top:4px;flex-shrink:0;box-shadow:0 0 6px ${col}"></span>
+      <span style="font-size:12px;line-height:1.6;color:${MK.tx}">${txt}</span>
     </div>`;
   });
-  html+=`</div>`;
+  html += `</div>`;
 
   // AHEAD
-  html+=sh('WAT KOMT ERAAN');
-  html+=`<div style="display:grid;gap:5px;margin-bottom:12px">`;
+  html += sh('Wat komt eraan');
+  html += `<div style="display:grid;gap:6px;margin-bottom:14px">`;
   M.ahead.forEach(([when,what,why])=>{
-    html+=`<div style="display:flex;gap:12px;align-items:center;background:var(--p2);border:1px solid var(--bd);border-radius:3px;padding:8px 12px;flex-wrap:wrap">
-      <span style="font-family:'IBM Plex Mono';font-size:9px;font-weight:700;color:var(--acc);min-width:88px">${when}</span>
-      <span style="font-size:10px;font-weight:600;min-width:180px;flex:0 0 auto">${what}</span>
-      <span style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono'">${why}</span>
+    html += `<div style="display:flex;gap:14px;align-items:center;background:${MK.p2};border:1px solid ${MK.bd};border-radius:4px;padding:10px 14px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono';font-size:10px;font-weight:700;color:${MK.acc};min-width:110px">${when}</span>
+      <span style="font-size:12.5px;font-weight:600;color:${MK.tx};min-width:200px;flex:0 0 auto">${what}</span>
+      <span style="font-size:11px;color:${MK.tx2};font-family:'IBM Plex Mono'">${why}</span>
     </div>`;
   });
-  html+=`</div>`;
+  html += `</div>`;
 
   // TRUMP
-  html+=sh('TRUMP & GROOT NIEUWS');
-  html+=`<div style="background:var(--panel);border:1px solid var(--bd);border-left:3px solid var(--inf);border-radius:3px;padding:10px 14px;margin-bottom:12px">`;
+  html += sh('Trump & groot nieuws');
+  html += `<div style="background:${MK.panel};border:1px solid ${MK.bd};border-left:4px solid ${MK.inf};border-radius:4px;padding:12px 16px;margin-bottom:14px">`;
   M.trump.forEach((t,i)=>{
-    html+=`<div style="display:flex;gap:8px;font-size:10px;line-height:1.5;padding:5px 0;${i?'border-top:1px solid rgba(17,24,40,.5)':''}">
-      <span style="color:var(--inf)">\u25b8</span><span style="color:var(--tx2)">${t}</span>
+    html += `<div style="display:flex;gap:10px;font-size:12px;line-height:1.6;padding:7px 0;${i?'border-top:1px solid '+MK.bd:''}">
+      <span style="color:${MK.inf};font-size:14px;flex-shrink:0">▸</span>
+      <span style="color:${MK.tx}">${t}</span>
     </div>`;
   });
-  html+=`</div>`;
+  html += `</div>`;
 
   // GLOSSARY
-  html+=sh('JARGON-BUSTER','Elke term in \u00e9\u00e9n zin uitgelegd.');
-  html+=`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px;margin-bottom:12px">`;
+  html += sh('Jargon-buster', 'Elke term in één zin uitgelegd.');
+  html += `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;margin-bottom:14px">`;
   M.glossary.forEach(([term,def])=>{
-    html+=`<div style="background:var(--panel);border:1px solid var(--bd);border-radius:3px;padding:8px 10px">
-      <div style="font-size:10px;font-weight:700;color:var(--inf);margin-bottom:2px">${term}</div>
-      <div style="font-size:9px;color:var(--tx2);line-height:1.4">${def}</div>
+    html += `<div style="background:${MK.panel};border:1px solid ${MK.bd};border-radius:4px;padding:10px 13px">
+      <div style="font-size:12px;font-weight:700;color:${MK.inf};margin-bottom:3px">${term}</div>
+      <div style="font-size:11px;color:${MK.tx};line-height:1.5">${def}</div>
     </div>`;
   });
-  html+=`</div>`;
+  html += `</div>`;
 
-  html+=`<div style="font-size:8px;color:var(--mu);font-family:'IBM Plex Mono';line-height:1.6;border-top:1px solid var(--bd);padding-top:8px">
-    \u26a0 GEEN FINANCIEEL ADVIES. Prijzen zijn indicatief. Controleer altijd je eigen broker vóór een trade. Data: PCE Fed, CFTC COT, Finviz, Investing.com.
+  html += `<div style="font-size:10px;color:${MK.mu};font-family:'IBM Plex Mono';line-height:1.6;border-top:1px solid ${MK.bd};padding-top:10px">
+    ⚠ Geen financieel advies. Prijzen indicatief. Controleer altijd je eigen broker vóór een trade.
   </div>`;
 
-  el.innerHTML=html;
+  el.innerHTML = html;
 }
+
 // ══ STATE ══════════════════════════════════════════
 let ST_ST={sk:'score',sd:1,pg:1,capF:'all',sel:null};
 let ST_FR={sk:'score',sd:1,pg:1,sel:null};
@@ -1850,7 +1623,7 @@ renderFR();
 buildFeedST();
 buildBal();
 buildRTW();
-buildAlertBanner();buildAlertBanner();buildChangelog();buildPortfolio();buildMarkt();
+buildAlertBanner();buildAlertBanner();buildChangelog();buildMarkt();
 buildWatch();
 renderCmpBar();
 
@@ -1863,4 +1636,16 @@ function renderAll(){renderST();renderFR();buildFeedST();buildRTW();}
 </script>
 </div>
 </body>
+</html<div style="background:linear-gradient(135deg,#0c1526,#0f1e36);border-bottom:1px solid rgba(184,154,56,.2);padding:10px 18px">
+<div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+<div style="flex:1;min-width:260px"><div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:3px;color:#b89a38;margin-bottom:4px">WAT IS DIT DASHBOARD?</div><div style="font-size:12px;color:#cbd5e1;line-height:1.6"><b style="color:#e2e8f0">FORM4 INTEL</b> volgt <b style="color:#b89a38">SEC Form 4 insider-aankopen</b> &#8212; wanneer CEO&apos;s &amp; directeuren met <em>eigen geld</em> kopen (Code P), gekoppeld aan <b style="color:#4ade80">Trump beleids-tailwinds</b>. Sterkste signaal: cluster 3+ insiders tegelijk.</div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<div style="text-align:center;padding:7px 14px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:4px"><div style="font-family:'IBM Plex Mono';font-size:18px;font-weight:700;color:#b89a38">116</div><div style="font-size:9px;color:#64748b;font-family:'IBM Plex Mono';letter-spacing:1px">AANDELEN</div></div>
+<div style="text-align:center;padding:7px 14px;background:rgba(74,222,128,.05);border:1px solid rgba(74,222,128,.15);border-radius:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;color:#4ade80">CODE P</div><div style="font-size:9px;color:#64748b;font-family:'IBM Plex Mono';letter-spacing:1px">OPEN MARKT</div></div>
+<div style="text-align:center;padding:7px 14px;background:rgba(96,165,250,.05);border:1px solid rgba(96,165,250,.15);border-radius:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;color:#60a5fa">CEO &middot; CFO &middot; DIR</div><div style="font-size:9px;color:#64748b;font-family:'IBM Plex Mono';letter-spacing:1px">INSIDERS ONLY</div></div>
+<div style="text-align:center;padding:7px 14px;background:rgba(248,113,113,.05);border:1px solid rgba(248,113,113,.15);border-radius:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;font-weight:700;color:#f87171">GEEN ADVIES</div><div style="font-size:9px;color:#64748b;font-family:'IBM Plex Mono';letter-spacing:1px">RESEARCH ONLY</div></div>
+</div>
+</div>
+</div>
+>
 </html>
