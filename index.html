@@ -501,124 +501,116 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 
 // ══ DATA ══════════════════════════════════════════
 const CONFIG = {
-  dataDate: '2026-07-27',
+  dataDate: '2026-08-12',
   versie: 'V9.9',
   finnhubKey: 'd8d6ul9r01qub2puue2gd8d6ul9r01qub2puue30',
   twelveDataKey: '6a1a6f9ae017b3.84744888',
   liveEnabled: true,
   watch: [
-    {tk:'ASTS', type:'cat', datum:'AUG 2026', txt:'BlueBird 11-13 launch Cape Canaveral. Q2 earnings 17 aug. Short interest 24% float = short squeeze risico bij succesvolle launch.'},
-    {tk:'SOFI', type:'cat', datum:'29 JUL 2026', txt:'Q2 earnings morgen. Consensus $1.14B omzet, EPS $0.11. Basel III rollback + CFPB defunding = fintech tailwind.'},
-    {tk:'MP', type:'cat', datum:'Q3 2026', txt:'Section 232 kritieke mineralen besluit pending. DoD 15% belang. COO kocht $962K. CEO verkoop gemengd signaal.'},
-    {tk:'INTC', type:'cat', datum:'Q3 2026', txt:'Q2 monster beat: $16.1B (+12%), EPS $0.42 verdubbeld. 18A yields ahead. Foundry-deal groot cloud-platform bevestigd.'},
-    {tk:'UNH', type:'cat', datum:'9 OKT 2026', txt:'Q2 beat EPS $6.38 vs $4.91 (+30%). Medical ratio 86.7%. FY26 guidance $19.50-20.00. Q3 earnings 9 oktober.'},
-    {tk:'HYMC', type:'cat', datum:'Q3 2026', txt:'Goud productie-update + Nevada permitting milestones. Catalysts die insider-actie kunnen triggeren.'}
+    {tk:'ASTS', type:'upd', datum:'10 AUG KLAAR', txt:'Q2 miss: $31.5M vs $34.4M (-10%). EPS -$0.77 vs -$0.29 (miss). MAAR: guidance $150-200M herbevestigd. $3.7B cash. 13 gateways. Beta eind 2026. Stock ~$68.'},
+    {tk:'UNH',  type:'cat', datum:'9 OKT 2026',  txt:'Q3 earnings. Na Q2 +30% beat. FY26 $19.50-$20.00.'},
+    {tk:'MP',   type:'cat', datum:'Q3 2026',      txt:'Section 232 mineralen pending. DoD 15% belang.'},
+    {tk:'SOFI', type:'upd', datum:'KLAAR',        txt:'Q2 beat $1.22B (+42%). EPS +9.9%. Stock herstelt na -10% dip.'},
   ],
   changelog: [
-    {type:'upd', txt:'\uD83D\uDFE2 UNH Q2 BEWEZEN: EPS $6.38 vs $4.91 (+30% beat). Medical ratio 86.7% = laagste in 2 jaar. Optum +29%. Stock $425. 10-director thesis +82%.'},
-    {type:'upd', txt:'\uD83D\uDFE2 INTC Q2 MONSTER: $16.1B omzet (+12% vs verwacht). EPS $0.42 verdubbeld. Sterkste groei in 15 jaar. 18A ahead of schedule.'},
-    {type:'upd', txt:'\uD83D\uDEA8 Section 122 VERLOPEN 24 juli. Tariefvoet 13%\u21927.2%. Section 301 (12.5% op 46 landen) pending. SOFI Q2 morgen 29 juli.'}
+    {type:'upd', txt:'\uD83D\uDFE1 ASTS Q2 miss: $31.5M vs $34.4M. EPS -$0.77 vs -$0.29. MAAR $3.7B cash, guidance herbevestigd, beta eind 2026. Stock ~$68.'},
+    {type:'upd', txt:'\uD83E\uDD47 GOUD $4.424-$4.470 vandaag (+10% in 1 maand). Zachte jobs + CPI-verwachting = Fed-hike angst daalt. 10-weeks high.'},
+    {type:'upd', txt:'\uD83D\uDCCA CPI juli VANDAAG verwacht: 3.4% annueel (vs 3.5% juni). Bij meevaller: Fed-pause sept bevestigd = goud + aandelen omhoog.'}
   ],
   nieuwToday: [],
-  updToday: ['INTC','UNH','ASTS']
+  updToday: ['ASTS']
 };
 
-// ══ MARKT DATA — 27 JULI 2026 ════════════════════════════════
+// ══ MARKT DATA — 12 AUGUSTUS 2026 ════════════════════════════════
 const MARKT_DATA = {
-  date: '2026-07-27',
+  date: '2026-08-12',
   sfeer: 'RISK-ON',
-  sfeerlabel: 'Section 122 verlopen 24 jul \u00b7 UNH +30% beat \u00b7 INTC verdubbeld \u00b7 Tarieven 13%\u21927.2%',
+  sfeerlabel: 'Goud $4.424 (+10% in 1 maand) \u00b7 CPI juli vandaag \u00b7 ASTS Q2 miss maar $3.7B cash \u00b7 Fed-pause sept',
 
   snap: [
-    {label:'Sfeer', val:'RISK-ON \u25b2', col:'#4ade80', sub:'Section 122 verlopen 24 juli \u2192 tarieven 13%\u21927.2%. UNH +30% beat. INTC EPS verdubbeld. Markt ademt op.'},
-    {label:'Goud \u00b7 XAUUSD', val:'~$4.080', col:'#b89a38', sub:'Herstel op tarief-de-escalatie + CPI 3.5%. Fed-hike angst daalt verder.'},
-    {label:'Nasdaq \u00b7 NQ', val:'~31.200', col:'#4ade80', sub:'INTC +12% AH trok semis omhoog. Lagere tarieven = risk-on voor tech.'},
+    {label:'\uD83E\uDD47 Goud \u00b7 XAUUSD', val:'$4.424 \u25b2', col:'#b89a38', sub:'+10% in 1 maand. 10-weeks high. Zachte jobs + CPI verwachting = Fed-hike angst laag.'},
+    {label:'CPI Juli \u00b7 VANDAAG', val:'3.4% verwacht', col:'#60a5fa', sub:'Economists: 3.4% annueel (vs 3.5% juni). Bij meevaller: Fed-pause sept = goud + tech omhoog.'},
+    {label:'ASTS \u00b7 Q2', val:'$31.5M / Miss', col:'#fbbf24', sub:'Miss op omzet + EPS. MAAR $3.7B cash, guidance herbevestigd, beta eind 2026.'},
   ],
-  snapLine: 'Week 21-27 juli 2026 was historisch: Section 122 (15% tariefmuur) verliep op 24 juli \u2014 effectieve tariefvoet daalt van ~13% naar ~7.2%. USTR miste deadline Section 301-vervanging, dus tarief-vacuum (tijdelijk lager). Zelfde week: INTC Q2 monster beat ($16.1B, +12%; EPS $0.42 = verdubbeld, sterkste groei in 15 jaar). En op 16 juli: UNH Q2 +30% beat (EPS $6.38 vs $4.91). Twee van de grootste insider-thesis stocks bewezen hun case in \u00e9\u00e9n week. SOFI Q2 earnings morgen 29 juli. ASTS launch augustus nadert.',
+  snapLine: 'Vandaag 12 augustus 2026: CPI Juli rapport wordt verwacht \u2014 economists schatten 3.4% annueel (vs 3.5% in juni). Goud is al gestegen naar $4.424-$4.470 als markt vooruitloopt op een zachte print. Vorige week: zwakke jobs-rapport (July NFP) + Fed liet rente onveranderd = markt prijst Fed-pause september in. ASTS miss op Q2 (10 aug): $31.5M vs $34.4M, EPS -$0.77 vs -$0.29. Maar guidance herbevestigd, $3.7B cash, 13 gateways geleverd. Section 301 (12.5% op 46 landen) nog steeds pending.',
 
   bigpic: [
-    {icon:'\uD83D\uDEA8', title:'1 \u00b7 Section 122 VERLOPEN \u2014 tarieven dalen', body:'Op 24 juli 2026 om 00:01 EDT verliep de Section 122 tariefmuur na 150 dagen. Geen Congressional extensie. USTR miste deadline Section 301-vervanging (12.5% op 46 landen incl. China, Vietnam, Japan, S-Korea). Effectief: van ~13% naar ~7.2%. Direct positief voor retailers, consumenten, tech supply chains.', matters:'Tarief-vacuum is tijdelijk. Section 301 aankondiging \u201eimminent\u201d. Bij 12.5% = hogere tarieven dan nu maar lager dan Section 122 15%.'},
-    {icon:'\uD83C\uDFE5', title:'2 \u00b7 UNH Q2 \u2014 insider thesis 100% bewezen', body:'16 juli: EPS $6.38 vs $4.91 (+30% beat). Omzet $112.03B. Medical cost ratio 86.7% = laagste in 2 jaar. Optum +29%. FY26 guidance $19.50-$20.00. De 10-director cluster kocht op 1 april op $234-249. Nu $425 = +82% in 4 maanden.', matters:'Beste insider-signal-bevestiging van 2026. 10 directors tegelijk = cluster = significantste signaal in het dashboard.'},
-    {icon:'\uD83D\uDCBB', title:'3 \u00b7 INTC Q2 \u2014 sterkste groei in 15 jaar', body:'23 juli: $16.128B omzet (vs $14.43B, +12% beat). EPS $0.42 vs $0.22 = verdubbeld. +25% YoY = sterkste since 2011. 18A yields ahead of schedule. Foundry-deal groot cloud-platform. 7e kwartaal op rij boven eigen guidance.', matters:'INTC-turnaround is real en versnelt. Pelosi $5M calls diep in-the-money. Foundry-thesis bewaarheid.'},
-    {icon:'\uD83D\uDE80', title:'4 \u00b7 ASTS \u2014 BlueBird 11-13 launch nadert', body:'ASTS consolideert op ~$74 na piek $86.77 (29 juni). BlueBird 11-13 launch augustus (Cape Canaveral). Q2 earnings 17 augustus. Short interest 24% float = short squeeze potentieel bij succesvolle launch. Risk-on macro = tailwind.', matters:'Augustus = ASTS-catalyst maand. Launch success \u2192 potentieel nieuwe piek. Miss \u2192 correctie.'},
-    {icon:'\u26A1', title:'5 \u00b7 SOFI Q2 morgen (29 juli)', body:'SoFi rapporteert Q2 op 29 juli. Consensus: omzet $1.14B, EPS $0.11. Goldman Sachs verhoogde PT naar $21. Cathie Wood kocht de dip. Basel III rollback + CFPB defunding = structurele tailwind voor fintech. Q1 beat: EPS $0.12 vs $0.12 (in-line), omzet $1.09B vs $1.05B (beat).', matters:'SoFi = fintech bellwether. Beat = positief voor heel fintech sector incl. TWFG, GSHD.'},
-    {icon:'\u26CF', title:'6 \u00b7 Section 301 vervanging \u2014 het volgende tarief-event', body:'USTR stelde 12.5% Section 301 op 46 landen voor. Deadline 20 juli gemist. Aankondiging \u201eimminent\u201d. Als door: China, Vietnam, India, Thailand, Japan, S-Korea krijgen 12.5% tarief. Canada/Mexico onveranderd (USMCA-certificering geldig).', matters:'Section 301 is de volgende markt-bewegende event. Aankondiging kan elk moment komen.'},
+    {icon:'\uD83E\uDD47', title:'1 \u00b7 Goud $4.424 \u2014 10-weeks high', body:'Goud sprong van ~$4.037 (5 aug) naar $4.424-$4.470 vandaag (+10% in 1 week). Drivers: zwakke July jobs-rapport vorige week, Fed liet rente onveranderd, markt verwacht nu Fed-pause in september. CPI Juli vandaag: bij 3.4% of lager = verdere bevestiging. Deutsche Bank handhaaft year-end target met goud nog in \u201eexplosieve fase\u201d.', matters:'Goud is de grootste winner van de afgelopen week. Fed-pause = geen renteverhogingen = goud omhoog. CPI vandaag is de volgende test.'},
+    {icon:'\uD83D\uDCCA', title:'2 \u00b7 CPI Juli VANDAAG \u2014 Fed-pause beslissing', body:'Economists verwachten 3.4% annueel (vs 3.5% juni) en +0.1% MoM. Na de zachte Juni CPI (3.5%, eerste MoM-daling since 2020) + zwakke jobs-rapport vorige week is de markt klaar voor een Fed-pause in september. Bij print \u22643.4%: Fed-hike angst verdwijnt, goud naar $4.500+, Nasdaq omhoog. Bij print >3.6%: verrassing, goud druk, Fed hawkish.', matters:'CPI Juli is de markt-bewegende catalyst van vandaag. Goud is al omhoog in afwachting.'},
+    {icon:'\uD83D\uDE80', title:'3 \u00b7 ASTS Q2 \u2014 miss maar sterk fundament', body:'10 aug: omzet $31.5M vs $34.4M (-10% miss). EPS -$0.77 vs -$0.29 (groot miss). MAAR: guidance $150-200M herbevestigd. $3.7B cash + $1.15B nieuwe converteerbare obligaties. $1.3B backlog. 13 gateways aan 7 klanten op 5 continenten. Beta services eind 2026. ~45 satellieten in baan begin 2027. BlueBird 14-16 bijna klaar. Productie t/m #42.', matters:'De thesis is intact: miss door timing van gateway-verkopen (Q4-gewogen). De kas is er, de satellieten draaien, de klanten zijn er. Analyst PT $81 vs $68 nu.'},
+    {icon:'\uD83C\uDFE5', title:'4 \u00b7 UNH \u2014 thesis +82% bewezen', body:'Q2 EPS $6.38 (+30% beat). Medical ratio 86.7%. Stock $425. 10-director cluster april op $234-249. Q3 earnings 9 oktober. FY26 guidance $19.50-$20.00.', matters:'Beste insider-signal bevestiging van 2026. Benchmark voor alle andere clusters in het dashboard.'},
+    {icon:'\uD83C\uDFE6', title:'5 \u00b7 SOFI \u2014 herstelt na dip', body:'Q2 beat: $1.22B (+42% YoY). EPS $0.12 (+9.9%). Record loan originations $14.8B (+69%). Stock daalde -10% op marge-druk maar herstelt. FY26 guidance $4.75-4.85B. Goldman PT $21 vs ~$16.50 nu. 8e kwartaal beat op rij.', matters:'SOFI is structureel sterk. De dip na Q2 is een buy-on-dip kans per Goldman Sachs.'},
+    {icon:'\uD83D\uDEA8', title:'6 \u00b7 Section 301 \u2014 tarief-vacuum duurt', body:'Section 122 verlopen 24 juli. Tarief van 13% naar ~7.2%. USTR Section 301 (12.5% op 46 landen) deadline 20 juli gemist. Aankondiging \u201eimminent\u201d. Tarief-vacuum duurt voort. Lagere tarieven = disinflatoir = helpt CPI verder omlaag = Fed-pause.', matters:'Elke dag zonder Section 301 = lager effectief tarief = lagere inflatie = goud + risk-on.'},
   ],
 
   instr: [
     {sym:'XAUUSD', name:'Goud / MGC micro-future', accent:'#b89a38',
-     px:'~$4.080', chg:'Risk-on na Section 122 expiry', bias:'BULLISH',
-     biasNote:'Tarief-vacuum = lagere inflatie-verwachting = Fed minder agressief = goud support. $4.000 bewezen als bodem. Structureel bull.',
+     px:'$4.424 \u25b2', chg:'+10% in 1 maand \u00b7 10-weeks high', bias:'BULLISH',
+     biasNote:'Zachte jobs + onveranderde Fed rente + CPI verwachting = triple catalyst voor goud. Bij CPI \u22643.4% vandaag: $4.500+ target. Deutsche Bank: goud nog in explosieve fase. Structurele bull-thesis intact.',
      levels:[
-       {l:'$4.200', tag:'weerstand major', type:'res'},
-       {l:'$4.150', tag:'weerstand', type:'res'},
-       {l:'$4.080', tag:'NU \u25c0', type:'cur'},
-       {l:'$4.000', tag:'steun / bodem bewezen', type:'sup'},
-       {l:'$3.900', tag:'steun major', type:'sup'},
+       {l:'$4.600', tag:'weerstand major', type:'res'},
+       {l:'$4.500', tag:'weerstand / target', type:'res'},
+       {l:'$4.424', tag:'NU \u25c0 \u00b7 10W high', type:'cur'},
+       {l:'$4.200', tag:'steun / vorige weerstand', type:'sup'},
+       {l:'$4.000', tag:'steun major / bewezen bodem', type:'sup'},
      ],
-     driver:'Tarief-de-escalatie + CPI 3.5% + Fed-pause verwachting'},
+     driver:'Fed-pause verwachting + CPI vandaag + tarief-vacuum'},
     {sym:'NQ', name:'Nasdaq-100 / MNQ micro-future', accent:'#3a8f6a',
-     px:'~31.200', chg:'INTC +12% trok semis omhoog', bias:'BULLISH',
-     biasNote:'INTC beat + Section 122 expiry + UNH beat = triple katalysator voor risk-on. Volgende: SOFI 29 jul, ASTS augustus.',
+     px:'~31.500', chg:'Risk-on op Fed-pause verwachting', bias:'BULLISH TILT',
+     biasNote:'Fed-pause sept + zachte CPI = risk-on. INTC + UNH + SOFI beats ondersteunen tech. ASTS miss had beperkte sector-impact. CPI vandaag = volgende directie-gever.',
      levels:[
-       {l:'32.000', tag:'weerstand major', type:'res'},
-       {l:'31.500', tag:'weerstand', type:'res'},
-       {l:'31.200', tag:'NU \u25c0', type:'cur'},
-       {l:'30.800', tag:'steun', type:'sup'},
+       {l:'32.500', tag:'weerstand major', type:'res'},
+       {l:'32.000', tag:'weerstand', type:'res'},
+       {l:'31.500', tag:'NU \u25c0', type:'cur'},
+       {l:'31.000', tag:'steun', type:'sup'},
        {l:'30.000', tag:'steun major', type:'sup'},
      ],
-     driver:'Tarief-vacuum + INTC beat + UNH beat + risk-on sfeer'},
+     driver:'Fed-pause + CPI vandaag + earnings beats'},
   ],
 
   play: [
-    {sym:'GOUD \u00b7 ~$4.080', accent:'#b89a38', rows:[
-      ['\uD83D\uDFE2','OMHOOG','Boven $4.150 als Section 301 zacht uitvalt + Fed-pause sept + Iran stabiel.','#4ade80'],
-      ['\uD83D\uDFE1','ZIJWAARTS','$4.000-$4.150: wacht op Section 301 besluit.','#b89a38'],
-      ['\uD83D\uDD34','OMLAAG','Onder $4.000 als Section 301 zwaar (>12.5%) + Iran de-escaleert volledig.','#f87171'],
+    {sym:'GOUD \u00b7 $4.424', accent:'#b89a38', rows:[
+      ['\uD83D\uDFE2','CPI \u22643.4%','Goud naar $4.500+ \u2192 Fed-pause sept bevestigd \u2192 structureel bull.','#4ade80'],
+      ['\uD83D\uDFE1','CPI 3.4-3.6%','Consolidatie $4.300-$4.500. Geen verrassing.','#b89a38'],
+      ['\uD83D\uDD34','CPI >3.6%','Verrassing omhoog \u2192 goud druk \u2192 $4.200-$4.300 hertest.','#f87171'],
     ]},
-    {sym:'NASDAQ \u00b7 ~31.200', accent:'#4ade80', rows:[
-      ['\uD83D\uDFE2','OMHOOG','Boven 32.000 als SOFI beat 29 jul + Section 301 meevalt + ASTS launch.','#4ade80'],
-      ['\uD83D\uDFE1','ZIJWAARTS','30.800-31.500: tarief-vacuum onzekerheid, earnings steun.','#b89a38'],
-      ['\uD83D\uDD34','OMLAAG','Onder 30.000 als Section 301 zwaar uitpakt + recessie-signalen.','#f87171'],
+    {sym:'ASTS \u00b7 $68.25', accent:'#fbbf24', rows:[
+      ['\uD83D\uDFE2','THESIS INTACT','$3.7B cash + guidance herbevestigd + beta eind 2026 \u2192 richting PT $81.','#4ade80'],
+      ['\uD83D\uDFE1','WACHTEN','Miss was timing-gerelateerd (Q4-gewogen). Consolidatie $65-75.','#b89a38'],
+      ['\uD83D\uDD34','BEZORGDHEID','Als Q3 ook miss + beta vertraging \u2192 druk richting $55-60.','#f87171'],
     ]},
   ],
 
   tl:[
-    ['14 jul', 'CPI juni 3.5% (vs 3.8%) \u2014 eerste MoM-daling since 2020. Goud +2%.','#4ade80'],
-    ['16 jul', 'UNH Q2 BEAT: EPS $6.38 vs $4.91 (+30%). Stock $425. Insider thesis bewezen.','#4ade80'],
-    ['23 jul', 'INTC Q2 MONSTER: $16.1B (+12%), EPS verdubbeld. AH +12%. Sterkste groei 15jr.','#4ade80'],
-    ['24 jul', 'Section 122 VERLOPEN. Tarieven 13%\u21927.2%. USTR miste Section 301 deadline.','#fbbf24'],
-    ['27 jul', 'Vandaag. Risk-on. SOFI Q2 morgen. ASTS launch augustus. Section 301 pending.','#b89a38'],
+    ['24 jul', 'Section 122 verlopen. Tarieven 13%\u21927.2%. Section 301 pending.','#fbbf24'],
+    ['29 jul', 'SOFI Q2 beat $1.22B (+42%). Stock -10% door marge-druk.','#fbbf24'],
+    ['5 aug',  'ASTS BlueBird 11-12-13 launch SUCCESS op Falcon 9 (3:42 EDT).','#4ade80'],
+    ['10 aug', 'ASTS Q2 miss: $31.5M vs $34.4M. EPS -$0.77 vs -$0.29. Guidance herbevestigd.','#fbbf24'],
+    ['12 aug', 'Goud $4.424 (+10% in 1 week). CPI Juli VANDAAG. Fed-pause sept ingeprijsd.','#b89a38'],
   ],
 
   ahead:[
-    ['MORGEN 29 JUL', 'SOFI Q2 earnings', 'consensus $1.14B omzet \u00b7 EPS $0.11 \u00b7 fintech tailwind'],
-    ['IMMININT', 'Section 301 besluit', '12.5% op 46 landen \u00b7 USTR miste Jul 20 deadline'],
-    ['AUG 2026', 'ASTS BlueBird 11-13 launch', 'Cape Canaveral \u00b7 short interest 24% float'],
-    ['17 AUG 2026', 'ASTS Q2 earnings', '$3.5B cash \u00b7 $150-200M revenue guidance'],
+    ['VANDAAG 12 AUG', 'CPI Juli rapport', 'verwacht 3.4% \u00b7 bij meevaller: Fed-pause sept bevestigd'],
+    ['IMMININT', 'Section 301 besluit', '12.5% op 46 landen \u00b7 elke dag vertraging = lager tarief'],
     ['9 OKT 2026', 'UNH Q3 earnings', 'na +30% beat \u00b7 FY guidance $19.50-$20.00'],
+    ['NOV 2026', 'China-deal expiry', 'verlengd t/m november 2026 \u00b7 heronderhandeling'],
   ],
 
   trump:[
-    'Section 122 VERLOPEN 24 juli \u2014 tariefvoet daalt van 13% naar ~7.2%. Historisch laag.',
-    'Section 301 vervanging (12.5% op 46 landen) nog pending \u2014 aankondiging imminient.',
-    'Canada/Mexico: USMCA niet verlengd maar 0% tarieven via certificering. Geen grensverandering.',
-    'Iran: Hormuz open. Onderhandelingen Qatar-Witkoff lopen. Olieprijzen stabiel.',
-    'China-deal verlengd t/m november 2026. Section 232 mineralen besluit nog pending.',
-    'CPI 3.5% + tarief-daling = dubbel disinflatoir. Fed-hike angst daalt significant.',
+    'Section 122 VERLOPEN 24 juli \u2014 tarieven ~7.2%. Section 301 (12.5%) pending.','Zwakke jobs + Fed-pause sept = risico-aandelen + goud profiteren.','Iran: Hormuz-onderhandelingen lopen. Bessent: deal \u201eimminent\u201d. Olie stabiel.','China-deal verlengd t/m november 2026. Section 232 mineralen pending.','CPI-daling + tarief-vacuum = dubbel disinflatoir. Fed-hike kans minimaal.',
   ],
 
   glossary:[
-    ['Section 122','Trade Act 1974 \u2014 tijdelijk tarief max 150 dagen. VERLOPEN 24 juli 2026.'],
-    ['Section 301','Handels-wet voor oneerlijke praktijken. USTR stelt 12.5% op 46 landen voor.'],
-    ['Tarief-vacuum','Periode tussen Section 122 expiry en Section 301 effectief. Lager tarief.'],
-    ['MCR','Medical Cost Ratio. UNH Q2: 86.7% = laagste in 2 jaar = bullish.'],
-    ['18A node','Intel fabricage-technologie. Q2: yields ahead of schedule. Clou\u00adc-deal bevestigd.'],
-    ['Beat / Miss','Resultaat boven/onder consensus. UNH +30%. INTC +91% EPS.'],
-    ['Short squeeze','Als short sellers moeten dekken bij stijging. ASTS: 24% short interest.'],
-    ['Risk-on / off','Geld naar rendement (risk-on) of veiligheid (risk-off). Nu: risk-on.'],
+    ['CPI','Consumer Price Index. Juli verwacht: 3.4% (vs 3.5% juni). Vandaag.'],
+    ['Fed-pause','Fed houdt rente onveranderd. Ingeprijsd voor sept 2026 na zachte data.'],
+    ['Section 301','Handels-wet. USTR stelt 12.5% op 46 landen voor. Deadline gemist. Pending.'],
+    ['ASTS Q2 miss','Omzet $31.5M vs $34.4M. EPS -$0.77 vs -$0.29. Timing = Q4-gewogen.'],
+    ['BlueBird','ASTS satellieten. 13 in baan. 14-16 bijna klaar. ~45 begin 2027.'],
+    ['Backlog','Contractueel vastgelegde toekomstige omzet. ASTS: $1.3B.'],
+    ['Beat / Miss','Resultaat boven/onder consensus. UNH +30%, INTC +91%, ASTS -196% EPS.'],
+    ['Risk-on','Geld naar rendement-zoekende beleggingen. Nu: risk-on door Fed-pause.'],
     ['MGC / MNQ','Micro gold future (MGC) en micro Nasdaq future (MNQ).'],
-    ['MFN-tarief','Most Favored Nation \u2014 standaard WTO-tarief (3-5%). Geldt na Section 122.'],
+    ['Tarief-vacuum','Na Section 122, voor Section 301. Laagste tarieven since pre-IEEPA.'],
   ],
 };
 // ════════════════════════════════════════════════════════════════
@@ -704,8 +696,8 @@ const PENNY=[
 ];
 
 const LARGE=[
-{tk:'ASTS',co:'AST SpaceMobile',sec:'Satellite/Telecom',st:'df',score:86,trump:5,mk:21.90e9,price:74.50,hi:133.86,lo:63.72,sig:['cP','cl','tr'],ins:[{n:'Abel Avellan (CEO)',r:'CEO',cd:'P',bd:'2026-04-26',bp:'$14.20',val:'+$852K',dw:'+8%'}],sells:[{n:'Huiwen Yao (CTO)',sd:'2026-06-09',sp:'~$96',val:'-$3.85M',nt:'CTO verkocht 40K aandelen ($3.85M) op 9 juni. Tijdstip = SpaceX IPO week. Eerste grote insider-sell bij ASTS.'}],nv:1138000,dow:'+8%',q1r:'$8.4M',q1e:'-$0.51',q1n:'Van piek $86.77 (29 juni) geconsolideerd op ~$74. BlueBird 11-13 launch AUGUSTUS = volgende grote catalyst. Short interest 24% float = short squeeze mogelijk bij succesvolle launch. Q2 earnings 17 aug. Section 122 verlopen = macro risk-on = tailwind voor groeiaandelen.',tt:'WH Space Policy briefings. Ex-Pentagon Director board. FCC spectrum. SpaceX IPO bull.',usp:'CEO kocht bij $14 nu $129. Direct-to-cell enige op schaal.'},
-{tk:'SOFI',co:'SoFi Technologies',sec:'Neobank',st:'fi',score:82,trump:4,mk:20.2e9,price:16.28,hi:32.73,lo:12.86,sig:['cP','cA','tr'],ins:[{n:'Anthony Noto (CEO)',r:'CEO',cd:'P',bd:'2026-05-11',bp:'$12.80',val:'+$512K',dw:'+6%'},{n:'Nieuwe CFO',r:'CFO',cd:'P',bd:'2026-05-13',bp:'$12.85',val:'+$193K',dw:'+12%'}],sells:[],nv:705000,dow:'+6%',q1r:'$1.09B',q1e:'+$0.12',q1n:'41% YoY. SoFiUSD stablecoin.',tt:'Crypto EO 19 mei direct. CFPB defunding. CEO+CFO cluster.',usp:'$1.09B +41%. SoFiUSD stablecoin. CEO+CFO cluster.'},
+{tk:'ASTS',co:'AST SpaceMobile',sec:'Satellite/Telecom',st:'df',score:86,trump:5,mk:21.90e9,price:68.25,hi:133.86,lo:55.50,sig:['cP','cl','tr'],ins:[{n:'Abel Avellan (CEO)',r:'CEO',cd:'P',bd:'2026-04-26',bp:'$14.20',val:'+$852K',dw:'+8%'}],sells:[{n:'Huiwen Yao (CTO)',sd:'2026-06-09',sp:'~$96',val:'-$3.85M',nt:'CTO verkocht 40K aandelen ($3.85M) op 9 juni. Tijdstip = SpaceX IPO week. Eerste grote insider-sell bij ASTS.'}],nv:1138000,dow:'+8%',q1r:'$8.4M',q1e:'-$0.51',q1n:'Q2 miss (10 aug): omzet $31.5M vs $34.4M (-10%). EPS -$0.77 vs -$0.29 = groot miss. MAAR: guidance $150-200M herbevestigd. $3.7B cash + $1.3B backlog. 13 gateways aan 7 klanten op 5 continenten. Beta services eind 2026. ~45 satellieten in baan begin 2027. BlueBird 14-16 bijna klaar voor verscheping. Productie t/m #42. Analyst PT $81. Stock $68.25 = 16% onder PT.',tt:'WH Space Policy briefings. Ex-Pentagon Director board. FCC spectrum. SpaceX IPO bull.',usp:'CEO kocht bij $14 nu $129. Direct-to-cell enige op schaal.'},
+{tk:'SOFI',co:'SoFi Technologies',sec:'Neobank',st:'fi',score:82,trump:4,mk:20.2e9,price:16.28,hi:32.73,lo:12.86,sig:['cP','cA','tr'],ins:[{n:'Anthony Noto (CEO)',r:'CEO',cd:'P',bd:'2026-05-11',bp:'$12.80',val:'+$512K',dw:'+6%'},{n:'Nieuwe CFO',r:'CFO',cd:'P',bd:'2026-05-13',bp:'$12.85',val:'+$193K',dw:'+12%'}],sells:[],nv:705000,dow:'+6%',q1r:'$1.09B',q1e:'+$0.12',q1n:'Q2 beat: omzet $1.22B vs $1.13B verwacht (+42% YoY, +8.3% beat). EPS $0.12 vs $0.11 (+9.9%). Record loan originations $14.8B (+69% YoY). 15.8M leden (+35%). Nettoresultaat +61%. MAAR stock -10% na resultaten: marge-druk, Financial Services contributie-marge -600 bps, marketing +48%. FY26 guidance verhoogd naar $4.75-4.85B. Goldman PT $21. 8e kwartaal op rij beat.',tt:'Crypto EO 19 mei direct. CFPB defunding. CEO+CFO cluster.',usp:'$1.09B +41%. SoFiUSD stablecoin. CEO+CFO cluster.'},
 {tk:'CIFR',co:'Cipher Digital Inc',sec:'Bitcoin Mining/HPC',st:'tk',score:81,trump:5,mk:8.41e9,price:20.55,hi:25.52,lo:2.95,sig:['cP','tr'],ins:[{n:'Tyler Page (CEO)',r:'CEO',cd:'P',bd:'2026-05-14',bp:'$3.40',val:'+$510K',dw:'+15%'}],sells:[{n:'Directors',sd:'2026-05-22',sp:'~$22-23',val:'-$380K',nt:'⚠ Directors selling bij high terwijl CEO kocht'}],nv:130000,dow:'+15%',q1r:'$34.8M',q1e:'-$0.87',q1n:'Record BTC treasury. HPC pivot.',tt:'Trump pro-Bitcoin. Crypto EO direct.',usp:'Record BTC. HPC pivot. ⚠ Directors verkopen.'},
 {tk:'RBLX',co:'Roblox Corporation',sec:'Gaming',st:'tk',score:60,trump:1,mk:24.4e9,price:39.80,hi:56.40,lo:24.10,sig:['cP'],ins:[{n:'David Baszucki (CEO/Founder)',r:'CEO/Founder',cd:'P',bd:'2026-05-09',bp:'$38.20',val:'+$573K',dw:'+2%'}],sells:[],nv:573000,dow:'+2%',q1r:'$1.14B',q1e:'-$0.38',q1n:'80M+ DAU. Oprichter $573K = dataset largest.',tt:'Tech deregulering.',usp:'Oprichter $573K dataset largest. 80M+ DAU.'},
 {tk:'WDC',co:'Western Digital',sec:'Data Storage',st:'tk',score:71,trump:2,mk:14.2e9,price:44.20,hi:58.60,lo:28.40,sig:['cP'],ins:[{n:'Irving Tan (CEO)',r:'CEO',cd:'P',bd:'2026-05-12',bp:'$42.10',val:'+$505K',dw:'+7%'}],sells:[],nv:505200,dow:'+7%',q1r:'$4.2B',q1e:'+$1.44',q1n:'AI datacenter opslag. CHIPS Act.',tt:'CHIPS Act. AI nationaal belang.',usp:'CEO $505K post-spinoff. $4.2B. AI datacenter.'},
