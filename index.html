@@ -2709,6 +2709,113 @@ setTimeout(()=>{
  <div style="height:30px"></div>`);
 },200);
 
+/* ══════════ V9 — UITBREIDING VAN HET UNIVERSUM ══════════ */
+
+/* dekking per beleidsmaatregel, berekend uit TRUMP × UNIV */
+const COVER = TRUMP.map(t=>{
+ const tk=UNIV.map(u=>u.tk);
+ const named=(t.tags||[]).filter(g=>tk.some(u=>g.includes(u)));
+ const generic=(t.tags||[]).filter(g=>!tk.some(u=>g.includes(u)));
+ return {t:t.t, cat:t.cat, st:t.st, n:named.length, g:generic.length, named:named, generic:generic};
+});
+
+const GAPSEC = [
+{sec:"STAAL & METAALVERWERKING", meet:"Section 232 uitgebreid naar koper, staal en hout · Section 301 Brazilië 25% op staal", nu:"ESAB (lasapparatuur) — verder niets",
+ waarom:"Je eigen beleidslijst noemt bij de Brazilië-maatregel expliciet 'Staal ↑' als begunstigde. Er zit geen enkele staalproducent in de lijst. Een importtarief van 25% op Braziliaans staal is per definitie een prijsvloer voor Amerikaanse producenten — dat is het zuiverste beleidsmechanisme dat er bestaat.",
+ uniek:"<b>Aandeel elektrische boogovens tegenover hoogovens.</b> EAF-producenten kunnen productie binnen weken op- en afschalen en draaien op schroot; geïntegreerde hoogovens niet. Bij een tariefgedreven prijssprong vangt de EAF-producent de marge en de hoogoven de vaste kosten.",
+ namen:"Nucor, Steel Dynamics, Commercial Metals (alle drie EAF) tegenover Cleveland-Cliffs en U.S. Steel (geïntegreerd).",
+ pri:1},
+{sec:"KOPER", meet:"Section 232 uitgebreid — koper expliciet genoemd", nu:"TMQ en IE (ontwikkelaars, geen producenten)",
+ waarom:"Je hebt de exploratiekant wel en de productiekant niet. Bij een tarief op geïmporteerd koper profiteert wie vandaag produceert, niet wie over acht jaar misschien produceert.",
+ uniek:"<b>Aandeel productie op Amerikaans grondgebied.</b> Dat is het enige dat telt bij een importtarief, en het loopt binnen de sector van bijna nul tot bijna alles.",
+ namen:"Freeport-McMoRan (grote Amerikaanse mijnen in Arizona) en Southern Copper (Peru en Mexico — dus juist de verkeerde kant van het tarief).",
+ pri:1},
+{sec:"NUTSBEDRIJVEN & DATACENTERSTROOM", meet:"Nucleaire Renaissance (4 EO's) · Beautiful Clean Coal · AI-datacentervraag", nu:"AAON en LMB (koeling) — geen enkele stroomproducent",
+ waarom:"Dit is het grootste gat. Drie van je 24 maatregelen gaan over stroomopwekking, en je dekt uitsluitend de koelingsleveranciers. De partij die de stroom verkóópt aan een datacenter zit er niet in — terwijl dat de partij is met een langlopend contract tegen een vaste prijs.",
+ uniek:"<b>Aandeel nucleair in de opwekkingsmix, en of er een getekend datacentercontract ligt.</b> Beide publiek. Een kerncentrale met een afnamecontract van vijftien jaar is een obligatie met aandelenrisico; een gascentrale op de spotmarkt is iets heel anders.",
+ namen:"Constellation Energy (grootste nucleaire vloot van de VS), Vistra, Talen Energy, NRG, plus GE Vernova als leverancier van de turbines.",
+ pri:1},
+{sec:"URANIUMVERRIJKING & SMR", meet:"Nucleaire Renaissance + NRC-hervorming", nu:"UUUU, NXE, ASPI (delfstof) — geen verrijking, geen reactoren",
+ waarom:"Je dekt het gesteente maar niet de keten erna. De brandstoftoeleveringsketen is volgens sectoranalyse het grootste knelpunt van de hele SMR-sector.",
+ uniek:"<b>Positie in de keten:</b> delfstof → verrijking → reactorontwerp → exploitatie. Elke stap heeft een ander risico en een ander tijdpad. Verrijking krijgt betaald ongeacht welk reactorontwerp wint.",
+ namen:"Centrus Energy (enige Amerikaanse HALEU-producent), NuScale (enig NRC-gecertificeerd ontwerp), Oklo, BWX Technologies (winstgevend vandaag), Nano Nuclear.",
+ pri:1},
+{sec:"FOSFAAT & KUNSTMEST", meet:"America First Arms Transfer Strategy — noemt letterlijk 'Phosphorus Supply'", nu:"NIETS",
+ waarom:"Je eigen maatregel 21 noemt fosforvoorziening als onderdeel van de wapenexportstrategie — fosfor is een munitiegrondstof én de basis van kunstmest. Er staat geen enkele naam tegenover. Dit is een maatregel die je hebt genoteerd en vervolgens niet hebt uitgewerkt.",
+ uniek:"<b>Eigen fosfaatrots tegenover ingekochte grondstof.</b> Wie de mijn bezit, bezit de prijs; wie inkoopt, betaalt hem.",
+ namen:"Mosaic (eigen fosfaatrots in Florida), Nutrien, Intrepid Potash, CF Industries (stikstof, ander gas-gedreven mechanisme).",
+ pri:2},
+{sec:"DEFENSIE-PRIMES & WAPENEXPORT", meet:"$500B+ budget · America First Arms Transfer Strategy · Drone Dominance", nu:"DRS, ONDS, OUST, SPIR, ASTS — allemaal toeleveranciers",
+ waarom:"Je hebt de sensoren, drones en satellieten. De partijen die de wapensystemen exporteren waar de strategie over gaat, zitten er niet in. Bij een exportversoepeling profiteert de systeembouwer, niet de sensorleverancier.",
+ uniek:"<b>Aandeel Foreign Military Sales in de orderportefeuille.</b> Dat is precies wat een exportstrategie beweegt, en het staat in de jaarrekening.",
+ namen:"Lockheed Martin, General Dynamics, Northrop Grumman, RTX; plus Huntington Ingalls voor het marinedeel en Kratos en AeroVironment voor onbemande systemen.",
+ pri:2},
+{sec:"HOUT & BOUWMATERIALEN", meet:"Section 232 uitgebreid — lumber expliciet genoemd", nu:"ROCK en LMB (bouwproducten, geen grondstof)",
+ waarom:"Hout staat met naam in je eigen maatregel 13. Geen enkele houtproducent in de lijst.",
+ uniek:"<b>Eigen bosbouwgrond tegenover ingekochte stammen.</b> Een REIT met eigen grond vangt de prijsstijging volledig; een zagerij betaalt hem.",
+ namen:"Weyerhaeuser (grondbezit, REIT-structuur), Louisiana-Pacific, Boise Cascade.",
+ pri:3},
+{sec:"KOLEN & THERMISCHE ENERGIE", meet:"America's Beautiful Clean Coal Power Generation Fleet", nu:"PARR en PRM (raffinage en dienstverlening)",
+ waarom:"Een executive order die letterlijk over de kolenvloot gaat, en geen enkele kolenproducent in de lijst.",
+ uniek:"<b>Thermische kolen tegenover metallurgische kolen.</b> Twee compleet verschillende markten: de EO raakt thermisch, terwijl staalproductie metallurgisch nodig heeft — en die tweede hangt juist aan de staalmaatregel hierboven.",
+ namen:"Peabody en Core Natural Resources (thermisch), Alpha Metallurgical en Warrior Met (metallurgisch).",
+ pri:3},
+{sec:"RESHORING-INDUSTRIE", meet:"IEEPA ongeldig verklaard + Section 301 → reshoring ↑", nu:"ESAB alleen",
+ waarom:"Je noteert reshoring als gevolg van drie maatregelen en dekt het met één naam. De bedrijven die fabrieken bouwen en van stroom voorzien zijn de directe begunstigden.",
+ uniek:"<b>Orderportefeuille in binnenlandse industriële bouw.</b> Publiek per kwartaal, en het loopt vooruit op de productiecijfers.",
+ namen:"Quanta Services en MYR Group (elektrische infrastructuur), Eaton, Emerson, Rockwell Automation.",
+ pri:3}
+];
+
+const INSREAL = [
+ {t:"De grootste geverifieerde aankoop van juli was geen insider", b:"Het grootste bevestigde koopbedrag in juli 2026 was de strategische investering van <b>$318,72 mln door Sumitomo Mitsui in Jefferies Financial Group</b> — een institutionele deelneming, geen discretionaire aankoop door een bestuurder. De maand was zwaar verkoopgedreven, met de grootste transacties afkomstig van oprichters, 10%-eigenaren en gelieerde instellingen.", c:"i"},
+ {t:"⚠ Correctie op een van mijn eigen kandidaten", b:"De grootste verkoop door een <i>opererende</i> CEO in juli kwam van <b>Peter Beck van Rocket Lab</b>. Ik noemde RKLB gisteren als kandidaat op basis van +352% koersstijging en de ruimtevaartmaatregelen. Met de oprichter als grootste CEO-verkoper van de maand faalt die naam poort 3 — <b>schrappen als kandidaat</b> tot er tegenbewijs is.", c:"n"},
+ {t:"Eén cluster in het hele large-cap universum, en die staat al in je lijst", b:"Van 149 gevolgde large caps had er <b>één</b> een cluster-aankoop met drie verschillende kopers: Taiwan Semiconductor. Die staat in je LARGE-array maar faalt poort 2 op beleidsalignment. Gezien de Section 232-uitbreiding naar halfgeleiders is dat oordeel discutabel — <b>heroverweeg de beleidsscore van TSMC</b>.", c:"g"},
+ {t:"Wat dit betekent voor de uitbreiding", b:"Je vraag was: welke aandelen zitten in het Trump-regime mét insiderkopen en staan nog niet in de lijst. Het eerlijke antwoord is dat de tweede voorwaarde op dit moment bijna niemand haalt — er waren in het hele gevolgde universum <b>40 aankopen tegenover 1.910 verkopen</b>. De uitbreiding moet daarom eerst op beleidsdekking gebeuren en pas daarna op insiderflow. Anders wacht je op een signaal dat in dit klimaat structureel niet komt.", c:"p"}
+];
+
+setTimeout(()=>{
+ const c=$("#c-scan"); if(!c)return;
+ const gaten=COVER.filter(x=>x.n<=1);
+ c.insertAdjacentHTML("afterbegin",`
+ <div class="sh"><b>UITBREIDING VAN HET UNIVERSUM</b> · WELKE BELEIDSMAATREGELEN GEEN AANDELEN HEBBEN</div>
+ <div class="lede">Je 24 gedocumenteerde maatregelen leggen naast de 116 namen. Per maatregel is geteld hoeveel tickers uit je eigen universum er daadwerkelijk aan hangen. <b>${gaten.length} van de 24 maatregelen hebben één of geen enkele naam</b> — dat is waar de lijst uitgebreid moet worden, en het is aantoonbaar in plaats van een aanname.</div>
+
+ <div class="tw"><table><thead><tr><th class="n">#</th><th>Maatregel</th><th>Categorie</th><th class="n">Namen in je lijst</th><th>Welke</th><th>Genoemd maar niet gedekt</th></tr></thead><tbody>
+ ${COVER.map((x,i)=>`<tr class="wrap" ${x.n<=1?'style="background:#fdf7f7"':''}>
+  <td class="n mono mu">${String(i+1).padStart(2,'0')}</td>
+  <td><b>${x.t}</b></td><td class="tx2" style="font-size:10px">${x.cat}</td>
+  <td class="n"><b class="${x.n>=3?'pos':x.n>=2?'gold':'neg'}" style="font-size:14px">${x.n}</b></td>
+  <td class="mono" style="font-size:10px">${x.named.join(' · ')||'<span class="mu">—</span>'}</td>
+  <td class="tx2" style="font-size:10px">${x.generic.join(' · ')||'—'}</td></tr>`).join("")}
+ </tbody></table></div>
+ <div class="warn"><div class="h">Wat de rode rijen laten zien</div>
+ De maatregelen zonder dekking zijn geen randgevallen. Het zijn <b>nucleaire renaissance</b>, <b>clean coal</b>, <b>Section 232 op koper, staal en hout</b>, <b>Brazilië-staaltarieven</b> en <b>fosforvoorziening</b> — allemaal maatregelen die je zelf hebt genoteerd met een pijl omhoog en waar vervolgens geen enkel aandeel tegenover staat. In vier gevallen staat de begunstigde letterlijk in je eigen tag ('Staal ↑', 'Uranium/SMR sector ↑', 'Coal/Gas ↑', 'Wapenexporteurs ↑') zonder ticker.</div>
+
+ <div class="sh"><b>NEGEN ONTBREKENDE SECTOREN</b> · met namen en het onderscheidende gegeven</div>
+ <div class="lede">Per sector: welke maatregel het aanstuurt, wat je nu hebt, waarom dat niet volstaat, en waarop je binnen die sector zou moeten selecteren. De namen zijn bekende spelers in de sector — <b>poort 3 en 4 zijn bij geen van hen gecontroleerd</b>. Ze zijn bedoeld als startpunt voor een EDGAR-uitdraai, niet als selectie.</div>
+ ${GAPSEC.map(g=>`<div class="card" style="margin-bottom:10px;border-color:${g.pri==1?'#e0c5c5':'var(--bd)'}">
+  <div class="ct"><div class="ctl" style="font-size:13px">${g.sec}</div>
+   <span class="tag st ${g.pri==1?'neg':g.pri==2?'gold':''}">PRIORITEIT ${g.pri}</span></div>
+  <div class="tw"><table><tbody>
+   <tr><td class="mu mono" style="width:150px">AANGESTUURD DOOR</td><td>${g.meet}</td></tr>
+   <tr><td class="mu mono">NU IN DE LIJST</td><td class="mono">${g.nu}</td></tr>
+  </tbody></table></div>
+  <div class="blk n"><div class="h">Waarom dat niet volstaat</div>${g.waarom}</div>
+  <div class="blk g"><div class="h">POORT 5 — waarop je binnen deze sector selecteert</div>${g.uniek}</div>
+  <div class="blk i"><div class="h">Waar je zou beginnen</div>${g.namen}<div class="note" style="margin-top:4px">Poort 3 en 4 niet gecontroleerd — dit is een zoeklijst, geen selectie.</div></div>
+ </div>`).join("")}
+
+ <div class="sh"><b>DE INSIDERVOORWAARDE</b> · waarom die nu bijna niemand haalt</div>
+ <div class="grid g2">
+ ${INSREAL.map(x=>`<div class="blk ${x.c=='pos'||x.c=='p'?'p':x.c=='n'?'n':x.c=='g'?'g':'i'}"><div class="h">${x.t}</div>${x.b}</div>`).join("")}
+ </div>
+ <div class="warn goldbox"><div class="h">De volgorde die ik zou aanhouden</div>
+ <b>Eerst beleidsdekking, dan insiderflow.</b> Vul de negen sectorgaten met kandidaten — dat kan vandaag en het is aantoonbaar nodig, want vijf van je eigen maatregelen hebben nul aandelen. Zet die namen op een watchlist met poort 5 ingevuld. Draai daarna één EDGAR-uitdraai over de hele lijst en laat poort 3 en 4 het filter doen.<br><br>
+ Omgekeerd werken — wachten tot je een insiderkoop ziet en dán kijken of het beleid past — betekent in een markt met 48 verkopen per aankoop dat je maanden niets doet en vervolgens koopt op het enige signaal dat toevallig langskwam.</div>
+ <div style="height:20px"></div>`);
+},260);
+
 </script>
 </body>
 </html>
