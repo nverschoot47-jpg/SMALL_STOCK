@@ -3037,6 +3037,189 @@ setTimeout(()=>{
   Position fully sold, realising ${eur(AGS_SALE.pl)} (${pc(AGS_SALE.plPct)}). Sold ahead of the estimated 26–28 August results. Analysis retained for reference.</div>`);}
 },1700);
 
+/* ═══════════ v21 — READY FOR THE WEEK OF 17 AUGUST ═══════════
+   Verified against live sources on 15 August before anything was written. */
+
+const FRI = {
+ t:"Friday 14 August close · third straight weekly gain, but the week ended on a warning",
+ rows:[
+  ["S&P 500","7,785.76","−0.2%",-1,"Slipped from Thursday's record. Still up 0.4% on the week and a third consecutive weekly gain. Thursday's intraday high of 7,816.70 was the first time above 7,800."],
+  ["Nasdaq Composite","26,729.16","−0.3%",-1,"Third weekly gain in a row, but only +0.1% for the week."],
+  ["Dow Jones","53,732.41","−0.2%",-1,"Down 0.6% on the week — the only major index lower."],
+  ["Russell 2000","3,068.42","+0.5%",1,"<b>A fresh record.</b> Small companies keep participating, which matters given where your remaining positions sit."],
+  ["Gold","$4,437.30","+0.4%",1,"Still climbing. Roughly 7% above the level the source document was built on."],
+  ["WTI crude","$81.71–82.40","+0.6 to +1.4%",1,"<b>Up on the week</b>, and for the reason below."],
+  ["Brent crude","$87.19","+0.1%",1,"—"],
+  ["Silver","$64.81","−0.3%",-1,"Worth noting: this is above the $64 resistance level in the dashboard, which was built on $60.25."],
+  ["Bitcoin","$63,014","−0.1%",-1,"Flat again."],
+  ["Volatility index","14.25","−2.6%",-1,"Still very low, into a heavy calendar."]
+ ]};
+
+const NEWDEV = [
+{t:"The American consumer weakened sharply — and this is new",c:"neg",pri:1,
+ b:`Two readings on Friday, both worse than expected. <b>July retail sales fell 0.6%</b> against an expected rise of 0.1% — the largest drop in over a year. Excluding cars they fell 0.3%, against an expected gain of 0.2%. And the preliminary University of Michigan sentiment index for August <b>fell to 51 against a forecast of 55</b>, with inflation still the dominant concern.`,
+ w:`This is the first genuinely new macro signal since the negative jobs report. It cuts both ways and you should hold both thoughts at once.<br><br>
+ <b>Helpful:</b> a weakening consumer lowers the chance of a rate rise, which supports 72.6% of your shares.<br>
+ <b>Harmful:</b> past a point, weak demand stops being a rate story and becomes an earnings story. Every position you own is valued on future profits.<br><br>
+ The tripwire in your DECIDE tab already names this: sustained weakness turns a rate story into an earnings story. Two soft consumer readings is not that point yet — but it is the first step towards it.`},
+{t:"The United States threatened an indefinite naval blockade of Iran, with measures promised next week",c:"neg",pri:1,
+ b:`Ceasefire talks have stalled. Washington warned it could maintain a naval blockade indefinitely and increase economic pressure. The Treasury Secretary said publicly: watch this space for announcements coming next week, because measures are planned unlike anything in the history of economic isolation of a country. Oil rose on the week on the back of it.`,
+ w:`<b>This is a dated catalyst inside your window and it was not in the dashboard until now.</b> If those measures arrive next week and are as severe as briefed, oil rises further.<br><br>
+ Under the corrected mechanism that is bad for gold, bad for the German index through input costs, good for the UK index, and it revives the inflation channel that had just started to close. It also raises the chance of a rate rise again — the thing that fell to 40% this week on soft inflation.<br><br>
+ For your four positions the effect is indirect but real: higher energy inflation puts the rate rise back on the table, and you now have <b>zero protection</b> on that side.`}
+];
+
+const DAYS = [
+{d:"Mon 17 Aug",t:"First full day with cash",
+ do:["Nothing needs to happen today. Cash is a position.","Read the two new developments above and decide whether they change your view on deploying at all this week.","If you are going to set sizing rules, do it today while nothing is pressing."],
+ watch:"Any announcement on Iran measures. The Treasury Secretary said next week explicitly.",hi:0},
+{d:"Tue 18 Aug",t:"Ordinary session",
+ do:["Run the daily prompt.","If a buy-back condition is met, note it — do not act on the same day you notice it."],
+ watch:"Oil. If Brent moves through $90 the inflation channel reopens.",hi:0},
+{d:"Wed 19 Aug",t:"50% tariff on Canadian vehicles and alcohol takes effect",
+ do:["This touches nothing you own. It is a sector opening, not a portfolio event.","Note which side gains: domestic producers of the same goods."],
+ watch:"Whether the July tariffs stack on top. That decides whether the burden is 50% or above 60%.",hi:1},
+{d:"Thu 20 Aug",t:"Oil futures September contract settles",
+ do:["Reading only. You hold no futures."],
+ watch:"Rolling behaviour can move the oil price without news. Do not read it as a signal.",hi:0},
+{d:"Fri 21 Aug",t:"Monthly option expiry",
+ do:["Do not open anything today.","Expiries amplify whatever direction the week already has — they do not create one."],
+ watch:"If the week has been strong, Friday tends to exaggerate it. That is mechanical, not meaningful.",hi:0},
+{d:"Mon 25 Aug",t:"THE DECISION DEADLINE",
+ do:["<b>Whatever you want your Xiaomi weight to be on Tuesday morning, it has to be that before this session closes.</b>","Xiaomi is 32.6% of your shares and reports in NVIDIA's shadow.","If you are not going to change it, write down that you decided that — so it is a choice rather than a default."],
+ watch:"Nothing. This day is about you, not the market.",hi:1},
+{d:"Tue 26 Aug",t:"NVIDIA · Xiaomi — same session",
+ do:["Do not deploy cash today.","Do not act in the first hour after the numbers. Asian trading prices NVIDIA first and Xiaomi second, so the initial move in Xiaomi may be about someone else's company."],
+ watch:"Not whether they beat — where the bar was. Five companies beat in one week this year and all five fell.",hi:1},
+{d:"27–29 Aug",t:"Jackson Hole",
+ do:["Expect no signal. The theme is deliberately not interest rates."],
+ watch:"Any unscripted remark on rates lands in a vacuum and moves more than it should.",hi:0}
+];
+
+const PRECOM = [
+ ["The Xiaomi weight on 26 August","Decide before 25 August closes","It is 32.6% of your shares reporting in another company's shadow. Leaving it is fine — leaving it <i>by default</i> is not."],
+ ["Maximum size per new position","€______ — 15% of the account is about €2,940","With €6,000–7,200 this means two or three purchases, not five."],
+ ["Minimum days between two purchases","______ days","You closed six positions in about three hours. The mirror risk is rebuilding at the same speed."],
+ ["Cash floor I will not go below","€______","Decide it now, while nothing is pressing and no headline is pulling."],
+ ["Will I buy back what I sold, or fill the gaps?","Choose one","Both are defensible. Not both at once with €6,000. Buying back all three of Goosehead, SoFi and TWFG reproduces exactly the concentration you just relieved."],
+ ["Am I deploying this week at all?","Yes / No","There is no rule that cash must be invested by Friday. Holding it into NVIDIA and Jackson Hole is a legitimate decision."]
+];
+
+const HEDGE = {
+ t:"What a rate hedge is, and why yours is now zero",
+ b:`A share is worth what it will earn in future, converted back to today's money. The higher the interest rate, the less those future earnings are worth now — because that money could otherwise sit somewhere safe earning that rate. Companies whose profits lie furthest in the future get hit hardest. Growth companies, in other words.<br><br>
+ <b>But some companies gain when rates rise.</b> Insurers, banks and asset managers hold large amounts of client money. When rates go up they earn more on it, without anything changing in their business. For them a rate rise is simply extra income.<br><br>
+ That is why Ageas and Patria carried a plus sign in the rate column of your driver map, while everything else carried a minus. When rates rose, they would rise and cushion the fall in the rest.<br><br>
+ <b>Why it never really worked for you:</b> it was too small. Together they were 16.4% against 68.2% pointing the other way — a hedge covering a quarter of your exposure barely cushions anything. And Ageas was not a clean hedge either, because its 25% stake in a Chinese insurer carried a hidden China position.<br><br>
+ <b>Where you stand now:</b> both are sold. Of your four remaining positions, 72.6% loses if rates rise and nothing gains. The timing was fortunate — the odds fell to around 40% this week. But several analysts point at October rather than September, and Friday's threatened Iran measures could revive the inflation channel that just started to close. <b>Having no protection is a legitimate choice. Having it by accident is not.</b>`
+};
+
+/* ── render ── */
+setTimeout(()=>{
+ const s=$("#c-start"); if(!s)return;
+ s.insertAdjacentHTML("afterbegin",`
+ <div class="sh"><b>READY FOR THE WEEK OF 17 AUGUST</b> · CHECKED 15 AUGUST</div>
+
+ <div class="card hl" style="margin-bottom:14px">
+  <div class="ct"><div class="ctl" style="font-size:15px">${FRI.t}</div>
+   <div class="mono mu" style="font-size:9px;text-align:right">VERIFIED BEFORE WRITING${SB('ct','LIVE')}</div></div>
+  <div class="tw"><table><thead><tr><th>Instrument</th><th class="n">Close</th><th class="n">Day</th><th style="min-width:480px">Note</th></tr></thead><tbody>
+  ${FRI.rows.map(r=>`<tr class="wrap"><td><b>${r[0]}</b></td><td class="n mono">${r[1]}</td>
+   <td class="n mono ${r[3]>0?'pos':'neg'}">${r[2]}</td><td class="tx2">${r[4]}</td></tr>`).join("")}
+  </tbody></table></div>
+ </div>
+
+ <div class="sh"><b>TWO NEW DEVELOPMENTS</b> · neither was in the dashboard before today</div>
+ <div class="grid g2" style="margin-bottom:14px">
+ ${NEWDEV.map(n=>`<div class="card" style="border-color:#e0c5c5">
+  <div class="ct"><div class="ctl" style="font-size:13px">${n.t}</div>
+   <span class="tag st neg" style="flex-shrink:0">NEW</span></div>
+  <div class="blk"><div class="h">What happened${SB('ct')}</div>${n.b}</div>
+  <div class="blk n"><div class="h">What it means for you</div>${n.w}</div></div>`).join("")}
+ </div>
+
+ <div class="sh"><b>THE WEEK, DAY BY DAY</b></div>
+ <div class="lede">What to do and what to watch. Note how few days actually require anything — that is deliberate.</div>
+ <div class="tl" style="margin-bottom:14px">
+ ${DAYS.map(d=>`<div class="tli ${d.hi?'hi':''}">
+  <div class="tld">${d.d.split(" ").slice(0,2).join(" ")}<small>${d.d.split(" ")[2]||''}</small></div>
+  <div class="tlt">${d.t}</div>
+  <div class="tlb"><b class="pos">DO:</b> ${d.do.map(x=>"· "+x).join("<br>")}</div>
+  <div class="act-rule">▸ WATCH: ${d.watch}</div></div>`).join("")}
+ </div>
+
+ <div class="sh"><b>DECIDE THESE BEFORE MONDAY</b></div>
+ <div class="lede">Six things worth settling while the market is closed and nothing is pulling at you. The value is entirely in deciding them in advance.</div>
+ <div class="tw" style="margin-bottom:14px"><table><thead><tr><th style="min-width:280px">Decision</th><th style="min-width:230px">The number or the choice</th><th style="min-width:420px">Why it matters this week</th></tr></thead><tbody>
+ ${PRECOM.map(p=>`<tr class="wrap"><td><b>${p[0]}</b></td><td class="mono gold">${p[1]}</td><td>${p[2]}</td></tr>`).join("")}
+ </tbody></table></div>
+
+ <div class="card" style="margin-bottom:14px">
+  <div class="ctl" style="font-size:13px;margin-bottom:8px">${HEDGE.t}</div>
+  <div style="font-size:12.5px;max-width:1150px">${HEDGE.b}</div>
+ </div>
+
+ <div class="sh"><b>THE DAILY PROMPT FOR THIS WEEK</b></div>
+ <div class="card" style="background:var(--p2)">
+ <div class="mono" id="wkprompt" style="font-size:11.5px;line-height:1.75;white-space:pre-wrap">DAILY UPDATE — REDEPLOYMENT WEEK
+
+Attached: the dashboard, and any broker or filings export I have.
+
+CURRENT STATE. Four positions: BigBear.ai 39.8%, Xiaomi 32.6%, MP Materials 27.4%,
+VCI Global 0.1%. Cash of EUR 6,000-7,200 to deploy. No rate hedge, no euro asset,
+nothing outside the AI capital-spending cycle.
+
+STEP 1 - VERIFY BEFORE UPDATING. Check these against live sources and report each as
+CONFIRMED, CHANGED or UNRESOLVED, with source and date:
+- Any new Iran measures announced, and the oil price. Separate supply-driven from
+  demand-driven moves.
+- Probability of a rate rise at the next meeting, and whether the market has moved to
+  October.
+- Consumer data - retail sales and sentiment were both weak on Friday. Has that
+  continued?
+- The levels of my four positions.
+- Any policy measure with an effective date inside thirty days.
+
+STEP 2 - MY THREE GAPS. For each of: nothing independent, no rate hedge, nothing
+outside the AI cycle - did today make that gap more or less urgent? Name which of my
+four positions is affected and how.
+
+STEP 3 - CANDIDATES, AGAINST WRITTEN CONDITIONS ONLY. Was any buy-back condition met
+today? Goosehead near EUR 62 with both voluntary buyers still holding. SoFi near USD 16
+with the capital ratio stable. TWFG after the pre-announced weak quarter with core
+growth above the mid teens. Then check any new insider purchase from the market-wide
+tape that fills one of the three gaps. If nothing meets a written condition, say so
+plainly - do not manufacture a candidate.
+
+STEP 4 - SIZING CHECK. For anything that qualifies, state what it does to my
+concentration, my chip-cluster weight and my rate exposure at EUR 2,000, 2,500 and
+3,000. I want the effect on the portfolio, not a target price.
+
+STEP 5 - THE WEEK AHEAD. What is coming in the next seven days, which of my four
+positions it touches, and what I should decide before it rather than after.
+
+RULES. No number without a source. Never present a candidate as a selection. "Nothing
+today" is a valid and useful answer. Flag anything I have not supplied that would
+change the answer.</div>
+ <div class="ctrl" style="margin-top:12px"><button class="btn act" onclick="copyWk()">copy this prompt</button></div></div>
+
+ <div class="warn goldbox"><div class="h">One sentence for the week</div>
+ You have cash for the first time in this whole exercise, and a calendar with two events that could move everything you own. <b>The advantage of holding cash is that you get to choose when to use it — spending it early gives that advantage away.</b></div>
+ <div style="height:20px"></div>`);
+
+ $("#stamps").innerHTML=[["MARKET","14 Aug close · verified","fresh"],
+  ["PORTFOLIO","4 positions + cash","fresh"],
+  ["NEXT DECISION","25 Aug · Xiaomi weight","stale"],
+  ["VERSION","21.0 · 15 Aug 2026",""]]
+  .map(x=>`<span class="hbadge ${x[2]}">${x[0]} <b>${x[1]}</b></span>`).join("");
+ document.querySelector(".logo span").textContent="CONTROL ROOM · v21 · WEEK OF 17 AUGUST";
+},1900);
+
+function copyWk(){const t=document.getElementById("wkprompt");
+ navigator.clipboard?.writeText(t.textContent);
+ alert("Prompt copied. Paste it into a new conversation each morning, together with anything you have exported.");}
+window.copyWk=copyWk;
+
 </script>
 </body>
 </html>
