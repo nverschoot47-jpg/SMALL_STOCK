@@ -1,70 +1,76 @@
-# DAGELIJKSE UPDATE-PROMPT — MACRO → MICRO DASHBOARD
+[dagelijkse-update-prompt (1).md](https://github.com/user-attachments/files/31139475/dagelijkse-update-prompt.1.md)
+# DAGELIJKSE UPDATE-PROMPT — VERSIE 21
 
-Kopieer het blok hieronder integraal in een nieuw gesprek. Voeg de bestanden toe die onder BIJLAGEN staan. Wat je niet hebt, laat je gewoon weg — de prompt vertelt Claude hoe daarmee om te gaan.
+*Bijgewerkt 15 augustus 2026. Afgestemd op vier posities plus cash.*
+
+Vervangt de vorige versie. Drie wezenlijke verschillen: hij begint bij je **cash** in plaats van bij je posities, hij vraagt kandidaten **alleen tegen geschreven voorwaarden**, en hij maakt expliciet dat *"vandaag niets"* een geldig antwoord is.
 
 ---
 
-## HET BLOK — kopieer vanaf hier
+## WAT ER VERANDERD IS SINDS DE VORIGE VERSIE
 
-**OPDRACHT**
-
-Werk mijn Macro → Micro dashboard bij naar de stand van vandaag. Lever één compleet HTML-bestand terug, dezelfde structuur en dezelfde lichte layout als het bijgevoegde bestand. Wijzig alleen het DATABLOK bovenin het script, niet de architectuur.
-
-**BIJLAGEN**
-
-1. Het dashboard-HTML van gisteren
-2. DEGIRO Account Statement (CSV) — Activiteit → Rapporten → Account Statement
-3. Actuele niveaus van de zes instrumenten uit TradingView: MGC1!, MNQ1!, SIL1!, MCL1!, GER40, UK100 — laatste slotkoers en dagverandering
-4. EDGAR-uitdraai Form 4 sinds de vorige update (indien beschikbaar)
-5. Nieuwe Google Alerts of nieuwsberichten die ik zelf heb doorgestuurd
-6. Eventueel: een nieuwe Part van de Connections Map
-
-**STAP 1 — CONTROLEER EERST, WERK DAARNA BIJ**
-
-Toets vóór elke wijziging deze vijf dragende beweringen aan een live bron. Zoek daadwerkelijk; ga niet af op wat in het bestand staat.
-
-- De status van de Straat van Hormuz en het olieniveau (WTI én Brent)
-- De renteverwachting voor de eerstvolgende FOMC — welke maand prijst de markt nu in
-- De laatste CPI- en payroll-uitkomst, inclusief de revisies op eerdere maanden
-- De stand van de zes instrumenten en, indien in mijn bezit, de tien posities
-- Elke tariefmaatregel met een datum binnen dertig dagen
-
-Rapporteer per bewering: BEVESTIGD, GECORRIGEERD of ONOPGELOST, met de bron en de datum van controle. Verwerk correcties door in de rest van het dashboard — een omgekeerd teken in de macro moet doorwerken in de heatmaps en de scenariomatrix.
-
-**STAP 2 — INSIDERTRANSACTIES**
-
-Scheid strikt op transactiecode en behandel ze niet gelijk:
-
-| Code | Betekenis | Weegt mee |
+| | Toen | Nu |
 |---|---|---|
-| P | Open-markt aankoop, discretionair | JA — sterkste signaal |
-| S zonder plan | Discretionaire verkoop | JA — als signaal |
-| S onder 10b5-1 | Vooraf ingepland | NEE — noteer plandatum |
-| A | Toekenning | NEE |
-| F / M | Belastinginhouding of optie-afwikkeling | NEE |
+| Posities | 10 | **4** |
+| Cash | negatief | **€6.000–7.200** |
+| Wint bij rentestijging | 16,4% | **0%** |
+| Euro-blootstelling | 12,9% | **0%** |
+| Chipcluster | 56,4% | **99,9%** |
+| Grootste positie | 22,5% | **BigBear.ai 39,8%** |
 
-Zet bij elke transactie de **leeftijd in dagen** naast de datum. Markeer alles ouder dan 150 dagen als verlopen. Voeg één regel toe met de marktbrede koop-verkoopverhouding als context, zodat een leeg beeld niet als datagat wordt gelezen.
+Twee nieuwe macro-ontwikkelingen sinds vrijdag: de Amerikaanse consument verzwakte scherp (detailhandel −0,6%, sentiment 51), en Washington dreigde met een onbeperkte zeeblokkade van Iran met **maatregelen aangekondigd voor komende week**.
 
-**STAP 3 — PORTEFEUILLE**
+---
 
-Lees de CSV uit voor aantal, koers, kostprijs en valuta. Bereken zelf: waarde in euro, weging, gewogen driverblootstelling per kolom van de heatmap, en de verandering ten opzichte van de vorige update. Vermeld de EUR/USD die je gebruikt en waar die vandaan komt.
+## DE PROMPT — kopieer vanaf hier
 
-**STAP 4 — KALENDER**
+**DAGELIJKSE UPDATE — HERINVESTERINGSWEEK**
 
-Schuif het venster op. Verwijder wat is afgehandeld, maar bewaar de uitkomst als één regel. Controleer of er nieuwe gedateerde gebeurtenissen bij zijn gekomen: expiraties, Fed-data, macrocijfers, beleidsmaatregelen, kwartaalcijfers. Markeer per datum of hij BEVESTIGD is bij de bron of GESCHAT uit een patroon.
+Bijlagen: het dashboard, plus eventuele broker-export of filings-export die ik heb.
 
-**HARDE REGELS**
+**HUIDIGE STAND.** Vier posities: BigBear.ai 39,8% · Xiaomi 32,6% · MP Materials 27,4% · VCI Global 0,1%. Cash van €6.000–7.200 om in te zetten. Geen rentehedge, geen euro-actief, niets buiten de AI-investeringscyclus.
 
-1. Vul nooit een getal in dat niet uit een genoemde bron komt. Ontbreekt een bron, dan blijft het veld leeg en gemarkeerd.
-2. Elk getal draagt een bronklasse-badge. Analistendoelen zijn de zwakste klasse en worden nooit als niveau gepresenteerd zonder dat erbij te zeggen.
-3. Een niveau zonder antwoord op alle drie de vragen — wie handelde hier, zitten ze er nog, wat verwijdert ze — krijgt het label GEEN DEKKING en wordt niet weggelaten.
-4. Tijdstempels staan per bron apart in de kopregel. Is de portefeuille van vandaag en de marktfeed van gisteren, dan staat dat er zo.
-5. Bij een nieuwe Part van de Connections Map verwerk je alleen het scorebord en de verschillen — niet het hele document opnieuw samenvatten.
-6. Meld actief wat je níét hebt kunnen verifiëren. Een gat dat benoemd is, is bruikbaar; een gat dat is opgevuld met een aanname is gevaarlijk.
+**STAP 1 — EERST CONTROLEREN, DAN PAS BIJWERKEN**
 
-**LEVERING**
+Toets onderstaande aan live bronnen en rapporteer per punt BEVESTIGD, GEWIJZIGD of ONOPGELOST, met bron en datum:
 
-Het complete HTML-bestand, plus in de chat een korte samenvatting van maximaal tien regels met: wat er is gecorrigeerd, wat er nieuw is, en wat er vandaag als eerste aandacht vraagt.
+- Zijn er nieuwe Iran-maatregelen aangekondigd, en wat doet de olieprijs? Scheid vraaggedreven van aanbodgedreven bewegingen — dat zijn tegengestelde signalen bij dezelfde prijs.
+- De kans op een renteverhoging bij de eerstvolgende vergadering, en of de markt naar oktober is opgeschoven.
+- Consumentendata. Detailhandel en sentiment waren vrijdag allebei zwak. Zet dat door?
+- De koersen van mijn vier posities.
+- Elke beleidsmaatregel met een ingangsdatum binnen dertig dagen.
+
+**STAP 2 — MIJN DRIE GATEN**
+
+Voor elk van deze drie — niets dat onafhankelijk beweegt, geen rentehedge, niets buiten de AI-cyclus — is dat gat vandaag urgenter of minder urgent geworden? Noem welke van mijn vier posities het raakt en hoe.
+
+**STAP 3 — KANDIDATEN, UITSLUITEND TEGEN GESCHREVEN VOORWAARDEN**
+
+Is er vandaag een terugkoopvoorwaarde gehaald?
+
+- Goosehead richting €62, met beide vrijwillige kopers nog steeds in positie
+- SoFi richting $16, met een stabiele kapitaalratio
+- TWFG na het aangekondigde zwakke vierde kwartaal, met kerngroei boven de hoge tienerjaren
+
+Controleer daarna of er een nieuwe insideraankoop op de marktbrede tape staat die een van de drie gaten vult.
+
+**Is er geen geschreven voorwaarde gehaald, zeg dat dan gewoon. Verzin geen kandidaat.**
+
+**STAP 4 — SIZING-CHECK**
+
+Voor alles wat wél kwalificeert: wat doet het met mijn concentratie, mijn chipcluster-weging en mijn rente-blootstelling bij €2.000, €2.500 en €3.000? Ik wil het effect op de portefeuille zien, geen koersdoel.
+
+**STAP 5 — DE WEEK VOORUIT**
+
+Wat komt er de komende zeven dagen, welke van mijn vier posities raakt het, en wat moet ik ervóór beslissen in plaats van erna?
+
+**REGELS**
+
+1. Geen getal zonder bron.
+2. Presenteer een kandidaat nooit als een selectie.
+3. "Vandaag niets" is een geldig en nuttig antwoord.
+4. Meld actief wat ik niet heb aangeleverd dat het antwoord zou veranderen.
+5. Maximaal tien regels samenvatting in de chat: wat gecorrigeerd is, wat nieuw is, en wat vandaag als eerste aandacht vraagt.
 
 ## — tot hier
 
@@ -72,17 +78,44 @@ Het complete HTML-bestand, plus in de chat een korte samenvatting van maximaal t
 
 ## KORTE VERSIE
 
-Voor dagen waarop er weinig is gebeurd:
+Voor dagen waarop er weinig speelt:
 
-> Werk het bijgevoegde dashboard bij naar vandaag. Controleer eerst Hormuz/olie, de renteverwachting en de laatste CPI- en payrolluitkomst aan live bronnen en meld per punt BEVESTIGD of GECORRIGEERD. Verwerk daarna de bijgevoegde DEGIRO-CSV en de TradingView-niveaus. Scheid insidertransacties strikt op code — alleen P telt als koopsignaal, F en A tellen niet, S onder 10b5-1 draagt geen informatie. Vul niets in zonder bron; laat ontbrekende velden leeg en gemarkeerd. Lever één compleet HTML-bestand plus tien regels samenvatting.
+> Werk het dashboard bij naar vandaag. Controleer eerst Iran/olie, de rentekans en de consumentendata aan live bronnen; meld per punt BEVESTIGD of GEWIJZIGD. Kijk daarna of een geschreven terugkoopvoorwaarde is gehaald — Goosehead bij €62, SoFi bij $16, TWFG na het zwakke Q4. Zo niet, zeg dat en verzin niets. Geen getal zonder bron. Maximaal tien regels samenvatting.
 
 ---
 
-## WAT JE MEELEVERT, EN WAAROM HET UITMAAKT
+## DE VASTE DATA IN DEZE PERIODE
+
+| Datum | Wat | Wat je ervóór beslist |
+|---|---|---|
+| Wo 19 aug | 50% tarief Canadese voertuigen en alcohol | Niets van jou geraakt — sectoropening |
+| Vr 21 aug | Maandelijkse optie-expiratie | Niets openen die dag |
+| **Ma 25 aug** | **Beslisdeadline** | **Je Xiaomi-weging voor de 26e** |
+| Di 26 aug | NVIDIA en Xiaomi, dezelfde sessie | Niet inzetten, niet handelen in het eerste uur |
+| 27–29 aug | Jackson Hole | Verwacht geen signaal |
+| Vr 4 sep | Augustus-banenrapport | Leesvolgorde: werkloosheid, participatie, revisies, lonen |
+| Vr 11 sep | Augustus-inflatie — bevestigde datum | Hierna is september effectief beslist |
+| 15–16 sep | Rentebesluit en dot plot | Lees de spreiding van de dots, niet de mediaan |
+| 18 sep | Quad witching, twee dagen na het besluit | Verklein wat gevoelig is vóór beide |
+| 27 nov | Chinese exportcontroles verlopen | MP wint, Xiaomi verliest |
+
+---
+
+## WAT JE MEELEVERT, EN WAT ER MISGAAT ZONDER
 
 | Bijlage | Zonder | Met |
 |---|---|---|
-| DEGIRO CSV | Kostprijs wordt afgeleid uit W/V ÷ W/V%, zonder transactiekosten of aankoopdata | Exacte kostprijs, aankoopdatum, kosten, dividend |
-| TradingView-niveaus | Macroprijzen lopen dagen achter op de analyse eromheen | Cones en niveaus kloppen weer bij de prijs |
-| EDGAR Form 4 | Insiderlaag veroudert stil; alleen namen met nieuwsdekking worden gevonden | Volledige dekking, inclusief small caps zonder pers |
-| Optie-impliciete beweging | Elk event wordt als even onverwacht behandeld | Onderscheid tussen "belangrijk" en "al ingeprijsd" |
+| Broker-CSV | Posities lopen dagen achter; kostprijs blijft afgeleid | Exacte kostprijs, aankoopdatum, kosten |
+| Koersniveaus | Macro loopt achter op de analyse eromheen | Cones en niveaus kloppen weer bij de prijs |
+| Form 4-export | Alleen namen die in het nieuws komen; kleine bedrijven vallen weg | Volledige dekking — precies waar een aankoop het meest zegt |
+| Optie-impliciete beweging | Elk event telt even zwaar | Onderscheid tussen "belangrijk" en "al ingeprijsd" |
+
+Praktisch moment voor de Form 4-export: **rond 1 september**, gefilterd vanaf 20 juli. Dan vang je het volledige open handelsvenster in één keer.
+
+---
+
+## TWEE REGELS VOOR DEZE WEEK IN HET BIJZONDER
+
+**Zet niets in op 26 augustus.** NVIDIA en Xiaomi in dezelfde sessie, Jackson Hole de dag erna. Vier gebeurtenissen in drie dagen op een portefeuille die 99,9% één cyclus is.
+
+**Cash is geen probleem om op te lossen.** Je hebt hem voor het eerst in dit hele traject. Het voordeel van cash is dat je kiest wanneer je hem gebruikt — vroeg uitgeven geeft dat voordeel weg.
