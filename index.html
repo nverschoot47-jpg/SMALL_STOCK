@@ -3220,6 +3220,185 @@ function copyWk(){const t=document.getElementById("wkprompt");
  alert("Prompt copied. Paste it into a new conversation each morning, together with anything you have exported.");}
 window.copyWk=copyWk;
 
+/* ═══════════ v22 — SATURDAY 15 AUGUST · WEEKEND UPDATE ═══════════ */
+
+const SAT = {
+ h:"The Iran measures promised for next week may run through Chinese banks — and that is a direct line into two of your four positions",
+ lead:`Markets are closed. But the story that dominated Friday developed further over the weekend, and it now has a transmission chain into your portfolio that did not exist yesterday.`,
+ facts:[
+  ["What was said","The Treasury Secretary described a <b>'one-two punch'</b>: unprecedented economic isolation combined with the continued blockade of Iran's ports and the Strait. Announcements are promised for <b>next week</b>. The Defence Secretary separately vowed the blockade would continue indefinitely.","ct"],
+  ["What is already in place","Central Command has redirected <b>59 commercial vessels</b> attempting to enter or leave Iranian ports since the blockade was reimposed on 13 July. The blockade has cost Tehran roughly <b>$4.8bn</b> in oil revenue.","ct"],
+  ["What 'unprecedented' probably means","Analysts consulted this weekend say genuinely new action would have to go beyond another round of company sanctions and target the international financial plumbing: <b>Chinese banks, yuan-denominated payments for Iranian oil, and the shipping, insurance and refining intermediaries</b> behind the trade. The US has sanctioned some Chinese refiners but has so far stopped short of the major Chinese banks that finance the trade.","an"],
+  ["The two constraints on doing it","First, hitting Chinese banks risks worsening relations with Beijing <b>ahead of a planned meeting between the two presidents</b>. Second, removing Iranian barrels takes discounted crude off the market and could push already elevated oil prices higher.","an"],
+  ["The counterweight","The President told Axios over the weekend that he is <b>'low-keying it'</b> with Iran, and the US faces a munitions shortfall and appears wary of expanding the military campaign. Iran's parliament is separately advancing a bill to formalise control of the Strait.","ct"]
+ ]};
+
+const CHAIN = {
+ t:"The new transmission chain — read this one slowly",
+ steps:["US targets Chinese banks over Iranian oil","US–China relations worsen ahead of the planned leaders' meeting","China's willingness to extend the export-control suspension falls","<b>27 November: controls tighten</b>","MP Materials gains · Xiaomi loses"],
+ w:`Until this weekend, your 27 November exposure was a standalone policy question. It now has a second route into it — through Iran, of all places.<br><br>
+ <b>You hold both sides of that decision: MP at 27.4% and Xiaomi at 32.6%.</b> You are net short the tightening by about five points. If sanctions on Chinese banks materialise next week and Beijing hardens in response, the probability attached to 27 November rises — and it rises against you on balance.<br><br>
+ This is exactly the kind of link the connections tab exists for: no research note on MP Materials will mention Iranian sanctions, and no note on Iran will mention Chinese export controls on gallium.`,
+ second:`<b>And the oil channel runs in parallel.</b> Removing Iranian barrels lifts oil. Higher oil revives energy inflation. Energy inflation puts the September or October rate rise back on the table — the thing that just fell to around 40%. Against that you now hold <b>zero</b> rate protection.<br><br>
+ So a single announcement next week can hit you through two separate chains at once. That is worth knowing before Monday rather than after Wednesday.`
+};
+
+const YCA = {
+ tk:"YCA", nm:"Yellow Cake plc", mkt:"London (AIM) · incorporated in Jersey, 2018",
+ what:"A company that buys physical uranium and stores it. It does not explore, mine or process anything — it is a way to own the uranium price directly, without operational risk. It currently holds <b>23.11 million pounds of U₃O₈</b> stored in Canada and France, under a long-term supply agreement with Kazakhstan's state producer.",
+ gates:[
+  ["1 · Size","PASS","Market value around £1.1–1.4bn. Mid-cap, so an insider purchase would carry meaning — if one existed.","pos"],
+  ["2 · Policy link","PASS, INDIRECT","Sits on the nuclear renaissance measure — the four executive orders plus regulatory reform — which your policy register scores as your <b>worst-covered gap</b>. But it is not a US company and no dated American measure names it. It benefits from global nuclear policy demand rather than from a specific decision with a date.","gold"],
+  ["3 · Insider buying","FAIL — STRUCTURALLY","No director purchases found. More importantly, <b>you should not expect any</b>: a Jersey company on London's junior market has no US filing regime, and it is a holding vehicle with an outsourced operating model and almost no staff. There is no management team to buy in.","neg"],
+  ["4 · Recency","NOT APPLICABLE","Follows from gate 3.","neg"],
+  ["5 · Unique factor","PASS — AND MEASURABLE","Two things competitors do not have. The Kazakhstan purchase option: it recently committed <b>$100m for 1,160,766 pounds at $86.15/lb</b>. And the discount itself — the company publishes its own net asset value per share, so you can measure exactly what you are paying relative to the uranium it owns.","pos"]
+ ],
+ buyback:"The company bought back its own shares instead: a <b>$10m programme completed</b>, 1,363,976 shares at a volume-weighted average of <b>544.41 pence</b>, bought only when the price sat at least 10% below net asset value. That is a price-insensitive, persistent bid — real, but a different class of evidence from a director spending personal money.",
+ fit:{
+  pro:["Not American, priced in sterling — it fills your <b>zero euro / zero non-dollar</b> gap partially","Sits outside the AI capital-spending cycle entirely, which is your largest structural weakness at 99.9%","The unique factor is a published number you can check yourself, which is rare"],
+  con:["<b>Not a rate hedge.</b> It does nothing for the gap you actually created by selling Ageas and Patria","Overlaps with MP Materials — both are critical-minerals stories, so it adds less diversification than it first appears","Junior-market listing means lower liquidity and wider spreads","Gates 3 and 4 cannot be satisfied, so gate 5 has to carry the full weight"]},
+ verdict:"<b>Three of five gates, with two that are structurally unachievable rather than failed.</b> That is not a disqualification — your own rule for foreign names already says gate 5 must carry the weight where the insider regime cannot. But it means the discount to net asset value is not a nice-to-have here; it is the entire discipline. Buying it at a premium would mean owning uranium at above the price of uranium.",
+ cond:["Only at a meaningful discount to published net asset value — the company's own buyback used <b>10% below</b> as its threshold, which is a reasonable floor to borrow","Not as a replacement for a rate hedge, because it is not one","Sized against MP Materials rather than alongside it — together they are one critical-minerals exposure, not two"]
+};
+
+/* ── render ── */
+setTimeout(()=>{
+ const s=$("#c-start"); if(!s)return;
+ s.insertAdjacentHTML("afterbegin",`
+ <div class="sh"><b>SATURDAY 15 AUGUST</b> · WEEKEND UPDATE · MARKETS CLOSED</div>
+ <div class="card hl" style="margin-bottom:14px">
+  <div class="ct"><div class="ctl" style="font-size:15px">${SAT.h}</div>
+   <div class="mono mu" style="font-size:9px;text-align:right">VERIFIED 15 AUG${SB('ct','LIVE')}</div></div>
+  <div class="lede" style="margin-bottom:10px">${SAT.lead}</div>
+  <div class="tw"><table><tbody>
+  ${SAT.facts.map(f=>`<tr class="wrap"><td class="mono gold" style="width:210px;vertical-align:top"><b>${f[0]}</b></td>
+   <td>${f[1]}${SB(f[2])}</td></tr>`).join("")}
+  </tbody></table></div>
+ </div>
+
+ <div class="card" style="border-color:#e0c5c5;margin-bottom:14px">
+  <div class="ct"><div class="ctl" style="font-size:14px">${CHAIN.t}</div>
+   <span class="tag st neg">NEW LINK</span></div>
+  <div class="mech" style="font-size:11.5px">${CHAIN.steps.join('<span class="ar">→</span>')}</div>
+  <div class="blk n"><div class="h">Why this matters to you specifically</div>${CHAIN.w}</div>
+  <div class="blk g"><div class="h">And the second chain, running at the same time</div>${CHAIN.second}</div>
+ </div>
+
+ <div class="warn goldbox"><div class="h">What this changes for the week</div>
+ Nothing about your positions changed over the weekend — but the <b>probability attached to two of your existing risks went up</b>, and they can be triggered by the same announcement.<br><br>
+ Practically: this strengthens the case for not deploying cash early in the week. If measures land on Tuesday and oil moves, you will want the cash then rather than have spent it on Monday.</div>
+
+ <div class="sh"><b>CANDIDATE ASSESSED</b> · ${YCA.nm} (${YCA.tk})</div>
+ <div class="card" style="margin-bottom:14px">
+  <div class="ct"><div class="ctl">${YCA.tk}<small>${YCA.nm} · ${YCA.mkt}</small></div>
+   <span class="tag st gold">3 OF 5 GATES</span></div>
+  <div class="blk i"><div class="h">What it actually is</div>${YCA.what}</div>
+  <div class="tw"><table><thead><tr><th style="min-width:150px">Gate</th><th>Result</th><th style="min-width:520px">Reasoning</th></tr></thead><tbody>
+  ${YCA.gates.map(g=>`<tr class="wrap"><td><b>${g[0]}</b></td>
+   <td><span class="tag st ${g[3]}">${g[1]}</span></td><td>${g[2]}</td></tr>`).join("")}
+  </tbody></table></div>
+  <div class="blk g"><div class="h">What the company did instead of insiders buying</div>${YCA.buyback}${SB('co')}</div>
+  <div class="grid g2">
+   <div class="blk p"><div class="h">How it fits your gaps</div>${YCA.fit.pro.map(x=>"· "+x).join("<br>")}</div>
+   <div class="blk n"><div class="h">Where it does not fit</div>${YCA.fit.con.map(x=>"· "+x).join("<br>")}</div>
+  </div>
+  <div class="warn"><div class="h">Verdict</div>${YCA.verdict}</div>
+  <div class="blk g"><div class="h">If you were to buy it, the written conditions</div>${YCA.cond.map(x=>"· "+x).join("<br>")}</div>
+ </div>
+
+ <div class="warn"><div class="h">What did NOT change this weekend</div>
+ No new market data — Friday's close still stands. No broker export, so your positions still read from the 14 August snapshot. No filings export, so the insider layer still ends at 31 July. Your four positions, your cash, and all three gaps are unchanged.<br><br>
+ The only thing that moved is the <b>probability</b> attached to risks you already carried. That is worth an update; it is not worth a trade.</div>
+ <div style="height:20px"></div>`);
+
+ $("#stamps").innerHTML=[["MARKET","14 Aug close · markets shut","fresh"],
+  ["WEEKEND","15 Aug · Iran chain added","fresh"],
+  ["NEXT DECISION","25 Aug · Xiaomi weight","stale"],
+  ["VERSION","22.0 · 15 Aug 2026",""]]
+  .map(x=>`<span class="hbadge ${x[2]}">${x[0]} <b>${x[1]}</b></span>`).join("");
+ document.querySelector(".logo span").textContent="CONTROL ROOM · v22 · 15 AUGUST";
+},2100);
+
+/* ═══════════ v23 — DOES YELLOW CAKE BELONG IN THE PLAN? ═══════════ */
+
+const YVERDICT = {
+ short:"No. Not under the system you built.",
+ why:`Your screen was designed around one specific idea: <b>an American policy measure with a date, plus an insider buying with their own money.</b> That is what the five gates test.<br><br>
+ Yellow Cake fails that on two counts, and neither is fixable.<br><br>
+ <b>It has no American policy trigger with a date.</b> It benefits from global nuclear demand — which is real — but there is no measure on your policy map that names it, gives it an effective date, or creates a winner-and-loser split it sits on. Your register lists nuclear as your worst-covered gap, but the gap is in <i>American</i> nuclear: enrichment, reactor designs, utilities selling power to data centres. Those are companies with filings, contracts and dates.<br><br>
+ <b>It cannot ever satisfy gates 3 and 4.</b> A Jersey-registered holding vehicle on London's junior market, with an outsourced operating model and almost no staff, has no management team to buy shares on the open market. This is not "no purchase found this quarter". It is a company where that evidence category structurally does not exist.`,
+ exception:`<b>About the foreign exception in your rules.</b> You do have a written rule that says gate 5 must carry the weight where the insider regime cannot. But look at what it was written for: ten critical-minerals names that were already in your universe, and later the shipping companies — all of which have <b>operating businesses, quarterly numbers and a policy measure with a date behind them</b>. Yellow Cake has a discount to net asset value.<br><br>
+ A discount is a valuation fact, not evidence about the business. Treating it as a substitute for gates 2, 3 and 4 stretches the exception past what it was designed to hold.`,
+ drift:`<b>And this is worth naming for what it is.</b> You have spent weeks tightening a screen: five gates, strict transaction codes, written conditions, a policy register. The moment an interesting name appears that does not fit, the temptation is to widen the definition rather than reject the name.<br><br>
+ That is thesis drift at the level of the system rather than the position. It is the same failure the dashboard warns about in individual holdings — rewriting the reason to fit what you want to own — just one layer up.`,
+ fair:`<b>What is genuinely true in its favour</b>, so this is not one-sided: it would fill two real gaps. It is non-dollar, and it sits entirely outside the AI capital-spending cycle that is currently 99.9% of your portfolio. Those are your two largest structural weaknesses. And its unique factor is unusually clean — the company publishes its own net asset value, so you can measure exactly what you are paying.<br><br>
+ That is a good argument for owning uranium exposure. It is not an argument that this instrument passes your screen.`
+};
+
+const CHOICE = [
+{o:"A · Keep the system as it is",
+ d:"Yellow Cake goes on a separate watchlist, not into the universe. You fill the nuclear gap with American names that do have filings and dated measures — enrichment, reactor designs, utilities. Those were already identified in your scan as the worst-covered sector.",
+ pro:["The screen keeps meaning what its name says","Gates 3 and 4 stay real rather than optional","The nuclear gap still gets filled, with instruments the system can actually judge"],
+ con:["You may miss a decent uranium vehicle","American nuclear names are more expensive and more crowded"],c:"pos"},
+{o:"B · Add a second, separate system",
+ d:"A deliberately different screen for non-US instruments where insider evidence cannot exist: physical commodity vehicles, closed-end funds, holding companies. Different gates — discount to published value, holding quality, cost ratio, liquidity — and a separate size limit.",
+ pro:["Honest about the fact that these are a different animal","You can own things your main screen structurally cannot see","Forces you to write down what the criteria actually are"],
+ con:["Two systems is more work than one","Needs its own size cap or it quietly grows"],c:"gold"},
+{o:"C · Widen the existing gates",
+ d:"Loosen gate 2 to 'benefits from global policy' and make gates 3 and 4 optional for foreign names.",
+ pro:["Simple","Everything fits again"],
+ con:["<b>This is the option I would argue against.</b> Once gate 2 accepts 'benefits from policy in general', almost everything passes. Once gates 3 and 4 are optional, the insider layer — the thing you spent the most effort building — becomes decorative.","You already ran this experiment: 54 of your original 116 names failed gate 2 precisely because that standard had been applied loosely"],c:"neg"}
+];
+
+const NUCGAP = [
+ ["Enrichment and fuel","A US producer of the specialised fuel that advanced reactor designs need. Gets paid regardless of which reactor design wins — that is a genuine gate 5 fact, and it has SEC filings.","STRONGEST FIT"],
+ ["Reactor designs","One design holds full US regulatory certification; a competitor is valued at more than double without it. Binary, public, checkable.","GOOD FIT"],
+ ["Utilities selling power","Three of your policy measures concern electricity generation and you own none of it. A director bought shares in a large electric utility on 6 August — that appeared on your own market-wide tape.","BEST EVIDENCE"],
+ ["Uranium miners with US assets","Already partly in your universe. Operating businesses with filings, unlike a storage vehicle.","ALREADY COVERED"]
+];
+
+/* ── render ── */
+setTimeout(()=>{
+ const s=$("#c-start"); if(!s)return;
+ s.insertAdjacentHTML("afterbegin",`
+ <div class="sh"><b>DOES YELLOW CAKE BELONG IN THE PLAN?</b></div>
+ <div class="card" style="border-color:#c9a0a0;margin-bottom:14px">
+  <div class="ct"><div class="ctl" style="font-size:16px">${YVERDICT.short}</div>
+   <span class="tag st neg">REVISED FROM YESTERDAY</span></div>
+  <div class="blk n"><div class="h">Why it fails, and why that cannot be fixed</div>${YVERDICT.why}</div>
+  <div class="blk g"><div class="h">About the foreign exception in your own rules</div>${YVERDICT.exception}</div>
+  <div class="blk i"><div class="h">What is genuinely true in its favour</div>${YVERDICT.fair}</div>
+  <div class="warn"><div class="h">The thing worth naming</div>${YVERDICT.drift}</div>
+ </div>
+
+ <div class="sh"><b>SO WHAT DO YOU DO WITH IT</b> · three options, pick one deliberately</div>
+ <div class="grid g3" style="margin-bottom:14px">
+ ${CHOICE.map(c=>`<div class="card" style="border-color:${c.c=='pos'?'#c9e2d5':c.c=='neg'?'#e0c5c5':'#e6dcc0'}">
+  <div class="ctl" style="font-size:13px;margin-bottom:6px">${c.o}</div>
+  <div class="tx2" style="margin-bottom:8px">${c.d}</div>
+  <div class="blk p"><div class="h">For</div>${c.pro.map(x=>"· "+x).join("<br>")}</div>
+  <div class="blk n"><div class="h">Against</div>${c.con.map(x=>"· "+x).join("<br>")}</div></div>`).join("")}
+ </div>
+
+ <div class="sh"><b>THE NUCLEAR GAP, FILLED PROPERLY</b></div>
+ <div class="lede">If the appeal of Yellow Cake is uranium and nuclear, that gap can be closed with instruments your system can actually judge. All of these were already identified in your universe scan as the worst-covered measure on the policy register.</div>
+ <div class="tw" style="margin-bottom:14px"><table><thead><tr><th style="min-width:180px">Part of the chain</th><th style="min-width:520px">Why it is judgeable</th><th>Fit</th></tr></thead><tbody>
+ ${NUCGAP.map(n=>`<tr class="wrap"><td><b>${n[0]}</b></td><td>${n[1]}</td>
+  <td><span class="tag st ${n[2].includes("STRONGEST")||n[2].includes("BEST")?'pos':n[2].includes("ALREADY")?'':'gold'}">${n[2]}</span></td></tr>`).join("")}
+ </tbody></table></div>
+ <div class="warn goldbox"><div class="h">The shortest version</div>
+ The question is not whether Yellow Cake is a decent way to own uranium — it may well be. The question is whether it passes a screen built on <b>American policy with a date plus an insider buying with their own money</b>. It does not, and it never can.<br><br>
+ <b>If you want it, buy it as an explicit exception with its own written rules and its own size cap.</b> What you should not do is quietly widen the gates so it fits — because then the gates stop filtering anything, and everything you built over the past weeks becomes decoration.</div>
+ <div style="height:20px"></div>`);
+
+ $("#stamps").innerHTML=[["MARKET","14 Aug close · markets shut","fresh"],
+  ["WEEKEND","15 Aug · Iran chain + YCA verdict","fresh"],
+  ["NEXT DECISION","25 Aug · Xiaomi weight","stale"],
+  ["VERSION","23.0 · 15 Aug 2026",""]]
+  .map(x=>`<span class="hbadge ${x[2]}">${x[0]} <b>${x[1]}</b></span>`).join("");
+ document.querySelector(".logo span").textContent="CONTROL ROOM · v23 · 15 AUGUST";
+},2300);
+
 </script>
 </body>
 </html>
