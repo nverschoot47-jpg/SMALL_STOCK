@@ -3399,6 +3399,298 @@ setTimeout(()=>{
  document.querySelector(".logo span").textContent="CONTROL ROOM · v23 · 15 AUGUST";
 },2300);
 
+/* ═══════════ v24 — COMMODITIES & THE DECISION TREE ═══════════ */
+
+const FEDNOW = {
+ asof:"20 August 2026",
+ rate:"3.50–3.75%, unchanged since December 2025",
+ sep:[["Hold","68.4%","pos"],["Hike 25bp","~31–34%","neg"],["Cut","~0%","mu"]],
+ correct:{t:"One correction to the framing, because the direction of travel matters",
+  b:`The conclusion — asymmetric towards a hike, a cut effectively off the table — is right. But the path there ran the other way round.<br><br>
+  In July the market was pricing a September hike at <b>82%</b>. Immediately before the July meeting it sat at <b>78.8%</b>, and it fell to <b>60.1%</b> right after the press conference. By 6 August it was around <b>55%</b>. After the negative jobs report and two soft inflation readings it dropped to roughly <b>31–34%</b>, where it sits now.<br><br>
+  So the market has not swung <i>towards</i> a hike over recent weeks — it has swung <b>away</b> from one, from two-thirds down to a third. What is true, and what makes your point stand, is that <b>the floor never became a cut</b>. It went from "hike likely" to "hold likely", never to "cut possible". A third is still a large tail for something the market is not paying to protect against.`},
+ minutes:{t:"What the minutes actually said, released 19 August",
+  b:`Three regional presidents — Logan, Hammack and Kashkari — all voted for a 25 basis point hike. That is the <b>first unified three-way dissent since September 2016</b>. The statement offered no forward guidance, consistent with the chair's refusal to signal a path, which analysts read as making <b>every meeting effectively live</b>.<br><br>
+  <b>And one line that deserves more attention than the rate debate.</b> Fed staff classified overall financial system vulnerabilities as "notable", and reported that their measure of the equity premium — the forward earnings yield adjusted for long-term rates — has been lower in recent history <b>only during the dot-com period</b>. That is the central bank's own staff saying equity valuations are at an extreme matched only once in twenty-five years.<br><br>
+  Important caveat on how to read this document: the minutes describe a debate that took place <b>before</b> the weak jobs report and the soft inflation prints. It is a record of a reaction function, not a forecast.`},
+ where:{t:"Where the market now expects the first move",
+  b:`Hold in September, hold in October, and a <b>hike priced for December</b>. Note the political layer: the midterm elections fall on 3 November, and the Fed generally prefers not to move in the meetings immediately around an election. That pushes the path towards December by default rather than by conviction.<br><br>
+  The June projections had nine members expecting at least one hike in 2026, eight expecting no change, and <b>one single member projecting a cut</b>.`}
+};
+
+const TREE = {
+ nodes:[
+  {id:"start",x:60,y:200,w:150,h:56,t:"11 SEPTEMBER",s:"August inflation",c:"gold"},
+  {id:"soft",x:280,y:80,w:150,h:56,t:"SOFT",s:"core at or below 2.4%",c:"pos"},
+  {id:"line",x:280,y:200,w:150,h:56,t:"IN LINE",s:"core 2.5–2.7%",c:"mu"},
+  {id:"hot",x:280,y:320,w:150,h:56,t:"HOT",s:"core above 2.8%",c:"neg"},
+  {id:"hold1",x:500,y:50,w:160,h:56,t:"HOLD",s:"odds fall below 20%",c:"pos"},
+  {id:"hold2",x:500,y:170,w:160,h:56,t:"HOLD",s:"base case · 68%",c:"mu"},
+  {id:"hike",x:500,y:290,w:160,h:56,t:"HIKE 25bp",s:"the tail · ~31%",c:"neg"},
+  {id:"dec",x:500,y:400,w:160,h:56,t:"DECEMBER",s:"where it gets pushed",c:"gold"}
+ ],
+ links:[["start","soft"],["start","line"],["start","hot"],["soft","hold1"],["line","hold2"],["hot","hike"],["line","dec"],["hot","dec"]],
+ out:[
+  {n:"HOLD, odds collapsing",c:"pos",
+   g:"Gold UP — falling real yields are its cleanest driver",s:"Silver UP harder — higher beta on both legs",
+   o:"Oil neutral; driven by the Strait, not the Fed",q:"Nasdaq UP — discount rate falls",
+   y:"<b>Your book gains.</b> 72.6% is rate-negative and benefits. Nothing you hold loses."},
+  {n:"HOLD, base case",c:"mu",
+   g:"Gold sideways in its range",s:"Silver follows gold, industrial leg decides the rest",
+   o:"Oil unaffected",q:"Nasdaq must earn it — no macro push",
+   y:"<b>Neutral.</b> Earnings, not macro, decide. 26 August becomes the whole story."},
+  {n:"HIKE — the tail",c:"neg",
+   g:"Gold DOWN hard — this is the one scenario that breaks the floor at $3,975",s:"Silver DOWN hardest — both legs against it",
+   o:"Oil down on demand fears, up if it was energy that caused the hike",q:"Nasdaq DOWN — the whole discount rate moves, not one company",
+   y:"<b>Worst case for you.</b> 72.6% loses and you hold zero protection. And the low volatility index means this is not priced."},
+  {n:"PUSHED TO DECEMBER",c:"gold",
+   g:"Gold drifts, then repositions into the December meeting",s:"Silver follows",
+   o:"Oil unaffected",q:"Nasdaq relieved short term, same problem later",
+   y:"<b>You get time, not safety.</b> The exposure is unchanged, just dated later — and December is when the market currently prices the move."}
+ ]
+};
+
+const CUTPATH = [
+ ["What would have to happen first","Two or three consecutive negative jobs reports, or a genuine credit event. Not one soft print — the committee has three members who wanted to <i>raise</i> at the last meeting.","neg"],
+ ["What blocks it right now","Inflation has been above target for five years. Cutting into that would cost the credibility the chair is explicitly trying to rebuild by refusing to give guidance.","neg"],
+ ["The one dot","In the June projections, exactly one member out of eighteen projected a cut in 2026. Nine projected at least one hike.","mu"],
+ ["The realistic earliest window","Not 2026. A cut needs the labour market to break rather than soften — and if that happens, your growth positions lose on earnings what they gain on the discount rate.","gold"],
+ ["The trap in wanting one","A cut arriving for the right reason (inflation solved) is bullish. A cut arriving for the wrong reason (the economy is cracking) is not. <b>Do not treat 'cut' as a single outcome.</b>","neg"]
+];
+
+const SYMS = [
+ {a:"GOLD",f:"GC",m:"MGC",tv:"MGC1! / XAUUSD",ex:"COMEX",sz:"GC = 100 troy oz · MGC = 10 oz",mo:"Feb · Apr · Jun · Aug · Oct · Dec",
+  n:"The micro contract is a tenth of the full one, which is why it appears in this dashboard. XAUUSD is the spot price and will differ from the futures price — never compare the two in the same sentence."},
+ {a:"SILVER",f:"SI",m:"SIL",tv:"SIL1! / XAGUSD",ex:"COMEX",sz:"SI = 5,000 oz · SIL = 1,000 oz",mo:"Mar · May · Jul · Sep · Dec",
+  n:"Far more volatile than gold because the industrial leg adds a second driver. Positioning is unusually light, which is why 4% days happen without news."},
+ {a:"WTI CRUDE",f:"CL",m:"MCL",tv:"MCL1! / USOIL",ex:"NYMEX",sz:"CL = 1,000 barrels · MCL = 100 barrels",mo:"every month",
+  n:"Expires around the 20th of the month before delivery. Rolling moves the price without news — that is mechanical, not a signal."},
+ {a:"BRENT CRUDE",f:"BZ",m:"—",tv:"UKOIL",ex:"ICE",sz:"1,000 barrels",mo:"every month",
+  n:"The global benchmark, usually a few dollars above WTI. When the gap widens sharply it usually says something about US pipeline or storage constraints rather than about world demand."},
+ {a:"NASDAQ 100",f:"NQ",m:"MNQ",tv:"MNQ1! / US100",ex:"CME",sz:"NQ = $20 × index · MNQ = $2 × index",mo:"Mar · Jun · Sep · Dec",
+  n:"Quarterly expiry only. The September contract expires 18 September — two days after the rate decision, which is the worst possible sequencing."},
+ {a:"S&P 500",f:"ES",m:"MES",tv:"ES1! / US500",ex:"CME",sz:"ES = $50 × index · MES = $5 × index",mo:"Mar · Jun · Sep · Dec",n:"Same expiry calendar as the Nasdaq contract."},
+ {a:"DAX 40",f:"FDAX",m:"FDXM",tv:"GER40",ex:"Eurex",sz:"FDAX = €25 × index",mo:"Mar · Jun · Sep · Dec",n:"Priced in euros, so a euro investor carries no currency layer here — unlike everything American."},
+ {a:"FTSE 100",f:"Z",m:"—",tv:"UK100",ex:"ICE",sz:"£10 × index",mo:"Mar · Jun · Sep · Dec",n:"Heavy energy and mining weighting, which is why it is the one index that loses on cheap oil."},
+ {a:"DOLLAR INDEX",f:"DX",m:"—",tv:"DXY",ex:"ICE",sz:"$1,000 × index",mo:"Mar · Jun · Sep · Dec",
+  n:"Matters more to you than most people: 100% of your shares are priced in dollars or a dollar-pegged currency."},
+ {a:"URANIUM",f:"UX",m:"—",tv:"—",ex:"CME (thin)",sz:"250 lbs U₃O₈",mo:"monthly",
+  n:"Very thinly traded — most exposure is taken through shares rather than futures, which is precisely why vehicles that hold physical uranium exist."}
+];
+
+const CTERMS = [
+ ["Contango","The futures price is higher than the spot price — the market expects it to cost more later, or you are paying for storage. Holding a long position through a roll in contango costs you money each time.","OIL · GOLD"],
+ ["Backwardation","The opposite: futures cheaper than spot. Usually a sign of physical scarcity right now. In oil it is one of the cleanest signals that a supply problem is real rather than anticipated.","OIL"],
+ ["Roll yield","What you gain or lose purely from moving from an expiring contract to the next one. In a long-running contango it quietly erodes returns even when the price goes nowhere.","ALL FUTURES"],
+ ["Real yield","The bond yield minus expected inflation. This is the single cleanest driver of the gold price — gold pays no interest, so when real yields rise, holding it costs more.","GOLD · SILVER"],
+ ["Breakeven inflation","The gap between an ordinary bond yield and an inflation-linked one. It is the market's own inflation forecast, and it moves before official inflation data does.","GOLD · RATES"],
+ ["Gold/silver ratio","How many ounces of silver buy one ounce of gold. Above 80 silver is historically cheap relative to gold; below 65 it is expensive. It was 70.88 in early August and moved back towards 69.","GOLD · SILVER"],
+ ["Crack spread","The margin a refiner earns between crude and the products it sells. It explains why a refiner can suffer when oil rises — they buy the crude and sell the products.","OIL"],
+ ["Days of supply / inventories","Weekly storage data. Falling inventories with rising prices means real scarcity; rising inventories with rising prices means speculation.","OIL"],
+ ["Term premium","The extra yield demanded for lending long rather than short, because the future is uncertain. It rises when a central bank stops giving guidance — which is exactly what has happened.","RATES · NASDAQ"],
+ ["Physical versus paper","Central banks buying bullion is physical demand; funds selling exchange-traded products is paper demand. In the second quarter central banks bought 289 tonnes while funds sold 45 — a six-to-one physical bid.","GOLD"]
+];
+
+const NEWSCOM = [
+ ["\"OPEC+ raises or cuts output\"","MATTERS","The one genuinely supply-side lever. But read what changed: the barrel count is usually decided in advance — the news is whether the <i>guidance</i> survives.","pos"],
+ ["\"Inventories rose or fell more than expected\"","MATTERS","Weekly and reliable. Combine with the price direction: falling stocks plus a rising price is real scarcity.","pos"],
+ ["\"Gold hits a record / a new high\"","CONTEXT ONLY","A price level is not a reason. Ask what real yields did that week — that is the driver, and it is published.","gold"],
+ ["\"Analyst sees gold at $6,000\"","WEAKEST CLASS","Three banks currently have targets between $5,200 and $6,300. They are opinions with no transaction behind them.","neg"],
+ ["\"Strait of Hormuz reopening talks\"","CHECK THE DATA, NOT THE QUOTE","On 10 August one side said the Strait was open while traffic showed eight vessels against a pre-war 120. <b>Ship counts beat statements.</b>","neg"],
+ ["\"Sanctions imposed on X\"","DEPENDS ENTIRELY ON WHO","Sanctioning a shipping company is routine. Sanctioning the banks that finance the trade is not — that is the difference between a headline and a repricing.","gold"],
+ ["\"Central bank X bought gold\"","MATTERS QUIETLY","Price-insensitive, policy-driven buying. It does not move the price on the day, but it is the floor underneath it.","pos"],
+ ["\"Fed official says…\"","DEPENDS ON WHO AND WHEN","A dissenting regional president speaking is worth more than a routine speech. Three of them voted to raise at the last meeting.","gold"]
+];
+
+/* ── render ── */
+setTimeout(()=>{
+ $("#tabs").insertAdjacentHTML("beforeend",`<div class="tab" data-t="cmd"><i>◈</i>COMMODITIES & TREE</div>`);
+ document.getElementById("panels").insertAdjacentHTML("beforeend",`<div class="panel" id="p-cmd"><div class="w" id="c-cmd"></div></div>`);
+ document.querySelectorAll(".tab").forEach(x=>x.onclick=()=>go(x.dataset.t));
+
+ const nd=id=>TREE.nodes.find(n=>n.id==id);
+ const col=c=>c=="pos"?"#1d6b4c":c=="neg"?"#9b2f2f":c=="gold"?"#8a6a1c":"#5a636e";
+ const bg=c=>c=="pos"?"#f0f7f3":c=="neg"?"#fbf0f0":c=="gold"?"#fbf8ef":"#f4f4f1";
+
+ $("#c-cmd").innerHTML=`
+ <div class="sh"><b>COMMODITIES & THE DECISION TREE</b> · WHERE RATES, OIL AND METALS MEET</div>
+ <div class="lede">Three things in one place: <b>where the rate debate actually stands</b> as of ${FEDNOW.asof}, a <b>visual decision tree</b> from the September inflation reading through to what each outcome does to gold, silver, oil, the index and your four positions, and the <b>contract symbols and terminology</b> you need to read commodity news without guessing.</div>
+
+ <div class="sh"><b>1 · WHERE THE RATE DEBATE STANDS</b></div>
+ <div class="grid g4" style="margin-bottom:12px">
+  <div class="card"><div class="desk">CURRENT RATE</div><div class="ctr" style="text-align:left;font-size:19px">${FEDNOW.rate.split(",")[0]}</div><div class="mu">unchanged since December 2025</div></div>
+  ${FEDNOW.sep.map(s=>`<div class="card"><div class="desk">SEPTEMBER · ${s[0].toUpperCase()}</div>
+   <div class="ctr ${s[2]}" style="text-align:left;font-size:26px">${s[1]}</div><div class="mu">16–17 September meeting</div></div>`).join("")}
+ </div>
+ <div class="warn"><div class="h">${FEDNOW.correct.t}</div>${FEDNOW.correct.b}${SB('ct')}</div>
+ <div class="grid g2" style="margin-bottom:14px">
+  <div class="card"><div class="ctl" style="font-size:13px;margin-bottom:6px">${FEDNOW.minutes.t}</div><div>${FEDNOW.minutes.b}${SB('ct')}</div></div>
+  <div class="card"><div class="ctl" style="font-size:13px;margin-bottom:6px">${FEDNOW.where.t}</div><div>${FEDNOW.where.b}${SB('ct')}</div></div>
+ </div>
+
+ <div class="sh"><b>2 · THE DECISION TREE</b> · from the inflation reading to your portfolio</div>
+ <div class="lede">Read left to right. The first split is the <b>11 September inflation reading</b>, the second is the <b>16–17 September meeting</b>. Underneath, what each outcome does to each instrument — and to what you actually own.</div>
+ <div class="card" style="margin-bottom:12px">
+ <svg viewBox="0 0 720 480" style="width:100%;height:auto;display:block">
+  ${TREE.links.map(l=>{const a=nd(l[0]),b=nd(l[1]);
+   const x1=a.x+a.w,y1=a.y+a.h/2,x2=b.x,y2=b.y+b.h/2,mx=(x1+x2)/2;
+   return `<path d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}" fill="none" stroke="${col(b.c)}" stroke-width="1.6" stroke-opacity=".5"/>`}).join("")}
+  ${TREE.nodes.map(n=>`
+   <rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="5" fill="${bg(n.c)}" stroke="${col(n.c)}" stroke-width="1.4"/>
+   <text x="${n.x+n.w/2}" y="${n.y+24}" text-anchor="middle" font-family="IBM Plex Mono" font-size="13" font-weight="600" fill="${col(n.c)}">${n.t}</text>
+   <text x="${n.x+n.w/2}" y="${n.y+41}" text-anchor="middle" font-family="IBM Plex Sans" font-size="10" fill="#5a636e">${n.s}</text>`).join("")}
+  <text x="135" y="170" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" letter-spacing="1" fill="#949aa3">THE DATA</text>
+  <text x="355" y="30" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" letter-spacing="1" fill="#949aa3">THE PRINT</text>
+  <text x="580" y="30" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" letter-spacing="1" fill="#949aa3">THE DECISION</text>
+ </svg>
+ </div>
+ <div class="tw" style="margin-bottom:14px"><table><thead><tr><th style="min-width:150px">Outcome</th><th style="min-width:180px">Gold</th><th style="min-width:180px">Silver</th><th style="min-width:170px">Oil</th><th style="min-width:170px">Nasdaq</th><th style="min-width:290px">Your four positions</th></tr></thead><tbody>
+ ${TREE.out.map(o=>`<tr class="wrap"><td><b class="${o.c=='pos'?'pos':o.c=='neg'?'neg':o.c=='gold'?'gold':''}">${o.n}</b></td>
+  <td>${o.g}</td><td>${o.s}</td><td>${o.o}</td><td>${o.q}</td><td>${o.y}</td></tr>`).join("")}
+ </tbody></table></div>
+
+ <div class="sh"><b>3 · IS THERE ANY PATH TO A RATE CUT?</b></div>
+ <div class="lede">Short answer: not this year, and probably not for the reason you would want.</div>
+ <div class="tw" style="margin-bottom:14px"><table><tbody>
+ ${CUTPATH.map(c=>`<tr class="wrap"><td class="mono ${c[2]=='neg'?'neg':c[2]=='gold'?'gold':'mu'}" style="width:240px;vertical-align:top"><b>${c[0]}</b></td><td>${c[1]}</td></tr>`).join("")}
+ </tbody></table></div>
+
+ <div class="sh"><b>4 · CONTRACT SYMBOLS</b> · what to type, and what one contract actually is</div>
+ <div class="lede">Every instrument in this dashboard, with the full-size symbol, the micro version, what you type into a charting platform, and the contract size. <b>The size is the part people skip</b> — it decides how much one point of movement is worth.</div>
+ <div class="tw" style="margin-bottom:14px"><table><thead><tr><th>Asset</th><th class="n">Full</th><th class="n">Micro</th><th>Chart symbol</th><th>Exchange</th><th>Contract size</th><th>Expiry months</th><th style="min-width:340px">What to know</th></tr></thead><tbody>
+ ${SYMS.map(s=>`<tr class="wrap"><td><b>${s.a}</b></td><td class="n mono gold"><b>${s.f}</b></td>
+  <td class="n mono">${s.m}</td><td class="mono">${s.tv}</td><td class="tx2">${s.ex}</td>
+  <td class="mono" style="font-size:10px">${s.sz}</td><td class="tx2" style="font-size:10px">${s.mo}</td><td>${s.n}</td></tr>`).join("")}
+ </tbody></table></div>
+
+ <div class="sh"><b>5 · THE TERMS YOU NEED</b> · to read commodity news without guessing</div>
+ <div class="tw" style="margin-bottom:14px"><table><thead><tr><th style="min-width:170px">Term</th><th style="min-width:560px">What it means, and why it matters</th><th>Applies to</th></tr></thead><tbody>
+ ${CTERMS.map(t=>`<tr class="wrap"><td class="mono gold"><b>${t[0]}</b></td><td>${t[1]}</td>
+  <td class="mono tx2" style="font-size:9px">${t[2]}</td></tr>`).join("")}
+ </tbody></table></div>
+
+ <div class="sh"><b>6 · READING COMMODITY HEADLINES</b></div>
+ <div class="tw"><table><thead><tr><th style="min-width:280px">The headline</th><th>Worth</th><th style="min-width:520px">What to do with it</th></tr></thead><tbody>
+ ${NEWSCOM.map(n=>`<tr class="wrap"><td><b>${n[0]}</b></td>
+  <td><span class="tag st ${n[3]}">${n[1]}</span></td><td>${n[2]}</td></tr>`).join("")}
+ </tbody></table></div>
+
+ <div class="warn goldbox"><div class="h">The one thing to carry out of this tab</div>
+ A hike is priced at roughly a third — and the volatility index sits near 15, which means <b>the market is not paying to protect against it</b>. That combination is what makes it a tail risk rather than a base case: not because it is likely, but because it is cheap to ignore and expensive to be wrong about.<br><br>
+ Your four positions are 72.6% rate-negative with zero offset. In the hike branch of the tree above, every column turns against you at once.</div>
+ <div style="height:40px"></div>`;
+
+ document.querySelector(".logo span").textContent="CONTROL ROOM · v24 · 20 AUGUST";
+ $("#stamps").innerHTML=[["FED","20 Aug · hold 68% / hike 31–34% / cut ~0%","fresh"],
+  ["PORTFOLIO","4 positions + cash","stale"],
+  ["NEXT DECISION","25 Aug · Xiaomi weight","stale"],
+  ["VERSION","24.0 · 20 Aug 2026",""]]
+  .map(x=>`<span class="hbadge ${x[2]}">${x[0]} <b>${x[1]}</b></span>`).join("");
+},2500);
+
+/* ═══════════ v25 — THURSDAY 20 AUGUST · RISK-OFF WEEK ═══════════ */
+
+const D20 = {
+ h:"Three forces hit at once: yields at a twenty-year high, oil near $88, and the consumer confirmed weak",
+ lead:`The three-week winning streak is breaking. Everything that was working two weeks ago — falling rate expectations, falling oil, a record S&P — reversed inside five sessions.`,
+ rows:[
+  ["S&P 500","7,641.16","−0.87%",-1,"Down 1.9% on the week so far. Eight sessions ago this index set a record above 7,800."],
+  ["Nasdaq Composite","26,067.17","−1.00%",-1,"<b>Down 2.5% on the week</b> — the worst of the majors and the one that matters most to your positions."],
+  ["Dow Jones","52,759.21","−1.32%",-1,"Down 703 points, dragged by Walmart. Second consecutive weekly loss."],
+  ["Spot gold","$4,491.75","−0.65%",-1,"Futures at $4,551.80. Still far above the $4,152 the source document was built on."],
+  ["WTI crude","near $88","rising",1,"<b>Topped $87 intraday.</b> From $75.77 on 4 August — that is a 16% move in sixteen sessions."],
+  ["Bitcoin","$71,808–72,000+","+11.5%",1,"<b>See the separate note below. This breaks a rule this dashboard wrote down.</b>"],
+  ["30-year Treasury","near a 20-year high","rising",1,"The Treasury said it will more than double buybacks of 10, 20 and 30-year debt. A rally followed, then fizzled the next day — yields rose across the curve again."]
+ ]};
+
+const D20F = [
+{t:"Trump announced a \"crushing economic operation\" against Iran",c:"neg",
+ b:`The measures promised last weekend have arrived as an announcement. Oil settled near $88, with the President's threat explicitly clouding peace prospects.`,
+ w:`<b>The chain flagged in the weekend update is now live.</b> Higher oil revives energy inflation; energy inflation revives the hike; the hike hits 72.6% of your book with zero offset.<br><br>
+ And the second half of that chain — whether the measures target Chinese banks — determines whether your 27 November exposure gets worse. Watch what the operation actually contains, not the headline.`},
+{t:"The bond market rejected the Treasury's own fix",c:"neg",
+ b:`The 30-year yield hit its highest level in nearly two decades early in the week. The Treasury responded by announcing it would more than double repurchases of long-dated debt. Stocks rallied sharply on Wednesday — and gave it all back on Thursday as yields rose across the curve again, on the view that propping up bonds worsens an already inflationary backdrop.`,
+ w:`This is Engine 2 running at full strength. <b>Every position you own is valued off that long yield</b>, and the attempt to push it down lasted exactly one session. When the market decides an official fix makes the problem worse, that is a more powerful signal than the fix itself.`},
+{t:"Walmart confirmed what Friday's retail sales suggested",c:"neg",
+ b:`Walmart reported its <b>slowest quarterly sales growth in more than six years</b> and fell around 8–9%, its worst drop since 2022. It sits in the Dow, the S&P 500 and the Nasdaq-100, so it dragged all three.`,
+ w:`Two independent confirmations in five days — official retail sales down 0.6%, and now the largest retailer in the country. The consumer weakness is no longer a single data point. That pushes the hike odds down, but it pushes the earnings risk up, and your positions are priced on future earnings.`},
+{t:"Jackson Hole is next week, and it is now the main event",c:"gold",
+ b:`The chair speaks at Jackson Hole next week. Analysts are explicitly framing it as the test of whether the hawkish discussion in the minutes translates into his own message — and whether he gives detail on his broader plans for the central bank.`,
+ w:`Under a chair who refuses forward guidance, an unscripted remark lands in a vacuum and moves more than it should. <b>This is now a larger event than it looked a week ago</b>, because the minutes gave it something specific to either confirm or contradict.`}
+];
+
+const BTCBREAK = {
+ t:"A rule this dashboard wrote down has just been falsified — and that is worth more than the price move",
+ rule:`The bitcoin card has carried this instruction since the first version: <i>\"Until it breaks $64,000 on volume, treat it as an unrelated instrument rather than part of this map.\"</i> The level had failed repeatedly since late February.`,
+ what:`On Thursday bitcoin surged <b>11.5% to $71,808</b> and topped $72,000, on the back of the Treasury buyback announcement and a White House crypto summit.`,
+ mean:`<b>The condition is met.</b> Not a drift through the level — an 11.5% session on a specific liquidity catalyst. Under your own written rule, bitcoin stops being an unrelated observation and becomes a liquidity instrument that responds to Treasury and central bank action.<br><br>
+ That matters beyond crypto: it says the market read the Treasury buyback as a <b>liquidity injection</b> rather than as debt management. Bitcoin moved 11.5% on it while equities gave back their gains within a day. Two markets, opposite readings of the same announcement — and the one that moved hardest was the liquidity-sensitive one.`,
+ act:`You do not own it and this is not an argument to. But the rule said what would change the picture, the thing happened, and the dashboard has to acknowledge it rather than quietly leave the old sentence in place. <b>That is what a falsification condition is for.</b>`
+};
+
+const D20PORT = [
+ ["Your rate exposure","WORSE","The 30-year at a twenty-year high with the Treasury's fix already failing means the discount rate is rising, not falling. 72.6% of your shares are rate-negative and nothing offsets it."],
+ ["Your oil exposure","INDIRECT BUT REAL","You hold no energy. But oil near $88 rebuilds the inflation channel, and that runs straight back into the rate exposure above."],
+ ["Your Nasdaq beta","HIT HARDEST","The Nasdaq is down 2.5% this week against the S&P's 1.9%. Your three real positions are high-beta names in that complex."],
+ ["26 August","UNCHANGED AND CLOSER","NVIDIA and Xiaomi in the same session, now landing in a risk-off tape rather than a record one. The bar argument gets harder, not easier."],
+ ["Your cash","THE POINT","In a week where everything fell, holding roughly 43% in cash is the position that worked. That is worth registering, because it is easy to feel like the cash is doing nothing."]
+];
+
+/* ── render ── */
+setTimeout(()=>{
+ const s=$("#c-start"); if(!s)return;
+ s.insertAdjacentHTML("afterbegin",`
+ <div class="sh"><b>THURSDAY 20 AUGUST</b> · UPDATE</div>
+ <div class="card hl" style="margin-bottom:14px">
+  <div class="ct"><div class="ctl" style="font-size:15px">${D20.h}</div>
+   <div class="mono mu" style="font-size:9px;text-align:right">VERIFIED BEFORE WRITING${SB('ct','LIVE')}</div></div>
+  <div class="lede" style="margin-bottom:10px">${D20.lead}</div>
+  <div class="tw"><table><thead><tr><th>Instrument</th><th class="n">Level</th><th class="n">Day</th><th style="min-width:480px">Note</th></tr></thead><tbody>
+  ${D20.rows.map(r=>`<tr class="wrap"><td><b>${r[0]}</b></td><td class="n mono">${r[1]}</td>
+   <td class="n mono ${r[3]>0?'pos':'neg'}">${r[2]}</td><td class="tx2">${r[4]}</td></tr>`).join("")}
+  </tbody></table></div>
+ </div>
+
+ <div class="sh"><b>WHAT DROVE IT</b></div>
+ <div class="grid g2" style="margin-bottom:14px">
+ ${D20F.map(f=>`<div class="card" style="border-color:${f.c=='neg'?'#e0c5c5':'#e6dcc0'}">
+  <div class="ctl" style="font-size:13px;margin-bottom:6px">${f.t}</div>
+  <div class="blk">${f.b}${SB('ct')}</div>
+  <div class="blk ${f.c=='neg'?'n':'g'}"><div class="h">What it means for you</div>${f.w}</div></div>`).join("")}
+ </div>
+
+ <div class="card" style="border-color:#c9a0a0;margin-bottom:14px">
+  <div class="ct"><div class="ctl" style="font-size:14px">${BTCBREAK.t}</div>
+   <span class="tag st neg">RULE TRIGGERED</span></div>
+  <div class="blk"><div class="h">What the dashboard said</div>${BTCBREAK.rule}</div>
+  <div class="blk g"><div class="h">What happened</div>${BTCBREAK.what}${SB('fe')}</div>
+  <div class="blk i"><div class="h">Why it matters beyond crypto</div>${BTCBREAK.mean}</div>
+  <div class="blk p"><div class="h">What to do about it</div>${BTCBREAK.act}</div>
+ </div>
+
+ <div class="sh"><b>WHAT IT MEANS FOR YOUR FOUR POSITIONS</b></div>
+ <div class="tw" style="margin-bottom:14px"><table><thead><tr><th style="min-width:190px">Area</th><th>Direction</th><th style="min-width:520px">Reading</th></tr></thead><tbody>
+ ${D20PORT.map(p=>`<tr class="wrap"><td><b>${p[0]}</b></td>
+  <td><span class="tag st ${p[1]=='THE POINT'?'pos':p[1].includes('WORSE')||p[1].includes('HARDEST')?'neg':'gold'}">${p[1]}</span></td>
+  <td>${p[2]}</td></tr>`).join("")}
+ </tbody></table></div>
+
+ <div class="warn goldbox"><div class="h">The week in one line, and what it changes</div>
+ Everything that was working two weeks ago reversed: rate expectations, oil, and the record index. Nothing about your four positions changed — but <b>the environment they sit in got materially worse, and your cash got materially more useful</b>.<br><br>
+ The two decisions ahead are unchanged and now closer: the Xiaomi weight before 25 August closes, and whether to deploy at all before NVIDIA on the 26th. In a tape like this week's, "not yet" is a stronger answer than it was on Monday.</div>
+
+ <div class="warn"><div class="h">Still not updated</div>
+ No broker export, so position values still read from 14 August — and given this week, they will have moved. No filings export; the insider layer still ends 31 July. Note that eight of your former holdings were in an open trading window that closes around mid-September, so the useful export moment is still around 1 September.</div>
+ <div style="height:20px"></div>`);
+
+ $("#stamps").innerHTML=[["MARKET","20 Aug close · risk-off week","fresh"],
+  ["FED","hold 68% / hike 31–34% / cut ~0%","fresh"],
+  ["NEXT DECISION","25 Aug · Xiaomi weight","stale"],
+  ["VERSION","25.0 · 20 Aug 2026",""]]
+  .map(x=>`<span class="hbadge ${x[2]}">${x[0]} <b>${x[1]}</b></span>`).join("");
+ document.querySelector(".logo span").textContent="CONTROL ROOM · v25 · 20 AUGUST";
+},2700);
+
 </script>
 </body>
 </html>
